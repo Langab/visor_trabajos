@@ -20,18 +20,21 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
-  header { background: var(--accent-dark); color: #fff; padding: 18px 24px; }
-  header h1 { font-size: 1.25rem; font-weight: 700; }
-  header p { font-size: .85rem; opacity: .85; margin-top: 2px; }
+  header { background: var(--accent-dark); color: #fff; padding: 16px 24px 0; }
+  header h1 { font-size: 1.2rem; font-weight: 700; }
+  header p { font-size: .85rem; opacity: .85; margin: 2px 0 12px; }
+  .tabs { display: flex; gap: 4px; }
+  .tab { padding: 9px 18px; border-radius: 10px 10px 0 0; background: rgba(255,255,255,.12); color: #fff; border: none; font-size: .92rem; cursor: pointer; font-weight: 600; }
+  .tab.active { background: var(--bg); color: var(--accent-dark); }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
 
   .stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
-  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; flex: 1; min-width: 130px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; flex: 1; min-width: 120px; }
   .stat .n { font-size: 1.5rem; font-weight: 800; color: var(--accent-dark); }
-  .stat .l { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .stat .l { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 
   .controls { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .controls input[type="search"] { flex: 2; min-width: 180px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; }
+  .controls input[type="search"] { flex: 2; min-width: 170px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; }
   .controls select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; background: #fff; color: var(--ink); }
   .chipbar { display: flex; gap: 6px; flex-wrap: wrap; }
   .chip { border: 1px solid var(--border); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: .82rem; cursor: pointer; user-select: none; color: var(--muted); }
@@ -48,6 +51,7 @@
   .job-title:hover { text-decoration: underline; }
   .job-meta { font-size: .85rem; color: var(--muted); margin-top: 2px; }
   .job-notes { font-size: .84rem; color: var(--ink); margin-top: 6px; background: #f8fafc; border-left: 3px solid var(--accent); padding: 5px 10px; border-radius: 0 6px 6px 0; }
+  .job-gaps { font-size: .82rem; color: #b45309; margin-top: 5px; }
   .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
   .badge { font-size: .72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .03em; }
   .b-high { background: #dcfce7; color: #15803d; }
@@ -59,63 +63,168 @@
   .b-descartada { background: #f1f5f9; color: #94a3b8; }
   .b-hoy { background: #1b3a5c; color: #fff; }
   .b-salary { background: #ecfdf5; color: #047857; text-transform: none; }
+  .b-cat { background: #eef2ff; color: #4338ca; }
+  .b-match { background: #1b3a5c; color: #fff; text-transform: none; }
+  .b-match.est { background: #94a3b8; }
   .job-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
   .job-date { font-size: .78rem; color: var(--muted); white-space: nowrap; }
   .mark { font-size: .78rem; border: 1px solid var(--border); background: #fff; border-radius: 8px; padding: 5px 10px; cursor: pointer; color: var(--muted); white-space: nowrap; }
   .mark.marked { background: var(--applied); border-color: var(--applied); color: #fff; }
   .empty { text-align: center; color: var(--muted); padding: 50px 0; }
   footer { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 30px; }
+
+  /* ===== Pestaña Análisis ===== */
+  .panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+  .panel h2 { font-size: 1.02rem; color: var(--accent-dark); margin-bottom: 10px; }
+  .panel h2 small { font-weight: 400; color: var(--muted); font-size: .8rem; }
+  .skillrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; font-size: .87rem; }
+  .skillrow .name { width: 170px; font-weight: 600; }
+  .bar { flex: 1; height: 10px; background: #eef1f5; border-radius: 6px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: var(--accent); border-radius: 6px; }
+  .bar > i.g { background: var(--high); }
+  .bar > i.o { background: var(--medium); }
+  .skillrow .lvl { width: 88px; font-size: .78rem; color: var(--muted); text-align: right; }
+  .gap-item { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--border); font-size: .89rem; }
+  .gap-item:last-child { border-bottom: none; }
+  .gap-count { background: #fef3c7; color: #b45309; font-weight: 700; border-radius: 8px; padding: 2px 10px; font-size: .8rem; white-space: nowrap; }
+  .gap-fix { color: var(--muted); font-size: .82rem; }
+  .top-op { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--border); font-size: .89rem; }
+  .top-op:last-child { border-bottom: none; }
+  .pct { font-weight: 800; font-size: 1.05rem; color: var(--accent-dark); width: 58px; }
+  .pct.est { color: var(--muted); font-weight: 600; }
+  .reco { padding: 8px 0 8px 14px; border-left: 3px solid var(--high); margin-bottom: 10px; font-size: .89rem; background: #f8fafc; border-radius: 0 8px 8px 0; padding-right: 10px; }
+  .reco b { color: var(--accent-dark); }
+  .dist { display: flex; gap: 20px; flex-wrap: wrap; }
+  .dist > div { flex: 1; min-width: 240px; }
   @media (max-width: 640px) {
     .job { flex-direction: column; gap: 8px; }
     .job-actions { flex-direction: row; align-items: center; }
+    .skillrow .name { width: 120px; }
   }
 </style>
 </head>
 <body>
 <header>
-  <h1>🔎 Visor de Trabajos — Analista de Datos · Santiago</h1>
+  <h1>🔎 Visor de Trabajos — Benjamín Lang</h1>
   <p id="updated">Cargando…</p>
+  <div class="tabs">
+    <button class="tab active" data-view="ofertas">📋 Ofertas</button>
+    <button class="tab" data-view="analisis">📊 Análisis estratégico</button>
+  </div>
 </header>
+
 <div class="wrap">
-  <div class="stats">
-    <div class="stat"><div class="n" id="s-total">–</div><div class="l">Ofertas activas</div></div>
-    <div class="stat"><div class="n" id="s-nuevas">–</div><div class="l">Nuevas (48 h)</div></div>
-    <div class="stat"><div class="n" id="s-high">–</div><div class="l">Afinidad alta</div></div>
-    <div class="stat"><div class="n" id="s-postuladas">–</div><div class="l">Postuladas</div></div>
-  </div>
-
-  <div class="controls">
-    <input type="search" id="q" placeholder="Buscar cargo o empresa…">
-    <div class="chipbar" id="fit-chips">
-      <span class="chip active" data-fit="all">Todas</span>
-      <span class="chip" data-fit="high">🟢 Alta</span>
-      <span class="chip" data-fit="medium">🟠 Media</span>
-      <span class="chip" data-fit="low">⚪ Baja</span>
+  <!-- ============ PESTAÑA OFERTAS ============ -->
+  <div id="view-ofertas">
+    <div class="stats">
+      <div class="stat"><div class="n" id="s-total">–</div><div class="l">Activas</div></div>
+      <div class="stat"><div class="n" id="s-nuevas">–</div><div class="l">Nuevas (48 h)</div></div>
+      <div class="stat"><div class="n" id="s-high">–</div><div class="l">Afinidad alta</div></div>
+      <div class="stat"><div class="n" id="s-inv">–</div><div class="l">Investigación</div></div>
+      <div class="stat"><div class="n" id="s-postuladas">–</div><div class="l">Postuladas</div></div>
     </div>
-    <select id="estado">
-      <option value="activas">Activas (sin descartadas)</option>
-      <option value="nueva">Solo nuevas</option>
-      <option value="evaluada">Evaluadas</option>
-      <option value="postulada">Postuladas</option>
-      <option value="descartada">Descartadas</option>
-      <option value="todas">Todas</option>
-    </select>
-    <select id="orden">
-      <option value="fecha">Más recientes primero</option>
-      <option value="fit">Mejor afinidad primero</option>
-      <option value="empresa">Por empresa (A-Z)</option>
-    </select>
+
+    <div class="controls">
+      <input type="search" id="q" placeholder="Buscar cargo o empresa…">
+      <div class="chipbar" id="cat-chips">
+        <span class="chip active" data-cat="all">Todas</span>
+        <span class="chip" data-cat="datos-bi">📊 Datos & BI</span>
+        <span class="chip" data-cat="investigacion">🎓 Investigación</span>
+      </div>
+      <div class="chipbar" id="fit-chips">
+        <span class="chip active" data-fit="all">Afinidad: todas</span>
+        <span class="chip" data-fit="high">🟢 Alta</span>
+        <span class="chip" data-fit="medium">🟠 Media</span>
+        <span class="chip" data-fit="low">⚪ Baja</span>
+      </div>
+      <select id="estado">
+        <option value="activas">Activas (sin descartadas)</option>
+        <option value="nueva">Solo nuevas</option>
+        <option value="evaluada">Evaluadas</option>
+        <option value="postulada">Postuladas</option>
+        <option value="descartada">Descartadas</option>
+        <option value="todas">Todas</option>
+      </select>
+      <select id="orden">
+        <option value="fecha">Más recientes primero</option>
+        <option value="match">Mejor match primero</option>
+        <option value="empresa">Por empresa (A-Z)</option>
+      </select>
+    </div>
+
+    <div id="list"></div>
   </div>
 
-  <div id="list"></div>
+  <!-- ============ PESTAÑA ANÁLISIS ============ -->
+  <div id="view-analisis" style="display:none">
+
+    <div class="panel">
+      <h2>👤 Mi perfil frente al mercado <small>· lo que las ofertas piden vs. lo que tengo</small></h2>
+      <div id="perfil-skills"></div>
+    </div>
+
+    <div class="panel dist">
+      <div>
+        <h2>📦 Ofertas por categoría</h2>
+        <div id="dist-cat"></div>
+      </div>
+      <div>
+        <h2>🎯 Ofertas activas por afinidad</h2>
+        <div id="dist-fit"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>🏆 Top oportunidades por comparabilidad <small>· % curado = descripción completa revisada; ~% = estimación por afinidad</small></h2>
+      <div id="top-ops"></div>
+    </div>
+
+    <div class="panel">
+      <h2>🧗 Qué te está faltando <small>· brechas detectadas en las descripciones reales revisadas</small></h2>
+      <div id="gaps-list"></div>
+    </div>
+
+    <div class="panel">
+      <h2>🧭 Recomendaciones estratégicas</h2>
+      <div id="recos"></div>
+    </div>
+  </div>
+
   <footer>Actualizado con el buscador de trabajo de Claude Code · Los marcadores "✅ Postulé" se guardan solo en este navegador</footer>
 </div>
 
 <script>
 const FIT_ORDER = { high: 0, medium: 1, low: 2 };
 const FIT_LABEL = { high: "Alta afinidad", medium: "Media", low: "Baja" };
+const FIT_EST = { high: 75, medium: 58, low: 40 };
+const CAT_LABEL = { "datos-bi": "Datos & BI", "investigacion": "Investigación" };
+
+// Perfil de Benjamín: nivel actual (0-100) vs demanda observada en las ofertas
+const PERFIL = [
+  { name: "R / RStudio",            nivel: 90, demanda: 45, lvl: "Avanzado" },
+  { name: "Power BI",               nivel: 88, demanda: 85, lvl: "Avanzado" },
+  { name: "Excel",                  nivel: 85, demanda: 70, lvl: "Avanzado" },
+  { name: "Git / GitLab",           nivel: 85, demanda: 25, lvl: "Avanzado" },
+  { name: "SQL",                    nivel: 55, demanda: 95, lvl: "Intermedio ⚠️" },
+  { name: "Python",                 nivel: 55, demanda: 65, lvl: "Intermedio" },
+  { name: "Cloud (AWS/Azure)",      nivel: 15, demanda: 45, lvl: "Básico ⚠️" },
+  { name: "Modelos predictivos/ML", nivel: 45, demanda: 55, lvl: "Estadístico" },
+  { name: "Comunicación/informes",  nivel: 92, demanda: 75, lvl: "Fortaleza ⭐" },
+  { name: "Inglés",                 nivel: 65, demanda: 40, lvl: "B2" },
+];
+
+// Recomendaciones estratégicas (basadas en las descripciones reales analizadas)
+const RECOS = [
+  { t: "SQL avanzado es tu brecha nº 1", d: "Aparece como EXCLUYENTE en la mayoría de las ofertas BI (Adecco, Duoc pide SQL Server, LarrainVial). Un curso de T-SQL/SQL Server de 20-30 h + práctica con window functions y modelado te sube el match promedio ~10 puntos. Es la inversión de mayor retorno." },
+  { t: "DAX y lenguaje M para profundizar Power BI", d: "Ya dominas Power BI, pero las ofertas técnicas (Adecco) piden DAX y M explícitamente. Si ya construyes dashboards institucionales, formalizar DAX te cuesta poco y elimina la brecha." },
+  { t: "Enmarca Claude Code como 'automatización con IA'", d: "Ofertas como la de Adecco piden 'manejo de automatizaciones con AI (excluyente)'. Tu buscador de trabajo agéntico y tus reportes automatizados SON eso: ponlo en el CV con nombre y apellido." },
+  { t: "'Carrera afín': argumenta, no te autodescartes", d: "Varias ofertas piden ingeniería 'o carrera afín'. Con 1° de tu generación, 5+ años en datos y el Censo Nacional, Sociología + especialización cuantitativa ES carrera afín. Postula igual; que te filtre el reclutador, no tú." },
+  { t: "El nicho investigación/analítica institucional es tu ventaja única", d: "En roles como Duoc UC, UAI (análisis institucional) o Banco Central compites con muchos menos candidatos que en BI corporativo, y tu combinación sociología + datos + Censo es rara. Prioriza estas ofertas aunque el volumen sea menor. Revisa también los portales de trabajo de universidades (UC, UChile, ANID) que no publican en LinkedIn." },
+  { t: "Cloud básico como inversión de mediano plazo", d: "AWS/Azure aparece como 'deseable' (Itaú, Duoc). No es urgente, pero un curso introductorio de fundamentos de datos en cloud te prepara para el siguiente salto de seniority." },
+];
+
 let DATA = { jobs: [], updated: null };
-let state = { q: "", fit: "all", estado: "activas", orden: "fecha" };
+let state = { q: "", fit: "all", cat: "all", estado: "activas", orden: "fecha", view: "ofertas" };
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
 
 async function load() {
@@ -131,33 +240,32 @@ async function load() {
     "Última actualización: " + d.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" }) +
     " · " + DATA.jobs.length + " ofertas registradas";
   render();
+  renderAnalisis();
 }
 
-function estadoDe(j) {
-  if (applied.has(j.id) || j.status === "postulada") return "postulada";
-  return j.status;
-}
-
-function daysAgo(iso) {
-  return (Date.now() - new Date(iso + "T12:00:00").getTime()) / 864e5;
-}
+const estadoDe = j => (applied.has(j.id) || j.status === "postulada") ? "postulada" : j.status;
+const daysAgo = iso => (Date.now() - new Date(iso + "T12:00:00").getTime()) / 864e5;
+const matchDe = j => j.match_pct != null ? j.match_pct : FIT_EST[j.fit];
+const esCurado = j => j.match_pct != null;
 
 function render() {
   let jobs = [...DATA.jobs];
   const q = state.q.toLowerCase();
   if (q) jobs = jobs.filter(j => (j.title + " " + j.company + " " + (j.notes||"")).toLowerCase().includes(q));
+  if (state.cat !== "all") jobs = jobs.filter(j => j.category === state.cat);
   if (state.fit !== "all") jobs = jobs.filter(j => j.fit === state.fit);
   if (state.estado === "activas") jobs = jobs.filter(j => estadoDe(j) !== "descartada");
   else if (state.estado !== "todas") jobs = jobs.filter(j => estadoDe(j) === state.estado);
 
   if (state.orden === "fecha") jobs.sort((a,b) => (b.date_posted||b.first_seen).localeCompare(a.date_posted||a.first_seen) || FIT_ORDER[a.fit]-FIT_ORDER[b.fit]);
-  else if (state.orden === "fit") jobs.sort((a,b) => FIT_ORDER[a.fit]-FIT_ORDER[b.fit] || (b.date_posted||b.first_seen).localeCompare(a.date_posted||a.first_seen));
+  else if (state.orden === "match") jobs.sort((a,b) => matchDe(b)-matchDe(a));
   else jobs.sort((a,b) => a.company.localeCompare(b.company));
 
   const act = DATA.jobs.filter(j => estadoDe(j) !== "descartada");
   document.getElementById("s-total").textContent = act.length;
   document.getElementById("s-nuevas").textContent = act.filter(j => daysAgo(j.first_seen) <= 2).length;
   document.getElementById("s-high").textContent = act.filter(j => j.fit === "high").length;
+  document.getElementById("s-inv").textContent = act.filter(j => j.category === "investigacion").length;
   document.getElementById("s-postuladas").textContent = DATA.jobs.filter(j => estadoDe(j) === "postulada").length;
 
   const list = document.getElementById("list");
@@ -167,14 +275,18 @@ function render() {
     const est = estadoDe(j);
     const esNueva = daysAgo(j.first_seen) <= 2;
     const marked = est === "postulada";
+    const pct = matchDe(j);
     return `<div class="job fit-${j.fit} ${est==="descartada"?"done":""}">
       <div class="fitdot"></div>
       <div class="job-main">
         <a class="job-title" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
         <div class="job-meta">${j.company}${j.location ? " · " + j.location : ""}${j.date_posted ? " · publicado " + j.date_posted : ""}</div>
         ${j.notes ? `<div class="job-notes">${j.notes}</div>` : ""}
+        ${j.gaps && j.gaps.length ? `<div class="job-gaps">🧗 Brechas: ${j.gaps.join(" · ")}</div>` : ""}
         <div class="badges">
+          <span class="badge b-match ${esCurado(j)?"":"est"}">${esCurado(j)?"":"~"}${pct}% match</span>
           <span class="badge b-${j.fit}">${FIT_LABEL[j.fit]}</span>
+          <span class="badge b-cat">${CAT_LABEL[j.category]||j.category}</span>
           <span class="badge b-${est}">${est}</span>
           ${esNueva ? '<span class="badge b-hoy">✨ nueva</span>' : ""}
           ${j.salary ? `<span class="badge b-salary">💰 ${j.salary}</span>` : ""}
@@ -188,20 +300,93 @@ function render() {
   }).join("");
 }
 
+function barRow(name, val, max, lvl, cls) {
+  const w = Math.round(val / max * 100);
+  return `<div class="skillrow"><span class="name">${name}</span><div class="bar"><i class="${cls||""}" style="width:${w}%"></i></div><span class="lvl">${lvl}</span></div>`;
+}
+
+function renderAnalisis() {
+  // Perfil: mi nivel vs demanda del mercado
+  document.getElementById("perfil-skills").innerHTML =
+    '<div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">Barra azul = mi nivel · barra naranja = qué tan pedida está en las ofertas recolectadas</div>' +
+    PERFIL.map(s =>
+      barRow(s.name, s.nivel, 100, s.lvl) +
+      barRow("", s.demanda, 100, "demanda", "o")
+    ).join("");
+
+  const act = DATA.jobs.filter(j => estadoDe(j) !== "descartada");
+
+  // Distribución por categoría y afinidad
+  const byCat = {};
+  act.forEach(j => byCat[j.category] = (byCat[j.category]||0)+1);
+  const maxC = Math.max(...Object.values(byCat), 1);
+  document.getElementById("dist-cat").innerHTML = Object.entries(byCat)
+    .sort((a,b)=>b[1]-a[1])
+    .map(([c,n]) => barRow(CAT_LABEL[c]||c, n, maxC, n + " ofertas")).join("");
+
+  const byFit = { high: 0, medium: 0, low: 0 };
+  act.forEach(j => byFit[j.fit]++);
+  document.getElementById("dist-fit").innerHTML =
+    barRow("🟢 Alta", byFit.high, act.length, byFit.high + " ofertas", "g") +
+    barRow("🟠 Media", byFit.medium, act.length, byFit.medium + " ofertas", "o") +
+    barRow("⚪ Baja", byFit.low, act.length, byFit.low + " ofertas");
+
+  // Top oportunidades por match
+  const tops = [...act].filter(j => estadoDe(j) !== "postulada")
+    .sort((a,b) => matchDe(b)-matchDe(a) || (esCurado(b)?1:0)-(esCurado(a)?1:0)).slice(0, 10);
+  document.getElementById("top-ops").innerHTML = tops.map(j =>
+    `<div class="top-op">
+      <span class="pct ${esCurado(j)?"":"est"}">${esCurado(j)?"":"~"}${matchDe(j)}%</span>
+      <div style="flex:1">
+        <a class="job-title" style="font-size:.92rem" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+        <div class="job-meta">${j.company} · ${CAT_LABEL[j.category]||j.category}${j.salary ? " · 💰 " + j.salary : ""}</div>
+      </div>
+    </div>`).join("");
+
+  // Brechas agregadas (solo de ofertas con descripción revisada)
+  const gapCount = {};
+  DATA.jobs.forEach(j => (j.gaps||[]).forEach(g => {
+    const key = g.split("(")[0].trim();
+    if (!gapCount[key]) gapCount[key] = { n: 0, detail: g, jobs: [] };
+    gapCount[key].n++;
+    gapCount[key].jobs.push(j.company);
+  }));
+  const gaps = Object.entries(gapCount).sort((a,b)=>b[1].n-a[1].n);
+  document.getElementById("gaps-list").innerHTML = gaps.length
+    ? gaps.map(([k,v]) =>
+      `<div class="gap-item"><span class="gap-count">${v.n} oferta${v.n>1?"s":""}</span><div><b>${k}</b><div class="gap-fix">Detectada en: ${[...new Set(v.jobs)].join(", ")}</div></div></div>`).join("")
+    : '<div class="empty">Aún no hay brechas registradas: se llenan al evaluar ofertas en detalle</div>';
+
+  // Recomendaciones
+  document.getElementById("recos").innerHTML = RECOS.map(r =>
+    `<div class="reco"><b>${r.t}.</b> ${r.d}</div>`).join("");
+}
+
 function toggle(id) {
   if (applied.has(id)) applied.delete(id); else applied.add(id);
   localStorage.setItem("postuladas", JSON.stringify([...applied]));
-  render();
+  render(); renderAnalisis();
 }
+
+// Tabs
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+  t.classList.add("active");
+  state.view = t.dataset.view;
+  document.getElementById("view-ofertas").style.display = state.view === "ofertas" ? "" : "none";
+  document.getElementById("view-analisis").style.display = state.view === "analisis" ? "" : "none";
+}));
 
 document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
 document.getElementById("estado").addEventListener("change", e => { state.estado = e.target.value; render(); });
 document.getElementById("orden").addEventListener("change", e => { state.orden = e.target.value; render(); });
 document.querySelectorAll("#fit-chips .chip").forEach(c => c.addEventListener("click", () => {
   document.querySelectorAll("#fit-chips .chip").forEach(x => x.classList.remove("active"));
-  c.classList.add("active");
-  state.fit = c.dataset.fit;
-  render();
+  c.classList.add("active"); state.fit = c.dataset.fit; render();
+}));
+document.querySelectorAll("#cat-chips .chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll("#cat-chips .chip").forEach(x => x.classList.remove("active"));
+  c.classList.add("active"); state.cat = c.dataset.cat; render();
 }));
 
 load();

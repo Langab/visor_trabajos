@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-06T13:09:01.207995+00:00",
+ "updated": "2026-07-06T13:26:41.960802+00:00",
  "jobs": [
   {
    "id": "4436929011",
@@ -12,7 +12,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4423552797",
@@ -25,7 +28,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436907724",
@@ -38,7 +44,26 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": "Título genérico: revisar descripción antes de postular"
+   "notes": "Título genérico: revisar descripción antes de postular",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4436966349",
+   "title": "Research Analyst",
+   "company": "TRC | Recruitme",
+   "url": "https://cl.linkedin.com/jobs/view/4436966349",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-04",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Revisar descripción: puede ser market research o investigación aplicada",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436788645",
@@ -51,7 +76,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433713237",
@@ -64,7 +92,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433706500",
@@ -77,7 +108,26 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4435484190",
+   "title": "Analista Quant de Mercados Nacionales",
+   "company": "AFC Chile",
+   "url": "https://cl.linkedin.com/jobs/view/4435484190",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-03",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Perfil cuantitativo/económico; su formación estadística aplica",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436417073",
@@ -90,7 +140,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436401677",
@@ -103,7 +156,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436401671",
@@ -116,7 +172,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435409191",
@@ -129,7 +188,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432780842",
@@ -142,7 +204,13 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "Power BI avanzado ✓, automatización con IA ✓ (Claude Code). Descripción completa revisada.",
+   "category": "datos-bi",
+   "match_pct": 68,
+   "gaps": [
+    "SQL avanzado (excluyente; el suyo es intermedio)",
+    "DAX y lenguaje M en profundidad"
+   ]
   },
   {
    "id": "4436410968",
@@ -155,7 +223,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433125144",
@@ -168,7 +239,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432795544",
@@ -181,7 +255,42 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4436439211",
+   "title": "Coordinador/a Territorial Programa Intervención Comunitaria",
+   "company": "Universidad de Las Américas",
+   "url": "https://cl.linkedin.com/jobs/view/4436439211",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-02",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Perfil sociólogo + coordinación; menos datos, más terreno",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4435270440",
+   "title": "Coordinador de Métricas Digitales",
+   "company": "UC CHRISTUS",
+   "url": "https://cl.linkedin.com/jobs/view/4435270440",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-02",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435812619",
@@ -194,7 +303,14 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "80/100 Fit Fuerte · Dirección de Estudios y Progresión Estudiantil; +100 postulantes, postular pronto; brecha SQL Server"
+   "notes": "80/100 Fit Fuerte · Dirección de Estudios y Progresión Estudiantil; +100 postulantes, postular pronto; brecha SQL Server",
+   "category": "datos-bi",
+   "match_pct": 80,
+   "gaps": [
+    "SQL Server avanzado (esencial en la oferta)",
+    "Cloud para datos (deseable)",
+    "Modelos predictivos formales"
+   ]
   },
   {
    "id": "4434620954",
@@ -207,7 +323,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4436110323",
@@ -220,7 +339,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435894660",
@@ -233,7 +355,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-coderslab-bi-stgo",
@@ -246,7 +371,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "USD 2.200-2.600/mes",
-   "notes": "Stack exacto: Power BI + SQL"
+   "notes": "Stack exacto: Power BI + SQL",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-cumplo-da",
@@ -259,7 +387,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-coderslab-pbi-rem",
@@ -272,7 +403,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "USD 1.500-2.000/mes",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-witi-ba",
@@ -285,7 +419,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-assetplan-bi",
@@ -298,7 +435,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "gob-devups-bi",
@@ -311,7 +451,42 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "USD 1.000-1.200/mes",
-   "notes": "Sueldo bajo mercado para su seniority"
+   "notes": "Sueldo bajo mercado para su seniority",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4423539658",
+   "title": "Data Scientist",
+   "company": "Banco BICE",
+   "url": "https://cl.linkedin.com/jobs/view/4423539658",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-01",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "DS bancario: probablemente Python/ML intensivo",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4435822766",
+   "title": "Data Scientist",
+   "company": "Confuturo",
+   "url": "https://cl.linkedin.com/jobs/view/4435822766",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-07-01",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435312399",
@@ -324,7 +499,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4415697410",
@@ -337,7 +515,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435179270",
@@ -350,7 +531,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4435310841",
@@ -363,7 +547,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4434250162",
@@ -376,7 +563,42 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4434245397",
+   "title": "Líder de Investigación",
+   "company": "HR Profile",
+   "url": "https://cl.linkedin.com/jobs/view/4434245397",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-06-27",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4434228641",
+   "title": "Social Affairs Officer - P3",
+   "company": "Escazú Ahora",
+   "url": "https://cl.linkedin.com/jobs/view/4434228641",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-06-27",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Organismo internacional-ONG; perfil social + datos",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4405415499",
@@ -389,7 +611,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433892435",
@@ -402,7 +627,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4430624936",
@@ -415,7 +643,26 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4434042763",
+   "title": "Asesor Consejo",
+   "company": "Banco Central de Chile",
+   "url": "https://cl.linkedin.com/jobs/view/4434042763",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-06-26",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Banco Central: prestigio alto, revisar si pide economista",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432144288",
@@ -428,7 +675,10 @@
    "fit": "high",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432608380",
@@ -441,7 +691,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433342430",
@@ -454,7 +707,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433524680",
@@ -467,7 +723,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4433394343",
@@ -480,7 +739,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": "Análisis institucional en educación superior (su dominio), pero cargo directivo: probablemente sobre su seniority"
+   "notes": "Análisis institucional en educación superior (su dominio), pero cargo directivo: probablemente sobre su seniority",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432898504",
@@ -493,7 +755,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4310245503",
@@ -506,7 +771,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432526648",
@@ -519,7 +787,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4419968472",
@@ -532,7 +803,12 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "Pide exactamente su stack: Python/R, SQL, Power BI, Excel. 1-3 años exp (él tiene 5+). Descripción completa revisada.",
+   "category": "datos-bi",
+   "match_pct": 85,
+   "gaps": [
+    "Título de ingeniería (Sociología califica como 'carrera afín': argumentarlo en la carta)"
+   ]
   },
   {
    "id": "4432512433",
@@ -545,7 +821,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432854601",
@@ -558,7 +837,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432290165",
@@ -571,7 +853,10 @@
    "fit": "high",
    "status": "nueva",
    "salary": "USD 2.000-2.400/mes",
-   "notes": "Mismo aviso en Get on Board publica el rango salarial"
+   "notes": "Mismo aviso en Get on Board publica el rango salarial",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4432290571",
@@ -581,10 +866,16 @@
    "location": "Santiago",
    "first_seen": "2026-07-06",
    "date_posted": "2026-06-23",
-   "fit": "high",
+   "fit": "low",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "OJO: pide experiencia bancaria excluyente que no tiene. Descripción completa revisada; rebajada de afinidad.",
+   "category": "datos-bi",
+   "match_pct": 40,
+   "gaps": [
+    "5+ años en industria financiera/banca (EXCLUYENTE)",
+    "AWS (deseable)"
+   ]
   },
   {
    "id": "4429491198",
@@ -597,7 +888,26 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4432268310",
+   "title": "Asesor(a) Senior Depto. Salud Colectiva y Bienestar",
+   "company": "Universidad de Las Américas",
+   "url": "https://cl.linkedin.com/jobs/view/4432268310",
+   "location": "Santiago",
+   "first_seen": "2026-07-06",
+   "date_posted": "2026-06-23",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "",
+   "category": "investigacion",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4431700376",
@@ -610,7 +920,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4430576159",
@@ -623,7 +936,10 @@
    "fit": "medium",
    "status": "descartada",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4431765170",
@@ -636,7 +952,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4428941967",
@@ -649,7 +968,10 @@
    "fit": "medium",
    "status": "nueva",
    "salary": "",
-   "notes": ""
+   "notes": "",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "4430595951",
@@ -662,7 +984,10 @@
    "fit": "low",
    "status": "descartada",
    "salary": "",
-   "notes": "Nivel graduado, bajo su seniority"
+   "notes": "Nivel graduado, bajo su seniority",
+   "category": "datos-bi",
+   "match_pct": null,
+   "gaps": []
   }
  ]
 }
