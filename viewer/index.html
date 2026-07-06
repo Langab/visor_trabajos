@@ -110,6 +110,7 @@
   <div class="tabs">
     <button class="tab active" data-view="ofertas">📋 Ofertas</button>
     <button class="tab" data-view="analisis">📊 Análisis estratégico</button>
+    <button class="tab" data-view="historico">📈 Histórico</button>
   </div>
 </header>
 
@@ -118,7 +119,7 @@
   <div id="view-ofertas">
     <div class="stats">
       <div class="stat"><div class="n" id="s-total">–</div><div class="l">Activas</div></div>
-      <div class="stat"><div class="n" id="s-nuevas">–</div><div class="l">Nuevas (48 h)</div></div>
+      <div class="stat"><div class="n" id="s-nuevas">–</div><div class="l">✨ Nuevas últ. pasada</div></div>
       <div class="stat"><div class="n" id="s-high">–</div><div class="l">Afinidad alta</div></div>
       <div class="stat"><div class="n" id="s-inv">–</div><div class="l">Investigación</div></div>
       <div class="stat"><div class="n" id="s-postuladas">–</div><div class="l">Postuladas</div></div>
@@ -190,6 +191,31 @@
     </div>
   </div>
 
+  <!-- ============ PESTAÑA HISTÓRICO ============ -->
+  <div id="view-historico" style="display:none">
+    <div class="stats">
+      <div class="stat"><div class="n" id="h-hoy">–</div><div class="l">Nuevas últ. pasada</div></div>
+      <div class="stat"><div class="n" id="h-hoy-high">–</div><div class="l">De alta afinidad</div></div>
+      <div class="stat"><div class="n" id="h-prom">–</div><div class="l">Promedio/día</div></div>
+      <div class="stat"><div class="n" id="h-total">–</div><div class="l">Acumuladas</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>📈 Ofertas nuevas por día <small>· comparación entre extracciones diarias</small></h2>
+      <div id="hist-chart"></div>
+    </div>
+
+    <div class="panel">
+      <h2>✨ Nuevas de la última pasada <small>· en estas conviene enfocarse para postular temprano</small></h2>
+      <div id="hist-nuevas"></div>
+    </div>
+
+    <div class="panel">
+      <h2>🗓️ Detalle por día</h2>
+      <div id="hist-table"></div>
+    </div>
+  </div>
+
   <footer>Actualizado con el buscador de trabajo de Claude Code · Los marcadores "✅ Postulé" se guardan solo en este navegador</footer>
 </div>
 
@@ -241,12 +267,16 @@ async function load() {
     " · " + DATA.jobs.length + " ofertas registradas";
   render();
   renderAnalisis();
+  renderHistorico();
 }
 
 const estadoDe = j => (applied.has(j.id) || j.status === "postulada") ? "postulada" : j.status;
 const daysAgo = iso => (Date.now() - new Date(iso + "T12:00:00").getTime()) / 864e5;
 const matchDe = j => j.match_pct != null ? j.match_pct : FIT_EST[j.fit];
 const esCurado = j => j.match_pct != null;
+// Última fecha de extracción registrada: define qué es "✨ nueva"
+const ultimaPasada = () => (DATA.history && DATA.history.length) ? DATA.history[DATA.history.length-1].date : null;
+const esNuevaFn = j => j.first_seen === ultimaPasada();
 
 function render() {
   let jobs = [...DATA.jobs];
@@ -263,7 +293,7 @@ function render() {
 
   const act = DATA.jobs.filter(j => estadoDe(j) !== "descartada");
   document.getElementById("s-total").textContent = act.length;
-  document.getElementById("s-nuevas").textContent = act.filter(j => daysAgo(j.first_seen) <= 2).length;
+  document.getElementById("s-nuevas").textContent = act.filter(esNuevaFn).length;
   document.getElementById("s-high").textContent = act.filter(j => j.fit === "high").length;
   document.getElementById("s-inv").textContent = act.filter(j => j.category === "investigacion").length;
   document.getElementById("s-postuladas").textContent = DATA.jobs.filter(j => estadoDe(j) === "postulada").length;
@@ -273,7 +303,7 @@ function render() {
 
   list.innerHTML = jobs.map(j => {
     const est = estadoDe(j);
-    const esNueva = daysAgo(j.first_seen) <= 2;
+    const esNueva = esNuevaFn(j);
     const marked = est === "postulada";
     const pct = matchDe(j);
     return `<div class="job fit-${j.fit} ${est==="descartada"?"done":""}">
@@ -362,10 +392,61 @@ function renderAnalisis() {
     `<div class="reco"><b>${r.t}.</b> ${r.d}</div>`).join("");
 }
 
+function renderHistorico() {
+  const hist = DATA.history || [];
+  if (!hist.length) {
+    document.getElementById("hist-chart").innerHTML = '<div class="empty">Aún no hay histórico</div>';
+    return;
+  }
+  const last = hist[hist.length - 1];
+  const total = hist.reduce((s, d) => s + d.new, 0);
+
+  document.getElementById("h-hoy").textContent = last.new;
+  document.getElementById("h-hoy-high").textContent = last.new_high;
+  document.getElementById("h-prom").textContent = Math.round(total / hist.length);
+  document.getElementById("h-total").textContent = last.cumulative;
+
+  // Gráfico de barras: nuevas por día (últimos 30 días)
+  const recent = hist.slice(-30);
+  const maxN = Math.max(...recent.map(d => d.new), 1);
+  document.getElementById("hist-chart").innerHTML =
+    '<div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">Barra azul = ofertas nuevas ese día · verde = de alta afinidad · a la derecha, el acumulado</div>' +
+    recent.map(d => {
+      const fecha = new Date(d.date + "T12:00:00").toLocaleDateString("es-CL", { weekday: "short", day: "numeric", month: "short" });
+      return `<div class="skillrow">
+        <span class="name">${fecha}</span>
+        <div class="bar"><i style="width:${Math.round(d.new/maxN*100)}%"></i></div>
+        <div class="bar" style="max-width:120px"><i class="g" style="width:${Math.round(d.new_high/maxN*100)}%"></i></div>
+        <span class="lvl">${d.new} nuevas (${d.new_high} 🟢) · Σ ${d.cumulative}</span>
+      </div>`;
+    }).join("");
+
+  // Nuevas de la última pasada, ordenadas por match, sin descartadas
+  const nuevas = DATA.jobs.filter(j => j.first_seen === last.date && estadoDe(j) !== "descartada")
+    .sort((a,b) => matchDe(b) - matchDe(a));
+  document.getElementById("hist-nuevas").innerHTML = nuevas.length
+    ? nuevas.slice(0, 15).map(j =>
+      `<div class="top-op">
+        <span class="pct ${esCurado(j)?"":"est"}">${esCurado(j)?"":"~"}${matchDe(j)}%</span>
+        <div style="flex:1">
+          <a class="job-title" style="font-size:.92rem" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+          <div class="job-meta">${j.company} · ${CAT_LABEL[j.category]||j.category}${j.salary ? " · 💰 " + j.salary : ""}</div>
+        </div>
+        <span class="badge b-${j.fit}">${FIT_LABEL[j.fit]}</span>
+      </div>`).join("")
+    : '<div class="empty">La última pasada no trajo ofertas nuevas</div>';
+
+  // Tabla por día (descendente)
+  document.getElementById("hist-table").innerHTML =
+    [...hist].reverse().map(d =>
+      `<div class="gap-item"><span class="gap-count">${d.date}</span><div><b>${d.new} nuevas</b> (${d.new_high} de alta afinidad) <span class="gap-fix">· acumulado: ${d.cumulative} ofertas</span></div></div>`
+    ).join("");
+}
+
 function toggle(id) {
   if (applied.has(id)) applied.delete(id); else applied.add(id);
   localStorage.setItem("postuladas", JSON.stringify([...applied]));
-  render(); renderAnalisis();
+  render(); renderAnalisis(); renderHistorico();
 }
 
 // Tabs
@@ -373,8 +454,8 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
   t.classList.add("active");
   state.view = t.dataset.view;
-  document.getElementById("view-ofertas").style.display = state.view === "ofertas" ? "" : "none";
-  document.getElementById("view-analisis").style.display = state.view === "analisis" ? "" : "none";
+  ["ofertas","analisis","historico"].forEach(v =>
+    document.getElementById("view-" + v).style.display = state.view === v ? "" : "none");
 }));
 
 document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
