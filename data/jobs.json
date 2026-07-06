@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-06T18:51:39.975886+00:00",
+ "updated": "2026-07-06T23:07:49.246767+00:00",
  "jobs": [
   {
    "id": "4436929011",
@@ -138,9 +138,9 @@
    "first_seen": "2026-07-06",
    "date_posted": "2026-07-02",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
-   "notes": "",
+   "notes": "70/100 Buen Fit · Grupo Falabella; pide SQL+Looker Studio+BigQuery (agregados); rol 0-1 año (sobrecalificado, enmarcar); título ing/estadística o afín",
    "category": "datos-bi",
    "match_pct": null,
    "gaps": []
@@ -221,7 +221,7 @@
    "first_seen": "2026-07-06",
    "date_posted": "2026-07-02",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
    "notes": "",
    "category": "datos-bi",
