@@ -64,6 +64,8 @@
   .b-hoy { background: #1b3a5c; color: #fff; }
   .b-salary { background: #ecfdf5; color: #047857; text-transform: none; }
   .b-cat { background: #eef2ff; color: #4338ca; }
+  .b-mod { background: #ecfeff; color: #0e7490; text-transform: none; }
+  .b-src { background: #f5f3ff; color: #6d28d9; text-transform: none; }
   .b-match { background: #1b3a5c; color: #fff; text-transform: none; }
   .b-match.est { background: #94a3b8; }
   .job-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
@@ -131,6 +133,7 @@
         <span class="chip active" data-cat="all">Todas</span>
         <span class="chip" data-cat="datos-bi">📊 Datos & BI</span>
         <span class="chip" data-cat="investigacion">🎓 Investigación</span>
+        <span class="chip" data-cat="sociologia">🧭 Sociología</span>
       </div>
       <div class="chipbar" id="fit-chips">
         <span class="chip active" data-fit="all">Afinidad: todas</span>
@@ -138,6 +141,18 @@
         <span class="chip" data-fit="medium">🟠 Media</span>
         <span class="chip" data-fit="low">⚪ Baja</span>
       </div>
+      <div class="chipbar" id="mod-chips">
+        <span class="chip active" data-mod="all">Modalidad: todas</span>
+        <span class="chip" data-mod="remoto">🏠 Remoto</span>
+        <span class="chip" data-mod="hibrido">🔀 Híbrido</span>
+        <span class="chip" data-mod="presencial">🏢 Presencial</span>
+      </div>
+      <select id="source">
+        <option value="all">Portal: todos</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="Get on Board">Get on Board</option>
+        <option value="Empleos Públicos">Empleos Públicos</option>
+      </select>
       <select id="estado">
         <option value="activas">Activas (sin descartadas)</option>
         <option value="nueva">Solo nuevas</option>
@@ -151,6 +166,7 @@
         <option value="match">Mejor match primero</option>
         <option value="empresa">Por empresa (A-Z)</option>
       </select>
+      <label class="chip" style="cursor:pointer"><input type="checkbox" id="salaryOnly" style="vertical-align:-1px"> 💰 Solo con renta</label>
     </div>
 
     <div id="list"></div>
@@ -173,6 +189,22 @@
         <h2>🎯 Ofertas activas por afinidad</h2>
         <div id="dist-fit"></div>
       </div>
+    </div>
+
+    <div class="panel dist">
+      <div>
+        <h2>🌐 Ofertas por portal</h2>
+        <div id="dist-src"></div>
+      </div>
+      <div>
+        <h2>💻 Ofertas por modalidad</h2>
+        <div id="dist-mod"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>💰 Ofertas con renta publicada <small>· solo el 20-25% del mercado la muestra; ordenadas de mayor a menor</small></h2>
+      <div id="salary-list"></div>
     </div>
 
     <div class="panel">
@@ -223,7 +255,8 @@
 const FIT_ORDER = { high: 0, medium: 1, low: 2 };
 const FIT_LABEL = { high: "Alta afinidad", medium: "Media", low: "Baja" };
 const FIT_EST = { high: 75, medium: 58, low: 40 };
-const CAT_LABEL = { "datos-bi": "Datos & BI", "investigacion": "Investigación" };
+const CAT_LABEL = { "datos-bi": "Datos & BI", "investigacion": "Investigación", "sociologia": "Sociología" };
+const MOD_LABEL = { remoto: "🏠 Remoto", hibrido: "🔀 Híbrido", presencial: "🏢 Presencial", no_especificado: "" };
 
 // Perfil de Benjamín: nivel actual (0-100) vs demanda observada en las ofertas
 const PERFIL = [
@@ -250,7 +283,7 @@ const RECOS = [
 ];
 
 let DATA = { jobs: [], updated: null };
-let state = { q: "", fit: "all", cat: "all", estado: "activas", orden: "fecha", view: "ofertas" };
+let state = { q: "", fit: "all", cat: "all", mod: "all", source: "all", salaryOnly: false, estado: "activas", orden: "fecha", view: "ofertas" };
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
 
 async function load() {
@@ -284,6 +317,9 @@ function render() {
   if (q) jobs = jobs.filter(j => (j.title + " " + j.company + " " + (j.notes||"")).toLowerCase().includes(q));
   if (state.cat !== "all") jobs = jobs.filter(j => j.category === state.cat);
   if (state.fit !== "all") jobs = jobs.filter(j => j.fit === state.fit);
+  if (state.mod !== "all") jobs = jobs.filter(j => j.modality === state.mod);
+  if (state.source !== "all") jobs = jobs.filter(j => j.source === state.source);
+  if (state.salaryOnly) jobs = jobs.filter(j => j.salary);
   if (state.estado === "activas") jobs = jobs.filter(j => estadoDe(j) !== "descartada");
   else if (state.estado !== "todas") jobs = jobs.filter(j => estadoDe(j) === state.estado);
 
@@ -317,6 +353,8 @@ function render() {
           <span class="badge b-match ${esCurado(j)?"":"est"}">${esCurado(j)?"":"~"}${pct}% match</span>
           <span class="badge b-${j.fit}">${FIT_LABEL[j.fit]}</span>
           <span class="badge b-cat">${CAT_LABEL[j.category]||j.category}</span>
+          ${MOD_LABEL[j.modality] ? `<span class="badge b-mod">${MOD_LABEL[j.modality]}</span>` : ""}
+          <span class="badge b-src">${j.source}</span>
           <span class="badge b-${est}">${est}</span>
           ${esNueva ? '<span class="badge b-hoy">✨ nueva</span>' : ""}
           ${j.salary ? `<span class="badge b-salary">💰 ${j.salary}</span>` : ""}
@@ -360,6 +398,37 @@ function renderAnalisis() {
     barRow("🟢 Alta", byFit.high, act.length, byFit.high + " ofertas", "g") +
     barRow("🟠 Media", byFit.medium, act.length, byFit.medium + " ofertas", "o") +
     barRow("⚪ Baja", byFit.low, act.length, byFit.low + " ofertas");
+
+  // Por portal
+  const bySrc = {};
+  act.forEach(j => bySrc[j.source] = (bySrc[j.source]||0)+1);
+  const maxS = Math.max(...Object.values(bySrc), 1);
+  document.getElementById("dist-src").innerHTML = Object.entries(bySrc)
+    .sort((a,b)=>b[1]-a[1]).map(([s,n]) => barRow(s, n, maxS, n + " ofertas")).join("");
+
+  // Por modalidad
+  const MOD_ORDER = ["remoto","hibrido","presencial","no_especificado"];
+  const MOD_TXT = { remoto:"🏠 Remoto", hibrido:"🔀 Híbrido", presencial:"🏢 Presencial", no_especificado:"❔ Sin especificar" };
+  const byMod = {};
+  act.forEach(j => byMod[j.modality] = (byMod[j.modality]||0)+1);
+  const maxM = Math.max(...Object.values(byMod), 1);
+  document.getElementById("dist-mod").innerHTML = MOD_ORDER.filter(m=>byMod[m])
+    .map(m => barRow(MOD_TXT[m], byMod[m], maxM, byMod[m] + " ofertas", m==="remoto"?"g":(m==="hibrido"?"o":""))).join("");
+
+  // Ofertas con renta publicada (parse USD alto para ordenar)
+  const parseSal = s => { const m = (s||"").replace(/\./g,"").match(/(\d{3,6})/g); return m ? Math.max(...m.map(Number)) : 0; };
+  const withSal = act.filter(j => j.salary && estadoDe(j) !== "descartada")
+    .sort((a,b) => parseSal(b.salary) - parseSal(a.salary));
+  document.getElementById("salary-list").innerHTML = withSal.length
+    ? withSal.map(j => `<div class="top-op">
+        <span class="pct" style="width:auto;min-width:110px;font-size:.85rem">💰 ${j.salary}</span>
+        <div style="flex:1">
+          <a class="job-title" style="font-size:.9rem" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+          <div class="job-meta">${j.company} · ${MOD_TXT[j.modality]||""} · ${j.source}</div>
+        </div>
+        <span class="badge b-${j.fit}">${FIT_LABEL[j.fit]}</span>
+      </div>`).join("")
+    : '<div class="empty">Aún no hay ofertas con renta publicada</div>';
 
   // Top oportunidades por match
   const tops = [...act].filter(j => estadoDe(j) !== "postulada")
@@ -469,6 +538,12 @@ document.querySelectorAll("#cat-chips .chip").forEach(c => c.addEventListener("c
   document.querySelectorAll("#cat-chips .chip").forEach(x => x.classList.remove("active"));
   c.classList.add("active"); state.cat = c.dataset.cat; render();
 }));
+document.querySelectorAll("#mod-chips .chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll("#mod-chips .chip").forEach(x => x.classList.remove("active"));
+  c.classList.add("active"); state.mod = c.dataset.mod; render();
+}));
+document.getElementById("source").addEventListener("change", e => { state.source = e.target.value; render(); });
+document.getElementById("salaryOnly").addEventListener("change", e => { state.salaryOnly = e.target.checked; render(); });
 
 load();
 </script>
