@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visor de Trabajos · Benjamín Lang</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --ink: #1b2a3a;
+    --muted: #64748b;
+    --accent: #2e6199;
+    --accent-dark: #1b3a5c;
+    --high: #16a34a;
+    --medium: #d97706;
+    --low: #9ca3af;
+    --applied: #7c3aed;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
+  header { background: var(--accent-dark); color: #fff; padding: 18px 24px; }
+  header h1 { font-size: 1.25rem; font-weight: 700; }
+  header p { font-size: .85rem; opacity: .85; margin-top: 2px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; flex: 1; min-width: 130px; }
+  .stat .n { font-size: 1.5rem; font-weight: 800; color: var(--accent-dark); }
+  .stat .l { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+  .controls { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .controls input[type="search"] { flex: 2; min-width: 180px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; }
+  .controls select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; background: #fff; color: var(--ink); }
+  .chipbar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { border: 1px solid var(--border); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: .82rem; cursor: pointer; user-select: none; color: var(--muted); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .job { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .job.done { opacity: .55; }
+  .fitdot { width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .fit-high .fitdot { background: var(--high); }
+  .fit-medium .fitdot { background: var(--medium); }
+  .fit-low .fitdot { background: var(--low); }
+  .job-main { flex: 1; }
+  .job-title { font-weight: 700; font-size: 1.02rem; color: var(--accent-dark); text-decoration: none; }
+  .job-title:hover { text-decoration: underline; }
+  .job-meta { font-size: .85rem; color: var(--muted); margin-top: 2px; }
+  .job-notes { font-size: .84rem; color: var(--ink); margin-top: 6px; background: #f8fafc; border-left: 3px solid var(--accent); padding: 5px 10px; border-radius: 0 6px 6px 0; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .badge { font-size: .72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .03em; }
+  .b-high { background: #dcfce7; color: #15803d; }
+  .b-medium { background: #fef3c7; color: #b45309; }
+  .b-low { background: #f1f5f9; color: #64748b; }
+  .b-nueva { background: #dbeafe; color: #1d4ed8; }
+  .b-evaluada { background: #fce7f3; color: #be185d; }
+  .b-postulada { background: #ede9fe; color: #6d28d9; }
+  .b-descartada { background: #f1f5f9; color: #94a3b8; }
+  .b-hoy { background: #1b3a5c; color: #fff; }
+  .b-salary { background: #ecfdf5; color: #047857; text-transform: none; }
+  .job-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+  .job-date { font-size: .78rem; color: var(--muted); white-space: nowrap; }
+  .mark { font-size: .78rem; border: 1px solid var(--border); background: #fff; border-radius: 8px; padding: 5px 10px; cursor: pointer; color: var(--muted); white-space: nowrap; }
+  .mark.marked { background: var(--applied); border-color: var(--applied); color: #fff; }
+  .empty { text-align: center; color: var(--muted); padding: 50px 0; }
+  footer { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 30px; }
+  @media (max-width: 640px) {
+    .job { flex-direction: column; gap: 8px; }
+    .job-actions { flex-direction: row; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🔎 Visor de Trabajos — Analista de Datos · Santiago</h1>
+  <p id="updated">Cargando…</p>
+</header>
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-total">–</div><div class="l">Ofertas activas</div></div>
+    <div class="stat"><div class="n" id="s-nuevas">–</div><div class="l">Nuevas (48 h)</div></div>
+    <div class="stat"><div class="n" id="s-high">–</div><div class="l">Afinidad alta</div></div>
+    <div class="stat"><div class="n" id="s-postuladas">–</div><div class="l">Postuladas</div></div>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Buscar cargo o empresa…">
+    <div class="chipbar" id="fit-chips">
+      <span class="chip active" data-fit="all">Todas</span>
+      <span class="chip" data-fit="high">🟢 Alta</span>
+      <span class="chip" data-fit="medium">🟠 Media</span>
+      <span class="chip" data-fit="low">⚪ Baja</span>
+    </div>
+    <select id="estado">
+      <option value="activas">Activas (sin descartadas)</option>
+      <option value="nueva">Solo nuevas</option>
+      <option value="evaluada">Evaluadas</option>
+      <option value="postulada">Postuladas</option>
+      <option value="descartada">Descartadas</option>
+      <option value="todas">Todas</option>
+    </select>
+    <select id="orden">
+      <option value="fecha">Más recientes primero</option>
+      <option value="fit">Mejor afinidad primero</option>
+      <option value="empresa">Por empresa (A-Z)</option>
+    </select>
+  </div>
+
+  <div id="list"></div>
+  <footer>Actualizado con el buscador de trabajo de Claude Code · Los marcadores "✅ Postulé" se guardan solo en este navegador</footer>
+</div>
+
+<script>
+const FIT_ORDER = { high: 0, medium: 1, low: 2 };
+const FIT_LABEL = { high: "Alta afinidad", medium: "Media", low: "Baja" };
+let DATA = { jobs: [], updated: null };
+let state = { q: "", fit: "all", estado: "activas", orden: "fecha" };
+const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
+
+async function load() {
+  try {
+    const r = await fetch("../data/jobs.json?v=" + Date.now());
+    DATA = await r.json();
+  } catch (e) {
+    document.getElementById("list").innerHTML = '<div class="empty">No se pudo cargar data/jobs.json</div>';
+    return;
+  }
+  const d = new Date(DATA.updated);
+  document.getElementById("updated").textContent =
+    "Última actualización: " + d.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" }) +
+    " · " + DATA.jobs.length + " ofertas registradas";
+  render();
+}
+
+function estadoDe(j) {
+  if (applied.has(j.id) || j.status === "postulada") return "postulada";
+  return j.status;
+}
+
+function daysAgo(iso) {
+  return (Date.now() - new Date(iso + "T12:00:00").getTime()) / 864e5;
+}
+
+function render() {
+  let jobs = [...DATA.jobs];
+  const q = state.q.toLowerCase();
+  if (q) jobs = jobs.filter(j => (j.title + " " + j.company + " " + (j.notes||"")).toLowerCase().includes(q));
+  if (state.fit !== "all") jobs = jobs.filter(j => j.fit === state.fit);
+  if (state.estado === "activas") jobs = jobs.filter(j => estadoDe(j) !== "descartada");
+  else if (state.estado !== "todas") jobs = jobs.filter(j => estadoDe(j) === state.estado);
+
+  if (state.orden === "fecha") jobs.sort((a,b) => (b.date_posted||b.first_seen).localeCompare(a.date_posted||a.first_seen) || FIT_ORDER[a.fit]-FIT_ORDER[b.fit]);
+  else if (state.orden === "fit") jobs.sort((a,b) => FIT_ORDER[a.fit]-FIT_ORDER[b.fit] || (b.date_posted||b.first_seen).localeCompare(a.date_posted||a.first_seen));
+  else jobs.sort((a,b) => a.company.localeCompare(b.company));
+
+  const act = DATA.jobs.filter(j => estadoDe(j) !== "descartada");
+  document.getElementById("s-total").textContent = act.length;
+  document.getElementById("s-nuevas").textContent = act.filter(j => daysAgo(j.first_seen) <= 2).length;
+  document.getElementById("s-high").textContent = act.filter(j => j.fit === "high").length;
+  document.getElementById("s-postuladas").textContent = DATA.jobs.filter(j => estadoDe(j) === "postulada").length;
+
+  const list = document.getElementById("list");
+  if (!jobs.length) { list.innerHTML = '<div class="empty">Sin resultados con estos filtros 🤷</div>'; return; }
+
+  list.innerHTML = jobs.map(j => {
+    const est = estadoDe(j);
+    const esNueva = daysAgo(j.first_seen) <= 2;
+    const marked = est === "postulada";
+    return `<div class="job fit-${j.fit} ${est==="descartada"?"done":""}">
+      <div class="fitdot"></div>
+      <div class="job-main">
+        <a class="job-title" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+        <div class="job-meta">${j.company}${j.location ? " · " + j.location : ""}${j.date_posted ? " · publicado " + j.date_posted : ""}</div>
+        ${j.notes ? `<div class="job-notes">${j.notes}</div>` : ""}
+        <div class="badges">
+          <span class="badge b-${j.fit}">${FIT_LABEL[j.fit]}</span>
+          <span class="badge b-${est}">${est}</span>
+          ${esNueva ? '<span class="badge b-hoy">✨ nueva</span>' : ""}
+          ${j.salary ? `<span class="badge b-salary">💰 ${j.salary}</span>` : ""}
+        </div>
+      </div>
+      <div class="job-actions">
+        <span class="job-date">vista ${j.first_seen}</span>
+        <button class="mark ${marked?"marked":""}" onclick="toggle('${j.id}')">${marked ? "✅ Postulé" : "Marcar postulada"}</button>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function toggle(id) {
+  if (applied.has(id)) applied.delete(id); else applied.add(id);
+  localStorage.setItem("postuladas", JSON.stringify([...applied]));
+  render();
+}
+
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+document.getElementById("estado").addEventListener("change", e => { state.estado = e.target.value; render(); });
+document.getElementById("orden").addEventListener("change", e => { state.orden = e.target.value; render(); });
+document.querySelectorAll("#fit-chips .chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll("#fit-chips .chip").forEach(x => x.classList.remove("active"));
+  c.classList.add("active");
+  state.fit = c.dataset.fit;
+  render();
+}));
+
+load();
+</script>
+</body>
+</html>
