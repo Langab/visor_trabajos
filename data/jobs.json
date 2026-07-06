@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-06T23:07:49.246767+00:00",
+ "updated": "2026-07-06T23:19:33.460007+00:00",
  "jobs": [
   {
    "id": "4436929011",
@@ -369,9 +369,9 @@
    "first_seen": "2026-07-06",
    "date_posted": "2026-07-01",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "USD 2.200-2.600/mes",
-   "notes": "Stack exacto: Power BI + SQL",
+   "notes": "Stack exacto: Power BI + SQL · 50/100 Fit Moderado · USD 2200-2600 pero plazo fijo 3 meses; 2 requisitos EXCLUYENTES no cumplidos: experiencia retail y modelos ML productivos; match técnico BI fuerte",
    "category": "datos-bi",
    "match_pct": null,
    "gaps": []
