@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07T13:43:14.747100+00:00",
+ "updated": "2026-07-07T13:46:34.674764+00:00",
  "jobs": [
   {
    "id": "4436276447",
@@ -52,6 +52,78 @@
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140632&c=0&j=0&tipo=avisotrabajoficha",
+   "title": "Analista de Datos",
+   "company": "Cenabast (Min. Salud)",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140632&c=0&j=0&tipo=avisotrabajoficha",
+   "location": "Ñuñoa, Santiago",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-07",
+   "fit": "high",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Analista de datos en Central de Abastecimiento del sistema de salud. Revisar renta y plazo en la ficha.",
+   "category": "datos-bi",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141225&c=0&j=0&tipo=avisotrabajoficha",
+   "title": "Analista de Datos y Automatización Presupuestaria",
+   "company": "Dir. Gral. de Concesiones (MOP)",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141225&c=0&j=0&tipo=avisotrabajoficha",
+   "location": "Santiago",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-07",
+   "fit": "high",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Datos + automatización presupuestaria: cruza con su perfil (R/Python, ETL). Revisar renta y plazo en la ficha.",
+   "category": "datos-bi",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141022&c=0&j=0&tipo=avisotrabajoficha",
+   "title": "Encargado de Sistematización de Datos y Contenidos",
+   "company": "Servicio de Salud Metropolitano Oriente",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141022&c=0&j=0&tipo=avisotrabajoficha",
+   "location": "Providencia, Santiago",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-07",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Sistematización de datos en salud pública RM. Revisar requisitos/renta en la ficha.",
+   "category": "datos-bi",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140982&c=0&j=0&tipo=avisotrabajoficha",
+   "title": "Profesional Unidad Control de Gestión",
+   "company": "Servicio de Salud Metropolitano Oriente",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140982&c=0&j=0&tipo=avisotrabajoficha",
+   "location": "Providencia, Santiago",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-07",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Control de gestión con análisis de datos en salud pública RM.",
+   "category": "datos-bi",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
    "match_pct": null,
    "gaps": []
   },
@@ -2531,12 +2603,16 @@
   },
   {
    "date": "2026-07-07",
-   "new": 23,
-   "new_high": 4,
+   "new": 27,
+   "new_high": 6,
    "new_ids": [
     "4436276447",
     "4436505177",
     "4437735216",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140632&c=0&j=0&tipo=avisotrabajoficha",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141225&c=0&j=0&tipo=avisotrabajoficha",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141022&c=0&j=0&tipo=avisotrabajoficha",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140982&c=0&j=0&tipo=avisotrabajoficha",
     "4437445836",
     "4437469347",
     "4433976740",
@@ -2558,7 +2634,7 @@
     "4435885814",
     "4435885880"
    ],
-   "cumulative": 133
+   "cumulative": 137
   }
  ]
 }
