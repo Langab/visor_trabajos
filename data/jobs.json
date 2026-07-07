@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07T15:01:15.165898+00:00",
+ "updated": "2026-07-07T18:28:58.852889+00:00",
  "jobs": [
   {
    "id": "4436276447",
@@ -126,6 +126,28 @@
    "modality": "presencial",
    "match_pct": null,
    "gaps": []
+  },
+  {
+   "id": "https://cenia.cl/2026/07/07/trabaja-en-cenia-3/",
+   "title": "Analista de Datos",
+   "company": "CENIA (Centro Nacional de IA)",
+   "url": "https://cenia.cl/2026/07/07/trabaja-en-cenia-3/",
+   "location": "Santiago (UC)",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-07",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "$1,6M bruto/mes",
+   "notes": "⭐ Calce excepcional research/datos. R/Python excluyente ✓, análisis estadístico/econométrico, diseño de estudios, ayudantías de investigación (deseable) ✓, LLM/Claude (deseable) ✓. OJO: renta $1,6M bruto (~$1,3M líq, bajo su objetivo/actual) y plazo fijo 3 meses→indefinido. Cierra 14-jul, postulación por Buk. · 86/100 Fit Fuerte · Calce research excepcional (R/Python excluyente, estadística, diseño estudios, ayudantías, LLM/Claude). Renta $1.6M bruto BAJA; plazo fijo 3m→indef; cierra 14-jul por Buk",
+   "category": "investigacion",
+   "source": "Sitio empresa",
+   "modality": "presencial",
+   "match_pct": 86,
+   "gaps": [
+    "Renta bajo su nivel (~$1,3M líquido)",
+    "Contrato inicial plazo fijo 3 meses",
+    "Stata no lo maneja (pero R/Python son 'equivalentes' aceptados)"
+   ]
   },
   {
    "id": "4398856375",
@@ -2603,8 +2625,8 @@
   },
   {
    "date": "2026-07-07",
-   "new": 27,
-   "new_high": 6,
+   "new": 28,
+   "new_high": 7,
    "new_ids": [
     "4436276447",
     "4436505177",
@@ -2613,6 +2635,7 @@
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141225&c=0&j=0&tipo=avisotrabajoficha",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=141022&c=0&j=0&tipo=avisotrabajoficha",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140982&c=0&j=0&tipo=avisotrabajoficha",
+    "https://cenia.cl/2026/07/07/trabaja-en-cenia-3/",
     "4437445836",
     "4437469347",
     "4433976740",
@@ -2634,7 +2657,7 @@
     "4435885814",
     "4435885880"
    ],
-   "cumulative": 137
+   "cumulative": 138
   }
  ]
 }
