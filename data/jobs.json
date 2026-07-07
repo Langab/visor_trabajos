@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07T19:08:34.790000+00:00",
+ "updated": "2026-07-07T19:16:19.158575+00:00",
  "jobs": [
   {
    "id": "4436276447",
@@ -466,9 +466,9 @@
    "first_seen": "2026-07-06",
    "date_posted": "2026-07-05",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "USD 800-950/mes",
-   "notes": "Análisis de encuestas: su especialidad (CEP). Renta baja para su seniority",
+   "notes": "Análisis de encuestas: su especialidad (CEP). Renta baja para su seniority · 78/100 Buen Fit · Su especialidad pura (encuestas: CEP+Censo). Pide Python(pandas)+SQL+Excel; su Python es intermedio (honesto); híbrido Santiago; renta USD 800-950 BAJA para su nivel; semi senior",
    "category": "investigacion",
    "source": "Get on Board",
    "modality": "hibrido",
