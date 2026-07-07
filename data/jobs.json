@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07T12:56:24.516426+00:00",
+ "updated": "2026-07-07T13:37:58.407893+00:00",
  "jobs": [
   {
    "id": "4436276447",
@@ -342,6 +342,26 @@
    "modality": "no_especificado",
    "match_pct": null,
    "gaps": []
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=141385&c=0&j=0&tipo=convpostularavisoTrabajo",
+   "title": "Profesional Depto. de Estudios, Monitoreo y Datos",
+   "company": "SLEP Santa Rosa (Min. Educación)",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=141385&c=0&j=0&tipo=convpostularavisoTrabajo",
+   "location": "San Miguel, Santiago",
+   "first_seen": "2026-07-07",
+   "date_posted": "2026-07-06",
+   "fit": "high",
+   "status": "nueva",
+   "salary": "$2,86M bruto/mes",
+   "notes": "⭐ CIERRA 10-JUL. Es TU MISMO departamento (SLEP Santa Rosa, Estudios/Monitoreo/Datos), como contrata grado 10. Pide R/Python + Power BI, sociólogo entre los perfiles. Funciones = alerta temprana deserción/repitencia/ausentismo, indicadores educacionales, SEP, visualización. Contrata dura hasta 31-dic (renovable).",
+   "category": "datos-bi",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "match_pct": 92,
+   "gaps": [
+    "Requiere certificar 2 años en registro/visualización de datos educacionales (tu rol actual + tesis/CEP lo cubren)"
+   ]
   },
   {
    "id": "https://www.getonbrd.com/jobs/data-science-analytics/analista-de-datos-encuestas-y-estudios-opinando-online-santiago",
@@ -2511,8 +2531,8 @@
   },
   {
    "date": "2026-07-07",
-   "new": 22,
-   "new_high": 3,
+   "new": 23,
+   "new_high": 4,
    "new_ids": [
     "4436276447",
     "4436505177",
@@ -2525,6 +2545,7 @@
     "4433996468",
     "4433965803",
     "4436222218",
+    "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=141385&c=0&j=0&tipo=convpostularavisoTrabajo",
     "4435487955",
     "4436902076",
     "4436912225",
@@ -2537,7 +2558,7 @@
     "4435885814",
     "4435885880"
    ],
-   "cumulative": 132
+   "cumulative": 133
   }
  ]
 }
