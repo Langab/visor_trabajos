@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-08T14:54:09.502716+00:00",
+ "updated": "2026-07-08T21:41:27.434947+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -54,6 +54,27 @@
    "modality": "no_especificado",
    "match_pct": null,
    "gaps": []
+  },
+  {
+   "id": "https://es.linkedin.com/posts/carolinavonhausen_buscamos-investigadora-para-área-de-estudios-activity-7480726513542127617-iAVz",
+   "title": "Investigador/a Área de Estudios",
+   "company": "Cátedra Carlos Vial Espantoso · Escuela de Administración UC",
+   "url": "https://es.linkedin.com/posts/carolinavonhausen_buscamos-investigadora-para-área-de-estudios-activity-7480726513542127617-iAVz",
+   "location": "Santiago (UC)",
+   "first_seen": "2026-07-08",
+   "date_posted": "2026-07-08",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "⭐ Calce research excelente: piden sociólogo/cs sociales (✓), métodos cuant+cualit (✓), R/Python, redacción, inglés B2 (✓), valoran IA (✓). Postulación por correo a cpvonhau@uc.cl (asunto: Postulación Cargo Investigador/a área de Estudios) con motivación, experiencia y proyección a 5 años + CV. Cierra 20-jul.",
+   "category": "investigacion",
+   "source": "LinkedIn (contacto directo)",
+   "modality": "no_especificado",
+   "match_pct": 88,
+   "gaps": [
+    "Experiencia idealmente vinculada al mundo laboral/gestión de personas (la suya es política/opinión pública/educación, no laboral directo)",
+    "Qualtrics deseable (ha usado plataformas de encuestas equivalentes)"
+   ]
   },
   {
    "id": "4436276447",
@@ -2967,12 +2988,13 @@
   },
   {
    "date": "2026-07-08",
-   "new": 17,
-   "new_high": 3,
+   "new": 18,
+   "new_high": 4,
    "new_ids": [
     "4410224504",
     "4428090923",
     "4434801972",
+    "https://es.linkedin.com/posts/carolinavonhausen_buscamos-investigadora-para-área-de-estudios-activity-7480726513542127617-iAVz",
     "4434568959",
     "4437875145",
     "4436838567",
@@ -2988,7 +3010,7 @@
     "4437462063",
     "4433994337"
    ],
-   "cumulative": 155
+   "cumulative": 156
   }
  ]
 }
