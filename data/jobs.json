@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-08T22:04:49.257708+00:00",
+ "updated": "2026-07-08T22:13:42.727746+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -10,9 +10,9 @@
    "first_seen": "2026-07-08",
    "date_posted": "2026-07-08",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
-   "notes": "",
+   "notes": "75/100 Buen Fit · Cumple ambos excluyentes: SQL(BigQuery) y reportería(Power BI/Looker); análisis para equipos comerciales; postulación por Aira (responder preguntas/pruebas); entry level (sobrecalificado); carrera afín",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
