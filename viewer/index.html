@@ -51,6 +51,9 @@
   .job-title:hover { text-decoration: underline; }
   .job-meta { font-size: .85rem; color: var(--muted); margin-top: 2px; }
   .job-notes { font-size: .84rem; color: var(--ink); margin-top: 6px; background: #f8fafc; border-left: 3px solid var(--accent); padding: 5px 10px; border-radius: 0 6px 6px 0; }
+  .job-deadline { font-size: .8rem; margin-top: 5px; color: var(--muted); font-weight: 600; }
+  .job-deadline.has { color: #0e7490; }
+  .job-deadline.urgent { color: #b91c1c; }
   .job-gaps { font-size: .82rem; color: #b45309; margin-top: 5px; }
   .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
   .badge { font-size: .72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .03em; }
@@ -329,6 +332,17 @@ const esCurado = j => j.match_pct != null;
 // Última fecha de extracción registrada: define qué es "✨ nueva"
 const ultimaPasada = () => (DATA.history && DATA.history.length) ? DATA.history[DATA.history.length-1].date : null;
 const esNuevaFn = j => j.first_seen === ultimaPasada();
+// Plazo de postulación: devuelve HTML del bloque de plazo
+function deadlineHTML(j) {
+  if (!j.deadline) return '<div class="job-deadline">🗓️ Plazo no disponible</div>';
+  const d = new Date(j.deadline + "T23:59:00");
+  const dias = Math.ceil((d.getTime() - Date.now()) / 864e5);
+  const fecha = d.toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
+  if (dias < 0) return `<div class="job-deadline">🗓️ Plazo cerrado (${fecha})</div>`;
+  const urgente = dias <= 5;
+  const cuenta = dias === 0 ? "¡cierra hoy!" : (dias === 1 ? "queda 1 día" : `quedan ${dias} días`);
+  return `<div class="job-deadline ${urgente ? "urgent" : "has"}">🗓️ Postular hasta ${fecha} · ${cuenta}</div>`;
+}
 
 function render() {
   let jobs = [...DATA.jobs];
@@ -366,6 +380,7 @@ function render() {
       <div class="job-main">
         <a class="job-title" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
         <div class="job-meta">${j.company}${j.location ? " · " + j.location : ""}${j.date_posted ? " · publicado " + j.date_posted : ""}</div>
+        ${deadlineHTML(j)}
         ${j.notes ? `<div class="job-notes">${j.notes}</div>` : ""}
         ${j.gaps && j.gaps.length ? `<div class="job-gaps">🧗 Brechas: ${j.gaps.join(" · ")}</div>` : ""}
         <div class="badges">
