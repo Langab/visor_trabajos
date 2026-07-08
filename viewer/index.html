@@ -72,6 +72,7 @@
   .job-date { font-size: .78rem; color: var(--muted); white-space: nowrap; }
   .mark { font-size: .78rem; border: 1px solid var(--border); background: #fff; border-radius: 8px; padding: 5px 10px; cursor: pointer; color: var(--muted); white-space: nowrap; }
   .mark.marked { background: var(--applied); border-color: var(--applied); color: #fff; }
+  .mark.resp { background: var(--high); border-color: var(--high); color: #fff; }
   .empty { text-align: center; color: var(--muted); padding: 50px 0; }
   footer { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 30px; }
 
@@ -113,6 +114,7 @@
     <button class="tab active" data-view="ofertas">📋 Ofertas</button>
     <button class="tab" data-view="analisis">📊 Análisis estratégico</button>
     <button class="tab" data-view="historico">📈 Histórico</button>
+    <button class="tab" data-view="seguimiento">📮 Seguimiento</button>
   </div>
 </header>
 
@@ -248,7 +250,22 @@
     </div>
   </div>
 
-  <footer>Actualizado con el buscador de trabajo de Claude Code · Los marcadores "✅ Postulé" se guardan solo en este navegador</footer>
+  <!-- ============ PESTAÑA SEGUIMIENTO ============ -->
+  <div id="view-seguimiento" style="display:none">
+    <div class="stats">
+      <div class="stat"><div class="n" id="sg-post">–</div><div class="l">Postuladas</div></div>
+      <div class="stat"><div class="n" id="sg-resp">–</div><div class="l">Con respuesta</div></div>
+      <div class="stat"><div class="n" id="sg-esp">–</div><div class="l">En espera</div></div>
+      <div class="stat"><div class="n" id="sg-tasa">–</div><div class="l">Tasa de respuesta</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>📮 Mis postulaciones <small>· marca aquí cuando recibas respuesta de cada una</small></h2>
+      <div id="sg-list"></div>
+    </div>
+  </div>
+
+  <footer>Actualizado con el buscador de trabajo de Claude Code · Los marcadores de postulación y respuesta se guardan en este navegador</footer>
 </div>
 
 <script>
@@ -285,6 +302,7 @@ const RECOS = [
 let DATA = { jobs: [], updated: null };
 let state = { q: "", fit: "all", cat: "all", mod: "all", source: "all", salaryOnly: false, estado: "activas", orden: "fecha", view: "ofertas" };
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
+const responded = new Set(JSON.parse(localStorage.getItem("respondidas") || "[]"));
 
 async function load() {
   try {
@@ -301,6 +319,7 @@ async function load() {
   render();
   renderAnalisis();
   renderHistorico();
+  renderSeguimiento();
 }
 
 const estadoDe = j => (applied.has(j.id) || j.status === "postulada") ? "postulada" : j.status;
@@ -363,6 +382,7 @@ function render() {
       <div class="job-actions">
         <span class="job-date">vista ${j.first_seen}</span>
         <button class="mark ${marked?"marked":""}" onclick="toggle('${j.id}')">${marked ? "✅ Postulé" : "Marcar postulada"}</button>
+        ${marked ? `<button class="mark ${responded.has(j.id)?"resp":""}" onclick="toggleResp('${j.id}')">${responded.has(j.id) ? "📩 Respondieron" : "Marcar respuesta"}</button>` : ""}
       </div>
     </div>`;
   }).join("");
@@ -512,10 +532,48 @@ function renderHistorico() {
     ).join("");
 }
 
+function refreshAll() { render(); renderAnalisis(); renderHistorico(); renderSeguimiento(); }
+
 function toggle(id) {
-  if (applied.has(id)) applied.delete(id); else applied.add(id);
+  if (applied.has(id)) { applied.delete(id); responded.delete(id); }
+  else applied.add(id);
   localStorage.setItem("postuladas", JSON.stringify([...applied]));
-  render(); renderAnalisis(); renderHistorico();
+  localStorage.setItem("respondidas", JSON.stringify([...responded]));
+  refreshAll();
+}
+
+function toggleResp(id) {
+  if (responded.has(id)) responded.delete(id);
+  else { responded.add(id); applied.add(id); }
+  localStorage.setItem("respondidas", JSON.stringify([...responded]));
+  localStorage.setItem("postuladas", JSON.stringify([...applied]));
+  refreshAll();
+}
+
+function renderSeguimiento() {
+  // Postuladas = las marcadas por el usuario (applied) + las con status "postulada" en los datos
+  const post = DATA.jobs.filter(j => estadoDe(j) === "postulada");
+  const resp = post.filter(j => responded.has(j.id));
+  const tasa = post.length ? Math.round(resp.length / post.length * 100) : 0;
+  document.getElementById("sg-post").textContent = post.length;
+  document.getElementById("sg-resp").textContent = resp.length;
+  document.getElementById("sg-esp").textContent = post.length - resp.length;
+  document.getElementById("sg-tasa").textContent = tasa + "%";
+
+  post.sort((a,b) => (responded.has(a.id)?1:0) - (responded.has(b.id)?1:0) || matchDe(b) - matchDe(a));
+  document.getElementById("sg-list").innerHTML = post.length
+    ? post.map(j => {
+        const r = responded.has(j.id);
+        return `<div class="top-op">
+          <div style="flex:1">
+            <a class="job-title" style="font-size:.92rem" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+            <div class="job-meta">${j.company} · ${CAT_LABEL[j.category]||j.category} · ${j.source}${j.salary ? " · 💰 " + j.salary : ""}</div>
+          </div>
+          <span class="badge ${r ? "b-high" : "b-medium"}">${r ? "📩 Respondió" : "⏳ En espera"}</span>
+          <button class="mark ${r?"resp":""}" onclick="toggleResp('${j.id}')">${r ? "Quitar" : "Marcar respuesta"}</button>
+        </div>`;
+      }).join("")
+    : '<div class="empty">Aún no has marcado postulaciones. Marca "Postulé" en las ofertas de la primera pestaña.</div>';
 }
 
 // Tabs
@@ -523,7 +581,7 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
   t.classList.add("active");
   state.view = t.dataset.view;
-  ["ofertas","analisis","historico"].forEach(v =>
+  ["ofertas","analisis","historico","seguimiento"].forEach(v =>
     document.getElementById("view-" + v).style.display = state.view === v ? "" : "none");
 }));
 
