@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-09T04:37:35.830790+00:00",
+ "updated": "2026-07-09T14:50:32.244606+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -2046,15 +2046,15 @@
    "first_seen": "2026-07-07",
    "date_posted": "2026-07-02",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Datos + automatización en universidad; buen cruce con su perfil",
+   "notes": "Datos + automatización en universidad; buen cruce con su perfil · 85/100 Fit Fuerte · Equipo de Gobierno de Datos en universidad; calza directo con su gobernanza SLEP desde cero. Pide SQL+Python+ETL+Power BI, todos cumplidos. Presencial Huechuraba. Experiencia en educación superior deseable no excluyente",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
-   "match_pct": null,
+   "match_pct": 85,
    "gaps": []
   },
   {
