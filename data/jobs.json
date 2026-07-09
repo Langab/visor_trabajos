@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-09T04:15:13.357621+00:00",
+ "updated": "2026-07-09T04:20:01.293615+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -1216,15 +1216,19 @@
    "first_seen": "2026-07-09",
    "date_posted": "2026-07-06",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Investigación cualitativa y cuantitativa con usuarios, entrevistas, encuestas, análisis y presentación a equipos multidisciplinarios. Pide título en Diseño/Ingeniería 'o afín' - argumentar Sociología",
+   "notes": "Investigación cualitativa y cuantitativa con usuarios, entrevistas, encuestas, análisis y presentación a equipos multidisciplinarios. Pide título en Diseño/Ingeniería 'o afín' - argumentar Sociología · 58/100 Fit Moderado · Investigación cuali+cuanti transferible (CEP/encuestas), pero sin experiencia directa en UX Research/producto; pide título Diseño/Ingeniería o afín (argumentar Sociología); gaps: Figma, usabilidad, Design Thinking/HCD",
    "category": "investigacion",
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
-   "match_pct": null,
-   "gaps": []
+   "match_pct": 58,
+   "gaps": [
+    "Sin experiencia directa en UX Research / producto digital",
+    "Figma, pruebas de usabilidad, Design Thinking/HCD no acreditados",
+    "Título en Diseño/Ingeniería vs. Sociología (carrera afín, argumentar)"
+   ]
   },
   {
    "id": "https://www.getonbrd.com/jobs/data-science-analytics/analista-de-datos-encuestas-y-estudios-opinando-online-santiago",
