@@ -54,6 +54,7 @@
   .job-deadline { font-size: .8rem; margin-top: 5px; color: var(--muted); font-weight: 600; }
   .job-deadline.has { color: #0e7490; }
   .job-deadline.urgent { color: #b91c1c; }
+  .job-applied { font-size: .8rem; margin-top: 5px; color: var(--applied); font-weight: 600; }
   .job-gaps { font-size: .82rem; color: #b45309; margin-top: 5px; }
   .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
   .badge { font-size: .72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .03em; }
@@ -264,6 +265,7 @@
       <div class="stat"><div class="n" id="sg-resp">–</div><div class="l">Con respuesta</div></div>
       <div class="stat"><div class="n" id="sg-esp">–</div><div class="l">En espera</div></div>
       <div class="stat"><div class="n" id="sg-tasa">–</div><div class="l">Tasa de respuesta</div></div>
+      <div class="stat"><div class="n" id="sg-diasprom">–</div><div class="l">Días prom. en espera</div></div>
     </div>
 
     <div class="panel">
@@ -311,6 +313,8 @@ let state = { q: "", fit: "all", cat: "all", mod: "all", source: "all", salaryOn
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
 const responded = new Set(JSON.parse(localStorage.getItem("respondidas") || "[]"));
 const closed = new Set(JSON.parse(localStorage.getItem("cerradas") || "[]"));
+const appliedDates = JSON.parse(localStorage.getItem("postuladas_fechas") || "{}");
+const todayISO = () => new Date().toISOString().slice(0, 10);
 
 async function load() {
   try {
@@ -337,6 +341,16 @@ const esCurado = j => j.match_pct != null;
 // Última fecha de extracción registrada: define qué es "✨ nueva"
 const ultimaPasada = () => (DATA.history && DATA.history.length) ? DATA.history[DATA.history.length-1].date : null;
 const esNuevaFn = j => j.first_seen === ultimaPasada();
+// Fecha de postulación: prioriza la marca del usuario (botón) sobre la del servidor
+const appliedDateOf = j => appliedDates[j.id] || j.applied_date || null;
+function appliedHTML(j) {
+  const fecha = appliedDateOf(j);
+  if (!fecha) return "";
+  const dias = Math.floor((Date.now() - new Date(fecha + "T12:00:00").getTime()) / 864e5);
+  const fechaTxt = new Date(fecha + "T12:00:00").toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
+  const cuenta = dias <= 0 ? "hoy" : (dias === 1 ? "hace 1 día" : `hace ${dias} días`);
+  return `<div class="job-applied">📮 Postulado el ${fechaTxt} · ${cuenta}</div>`;
+}
 // Plazo de postulación: devuelve HTML del bloque de plazo
 function deadlineHTML(j) {
   if (!j.deadline) return '<div class="job-deadline">🗓️ Plazo no disponible</div>';
@@ -389,6 +403,7 @@ function render() {
         <a class="job-title" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
         <div class="job-meta">${j.company}${j.location ? " · " + j.location : ""}${j.date_posted ? " · publicado " + j.date_posted : ""}</div>
         ${deadlineHTML(j)}
+        ${marked ? appliedHTML(j) : ""}
         ${j.notes ? `<div class="job-notes">${j.notes}</div>` : ""}
         ${j.gaps && j.gaps.length ? `<div class="job-gaps">🧗 Brechas: ${j.gaps.join(" · ")}</div>` : ""}
         <div class="badges">
@@ -560,18 +575,20 @@ function renderHistorico() {
 function refreshAll() { render(); renderAnalisis(); renderHistorico(); renderSeguimiento(); }
 
 function toggle(id) {
-  if (applied.has(id)) { applied.delete(id); responded.delete(id); }
-  else applied.add(id);
+  if (applied.has(id)) { applied.delete(id); responded.delete(id); delete appliedDates[id]; }
+  else { applied.add(id); if (!appliedDates[id]) appliedDates[id] = todayISO(); }
   localStorage.setItem("postuladas", JSON.stringify([...applied]));
   localStorage.setItem("respondidas", JSON.stringify([...responded]));
+  localStorage.setItem("postuladas_fechas", JSON.stringify(appliedDates));
   refreshAll();
 }
 
 function toggleResp(id) {
   if (responded.has(id)) responded.delete(id);
-  else { responded.add(id); applied.add(id); }
+  else { responded.add(id); applied.add(id); if (!appliedDates[id]) appliedDates[id] = todayISO(); }
   localStorage.setItem("respondidas", JSON.stringify([...responded]));
   localStorage.setItem("postuladas", JSON.stringify([...applied]));
+  localStorage.setItem("postuladas_fechas", JSON.stringify(appliedDates));
   refreshAll();
 }
 
@@ -585,20 +602,30 @@ function renderSeguimiento() {
   // Postuladas = las marcadas por el usuario (applied) + las con status "postulada" en los datos
   const post = DATA.jobs.filter(j => estadoDe(j) === "postulada");
   const resp = post.filter(j => responded.has(j.id));
+  const espera = post.filter(j => !responded.has(j.id));
   const tasa = post.length ? Math.round(resp.length / post.length * 100) : 0;
   document.getElementById("sg-post").textContent = post.length;
   document.getElementById("sg-resp").textContent = resp.length;
-  document.getElementById("sg-esp").textContent = post.length - resp.length;
+  document.getElementById("sg-esp").textContent = espera.length;
   document.getElementById("sg-tasa").textContent = tasa + "%";
 
-  post.sort((a,b) => (responded.has(a.id)?1:0) - (responded.has(b.id)?1:0) || matchDe(b) - matchDe(a));
+  const diasDe = j => { const f = appliedDateOf(j); return f ? Math.floor((Date.now() - new Date(f+"T12:00:00").getTime())/864e5) : null; };
+  const esperaConDias = espera.map(diasDe).filter(d => d != null);
+  document.getElementById("sg-diasprom").textContent = esperaConDias.length
+    ? Math.round(esperaConDias.reduce((a,b)=>a+b,0) / esperaConDias.length)
+    : "–";
+
+  post.sort((a,b) => (responded.has(a.id)?1:0) - (responded.has(b.id)?1:0) || (diasDe(b) ?? -1) - (diasDe(a) ?? -1));
   document.getElementById("sg-list").innerHTML = post.length
     ? post.map(j => {
         const r = responded.has(j.id);
+        const d = diasDe(j);
+        const fechaTxt = appliedDateOf(j) ? new Date(appliedDateOf(j)+"T12:00:00").toLocaleDateString("es-CL", {day:"numeric", month:"short", year:"numeric"}) : null;
         return `<div class="top-op">
           <div style="flex:1">
             <a class="job-title" style="font-size:.92rem" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
             <div class="job-meta">${j.company} · ${CAT_LABEL[j.category]||j.category} · ${j.source}${j.salary ? " · 💰 " + j.salary : ""}</div>
+            ${fechaTxt ? `<div class="job-applied">📮 ${fechaTxt} · ${d<=0?"hoy":(d===1?"hace 1 día":"hace "+d+" días")}</div>` : '<div class="job-applied" style="color:var(--muted)">📮 Fecha no registrada</div>'}
           </div>
           <span class="badge ${r ? "b-high" : "b-medium"}">${r ? "📩 Respondió" : "⏳ En espera"}</span>
           <button class="mark ${r?"resp":""}" onclick="toggleResp('${j.id}')">${r ? "Quitar" : "Marcar respuesta"}</button>
