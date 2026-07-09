@@ -64,6 +64,7 @@
   .b-evaluada { background: #fce7f3; color: #be185d; }
   .b-postulada { background: #ede9fe; color: #6d28d9; }
   .b-descartada { background: #f1f5f9; color: #94a3b8; }
+  .b-closed { background: #fee2e2; color: #b91c1c; }
   .b-hoy { background: #1b3a5c; color: #fff; }
   .b-salary { background: #ecfdf5; color: #047857; text-transform: none; }
   .b-cat { background: #eef2ff; color: #4338ca; }
@@ -76,6 +77,7 @@
   .mark { font-size: .78rem; border: 1px solid var(--border); background: #fff; border-radius: 8px; padding: 5px 10px; cursor: pointer; color: var(--muted); white-space: nowrap; }
   .mark.marked { background: var(--applied); border-color: var(--applied); color: #fff; }
   .mark.resp { background: var(--high); border-color: var(--high); color: #fff; }
+  .mark.closed { background: #b91c1c; border-color: #b91c1c; color: #fff; }
   .empty { text-align: center; color: var(--muted); padding: 50px 0; }
   footer { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 30px; }
 
@@ -130,6 +132,7 @@
       <div class="stat"><div class="n" id="s-high">–</div><div class="l">Afinidad alta</div></div>
       <div class="stat"><div class="n" id="s-inv">–</div><div class="l">Investigación</div></div>
       <div class="stat"><div class="n" id="s-postuladas">–</div><div class="l">Postuladas</div></div>
+      <div class="stat"><div class="n" id="s-closed">–</div><div class="l">🚫 Cerradas</div></div>
     </div>
 
     <div class="controls">
@@ -172,6 +175,7 @@
         <option value="empresa">Por empresa (A-Z)</option>
       </select>
       <label class="chip" style="cursor:pointer"><input type="checkbox" id="salaryOnly" style="vertical-align:-1px"> 💰 Solo con renta</label>
+      <label class="chip" style="cursor:pointer"><input type="checkbox" id="hideClosed" style="vertical-align:-1px"> 🚫 Ocultar cerradas</label>
     </div>
 
     <div id="list"></div>
@@ -303,9 +307,10 @@ const RECOS = [
 ];
 
 let DATA = { jobs: [], updated: null };
-let state = { q: "", fit: "all", cat: "all", mod: "all", source: "all", salaryOnly: false, estado: "activas", orden: "fecha", view: "ofertas" };
+let state = { q: "", fit: "all", cat: "all", mod: "all", source: "all", salaryOnly: false, hideClosed: false, estado: "activas", orden: "fecha", view: "ofertas" };
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
 const responded = new Set(JSON.parse(localStorage.getItem("respondidas") || "[]"));
+const closed = new Set(JSON.parse(localStorage.getItem("cerradas") || "[]"));
 
 async function load() {
   try {
@@ -353,6 +358,7 @@ function render() {
   if (state.mod !== "all") jobs = jobs.filter(j => j.modality === state.mod);
   if (state.source !== "all") jobs = jobs.filter(j => j.source === state.source);
   if (state.salaryOnly) jobs = jobs.filter(j => j.salary);
+  if (state.hideClosed) jobs = jobs.filter(j => !closed.has(j.id));
   if (state.estado === "activas") jobs = jobs.filter(j => estadoDe(j) !== "descartada");
   else if (state.estado !== "todas") jobs = jobs.filter(j => estadoDe(j) === state.estado);
 
@@ -366,6 +372,7 @@ function render() {
   document.getElementById("s-high").textContent = act.filter(j => j.fit === "high").length;
   document.getElementById("s-inv").textContent = act.filter(j => j.category === "investigacion").length;
   document.getElementById("s-postuladas").textContent = DATA.jobs.filter(j => estadoDe(j) === "postulada").length;
+  document.getElementById("s-closed").textContent = DATA.jobs.filter(j => closed.has(j.id)).length;
 
   const list = document.getElementById("list");
   if (!jobs.length) { list.innerHTML = '<div class="empty">Sin resultados con estos filtros 🤷</div>'; return; }
@@ -374,8 +381,9 @@ function render() {
     const est = estadoDe(j);
     const esNueva = esNuevaFn(j);
     const marked = est === "postulada";
+    const isClosed = closed.has(j.id);
     const pct = matchDe(j);
-    return `<div class="job fit-${j.fit} ${est==="descartada"?"done":""}">
+    return `<div class="job fit-${j.fit} ${(est==="descartada"||isClosed)?"done":""}">
       <div class="fitdot"></div>
       <div class="job-main">
         <a class="job-title" href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
@@ -392,12 +400,14 @@ function render() {
           <span class="badge b-${est}">${est}</span>
           ${esNueva ? '<span class="badge b-hoy">✨ nueva</span>' : ""}
           ${j.salary ? `<span class="badge b-salary">💰 ${j.salary}</span>` : ""}
+          ${isClosed ? '<span class="badge b-closed">🚫 Convocatoria cerrada</span>' : ""}
         </div>
       </div>
       <div class="job-actions">
         <span class="job-date">vista ${j.first_seen}</span>
         <button class="mark ${marked?"marked":""}" onclick="toggle('${j.id}')">${marked ? "✅ Postulé" : "Marcar postulada"}</button>
         ${marked ? `<button class="mark ${responded.has(j.id)?"resp":""}" onclick="toggleResp('${j.id}')">${responded.has(j.id) ? "📩 Respondieron" : "Marcar respuesta"}</button>` : ""}
+        <button class="mark ${isClosed?"closed":""}" onclick="toggleClosed('${j.id}')">${isClosed ? "🚫 Cerrada" : "Ya no acepta solicitudes"}</button>
       </div>
     </div>`;
   }).join("");
@@ -565,6 +575,12 @@ function toggleResp(id) {
   refreshAll();
 }
 
+function toggleClosed(id) {
+  if (closed.has(id)) closed.delete(id); else closed.add(id);
+  localStorage.setItem("cerradas", JSON.stringify([...closed]));
+  refreshAll();
+}
+
 function renderSeguimiento() {
   // Postuladas = las marcadas por el usuario (applied) + las con status "postulada" en los datos
   const post = DATA.jobs.filter(j => estadoDe(j) === "postulada");
@@ -617,6 +633,7 @@ document.querySelectorAll("#mod-chips .chip").forEach(c => c.addEventListener("c
 }));
 document.getElementById("source").addEventListener("change", e => { state.source = e.target.value; render(); });
 document.getElementById("salaryOnly").addEventListener("change", e => { state.salaryOnly = e.target.checked; render(); });
+document.getElementById("hideClosed").addEventListener("change", e => { state.hideClosed = e.target.checked; render(); });
 
 load();
 </script>
