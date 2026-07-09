@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-08T22:13:42.727746+00:00",
+ "updated": "2026-07-09T03:49:08.267602+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -2078,9 +2078,9 @@
    "first_seen": "2026-07-06",
    "date_posted": "2026-07-01",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "USD 1.500-2.000/mes",
-   "notes": "",
+   "notes": "72/100 Buen Fit · 100% remoto Sudamérica USD 1500-2000; Power BI/DAX avanzado (su fuerte); postular EN INGLÉS (CV en inglés listo); deseable ClickHouse (gap); RLS/Star Schema a demostrar",
    "category": "datos-bi",
    "source": "Get on Board",
    "modality": "remoto",
