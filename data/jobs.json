@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-09T04:01:25.675980+00:00",
+ "updated": "2026-07-09T04:15:13.357621+00:00",
  "jobs": [
   {
    "id": "4410224504",
@@ -807,6 +807,25 @@
    "gaps": []
   },
   {
+   "id": "4437885405",
+   "title": "Encargado/a de Desarrollo Social y Cultural",
+   "company": "PeoplePro - Chile",
+   "url": "https://cl.linkedin.com/jobs/view/4437885405",
+   "location": "Santiago",
+   "first_seen": "2026-07-09",
+   "date_posted": "2026-07-07",
+   "fit": "low",
+   "status": "descartada",
+   "salary": "",
+   "notes": "Residencia en San Felipe/Los Andes excluyente - fuera de la RM",
+   "category": "sociologia",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
    "id": "4398856375",
    "title": "Data Analyst - CoreOps",
    "company": "SumUp",
@@ -1182,6 +1201,25 @@
    "salary": "",
    "notes": "",
    "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4433985144",
+   "title": "UX Researcher",
+   "company": "Ayesa Digital",
+   "url": "https://cl.linkedin.com/jobs/view/4433985144",
+   "location": "Santiago",
+   "first_seen": "2026-07-09",
+   "date_posted": "2026-07-06",
+   "fit": "high",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Investigación cualitativa y cuantitativa con usuarios, entrevistas, encuestas, análisis y presentación a equipos multidisciplinarios. Pide título en Diseño/Ingeniería 'o afín' - argumentar Sociología",
+   "category": "investigacion",
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
@@ -1944,6 +1982,25 @@
    "status": "descartada",
    "salary": "",
    "notes": "",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "4426111112",
+   "title": "Analista Senior Research",
+   "company": "Banchile Inversiones",
+   "url": "https://cl.linkedin.com/jobs/view/4426111112",
+   "location": "Santiago",
+   "first_seen": "2026-07-09",
+   "date_posted": "2026-07-02",
+   "fit": "low",
+   "status": "descartada",
+   "salary": "",
+   "notes": "Equity research financiero: pide Ing. Comercial/Civil Industrial, inglés avanzado, habilidades comerciales - no calza con su perfil",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -3547,6 +3604,17 @@
     "4433994337"
    ],
    "cumulative": 175
+  },
+  {
+   "date": "2026-07-09",
+   "new": 3,
+   "new_high": 1,
+   "new_ids": [
+    "4437885405",
+    "4433985144",
+    "4426111112"
+   ],
+   "cumulative": 178
   }
  ]
 }
