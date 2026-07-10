@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-10T14:54:39.913106+00:00",
+ "updated": "2026-07-10T14:55:12.729273+00:00",
  "jobs": [
   {
    "id": "4435998218",
@@ -106,26 +106,6 @@
    "title": "Analista Perfiles Riesgo",
    "company": "Claro Chile",
    "url": "https://cl.linkedin.com/jobs/view/4438845282",
-   "location": "Santiago",
-   "first_seen": "2026-07-10",
-   "date_posted": "2026-07-10",
-   "fit": "low",
-   "status": "descartada",
-   "salary": "",
-   "notes": "",
-   "category": "datos-bi",
-   "source": "LinkedIn",
-   "modality": "no_especificado",
-   "deadline": "",
-   "applied_date": "",
-   "match_pct": null,
-   "gaps": []
-  },
-  {
-   "id": "4435657698",
-   "title": "Business Analyst Digital Commerce (dup)",
-   "company": "Cencosud",
-   "url": "https://cl.linkedin.com/jobs/view/4435657698",
    "location": "Santiago",
    "first_seen": "2026-07-10",
    "date_posted": "2026-07-10",
@@ -4824,7 +4804,7 @@
   },
   {
    "date": "2026-07-10",
-   "new": 26,
+   "new": 25,
    "new_high": 1,
    "new_ids": [
     "4435998218",
@@ -4833,7 +4813,6 @@
     "4438321054",
     "4435957436",
     "4438845282",
-    "4435657698",
     "4438657698",
     "4435678613",
     "4438651539",
@@ -4854,7 +4833,7 @@
     "4438846183",
     "4438832592"
    ],
-   "cumulative": 228
+   "cumulative": 227
   }
  ]
 }
