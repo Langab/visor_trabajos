@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-14T21:15:29.489106+00:00",
+ "updated": "2026-07-14T21:20:19.641789+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -195,6 +195,26 @@
    "notes": "Pide Python avanzado + ML + Deep Learning (TensorFlow/PyTorch): gap técnico; título Ing. Civil Matemática/Computación",
    "category": "datos-bi",
    "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:activity:7482805684372434944/",
+   "title": "Analista de Datos (BI)",
+   "company": "Starken",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7482805684372434944/",
+   "location": "Santiago",
+   "first_seen": "2026-07-14",
+   "date_posted": "2026-07-14",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Post de Josabad Perdomo (Desarrollo Organizacional Starken). Dashboards BI, análisis exploratorio, ETL automatizado, documentación (✓✓ su perfil). Pide Power BI (✓), Python intermedio (✓ exacto), Excel avanzado (✓), SQL avanzado (gap: intermedio), título ing. TI o afín (argumentar), 1.5+ años (✓ sobra). Postular por correo a josabad.perdomo@starken.cl con área de interés. CV listo · 75/100 Buen Fit · Dashboards BI+ETL automatizado+documentación calzan directo; Python intermedio pedido exacto; gaps: SQL avanzado (tiene intermedio), título ing. TI (argumentar carrera afín), BD Oracle/MongoDB; oferta bajo Ley 21.015; postulación por correo con CV y área de interés",
+   "category": "datos-bi",
+   "source": "LinkedIn (correo directo)",
    "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
@@ -5679,14 +5699,15 @@
   },
   {
    "date": "2026-07-14",
-   "new": 14,
-   "new_high": 1,
+   "new": 15,
+   "new_high": 2,
    "new_ids": [
     "https://www.linkedin.com/jobs/view/4440577870",
     "https://www.linkedin.com/jobs/view/4438011343",
     "https://www.linkedin.com/jobs/view/4440841121",
     "https://www.linkedin.com/jobs/view/4440569792",
     "https://www.linkedin.com/jobs/view/4440583374",
+    "https://www.linkedin.com/feed/update/urn:li:activity:7482805684372434944/",
     "https://www.linkedin.com/jobs/view/4440307289",
     "https://www.getonbrd.com/jobs/data-science-analytics/desarrollador-power-bi-remoto-3it-remote",
     "https://www.getonbrd.com/jobs/data-science-analytics/data-analyst-3it-remote",
@@ -5697,7 +5718,7 @@
     "https://www.getonbrd.com/jobs/data-science-analytics/analista-de-datos-lfi-santiago-bf1b",
     "https://www.getonbrd.com/jobs/data-science-analytics/analista-de-datos-python-tcit-santiago"
    ],
-   "cumulative": 267
+   "cumulative": 268
   }
  ]
 }
