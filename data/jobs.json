@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-14T02:29:39.847226+00:00",
+ "updated": "2026-07-14T15:40:52.658897+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -16,6 +16,66 @@
    "category": "sector_publico",
    "source": "Empleos Públicos",
    "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.getonbrd.com/empleos/data-science-analytics/data-analyst-chile-cumplo-santiago",
+   "title": "Data Analyst – Chile",
+   "company": "Cumplo",
+   "url": "https://www.getonbrd.com/empleos/data-science-analytics/data-analyst-chile-cumplo-santiago",
+   "location": "Santiago",
+   "first_seen": "2026-07-13",
+   "date_posted": "desconocida",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "SQL avanzado, Python intermedio, BI (Quicksight/Looker/Tableau/PowerBI) calzan bien. 2-4 años de experiencia fits. Gap: piden título de Ingeniería (Civil/Informática/Estadística/Industrial). Fintech de crowdfunding, full-time presencial.",
+   "category": "datos",
+   "source": "Get on Board",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.getonbrd.com/jobs/data-science-analytics/data-analyst-data-operations-equifax-chile-santiago",
+   "title": "Data Analyst (Data Operations)",
+   "company": "Equifax Chile",
+   "url": "https://www.getonbrd.com/jobs/data-science-analytics/data-analyst-data-operations-equifax-chile-santiago",
+   "location": "Santiago",
+   "first_seen": "2026-07-13",
+   "date_posted": "desconocida",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Looker Studio + BigQuery + foco en gobernanza y calidad de datos calza directo con su experiencia en INE/SLEP. Gap: título de ingeniería requerido, 3+ años mínimo.",
+   "category": "datos",
+   "source": "Get on Board",
+   "modality": "híbrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://dataobservatory.net/jobs",
+   "title": "Practicante Bibliotecología y Gestión de Información",
+   "company": "Data Observatory",
+   "url": "https://dataobservatory.net/jobs",
+   "location": "Santiago",
+   "first_seen": "2026-07-13",
+   "date_posted": "desconocida",
+   "fit": "low",
+   "status": "descartada",
+   "salary": "",
+   "notes": "Práctica para estudiante de Bibliotecología, no aplica a su perfil (titulado, no practicante). Plazo 16-jul-2026.",
+   "category": "investigacion",
+   "source": "Sitio propio",
+   "modality": "desconocida",
    "deadline": "",
    "applied_date": "",
    "match_pct": null,
@@ -5314,9 +5374,12 @@
   },
   {
    "date": "2026-07-13",
-   "new": 14,
+   "new": 17,
    "new_high": 2,
    "new_ids": [
+    "https://www.getonbrd.com/empleos/data-science-analytics/data-analyst-chile-cumplo-santiago",
+    "https://www.getonbrd.com/jobs/data-science-analytics/data-analyst-data-operations-equifax-chile-santiago",
+    "https://dataobservatory.net/jobs",
     "https://www.linkedin.com/jobs/view/4439489347",
     "https://www.linkedin.com/jobs/view/4437601737",
     "https://www.linkedin.com/jobs/view/4440335444",
@@ -5332,7 +5395,7 @@
     "https://www.linkedin.com/jobs/view/4435909679",
     "https://www.linkedin.com/jobs/view/4436754032"
    ],
-   "cumulative": 250
+   "cumulative": 253
   }
  ]
 }
