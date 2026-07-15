@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-15T22:25:01.664989+00:00",
+ "updated": "2026-07-15T22:27:35.915333+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -270,9 +270,9 @@
    "first_seen": "2026-07-14",
    "date_posted": "2026-07-14",
    "fit": "high",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Post de Josabad Perdomo (Desarrollo Organizacional Starken). Dashboards BI, análisis exploratorio, ETL automatizado, documentación (✓✓ su perfil). Pide Power BI (✓), Python intermedio (✓ exacto), Excel avanzado (✓), SQL avanzado (gap: intermedio), título ing. TI o afín (argumentar), 1.5+ años (✓ sobra). Postular por correo a josabad.perdomo@starken.cl con área de interés. CV listo · 75/100 Buen Fit · POSTULADA 2026-07-14 por correo a josabad.perdomo@starken.cl. Dashboards BI+ETL automatizado+documentación calzan directo; Python intermedio pedido exacto; gaps: SQL avanzado (tiene intermedio), título ing. TI (argumentar carrera afín), BD Oracle/MongoDB; oferta bajo Ley 21.015; postulación por correo con CV y área de interés",
+   "notes": "Post de Josabad Perdomo (Desarrollo Organizacional Starken). Dashboards BI, análisis exploratorio, ETL automatizado, documentación (✓✓ su perfil). Pide Power BI (✓), Python intermedio (✓ exacto), Excel avanzado (✓), SQL avanzado (gap: intermedio), título ing. TI o afín (argumentar), 1.5+ años (✓ sobra). Postular por correo a josabad.perdomo@starken.cl con área de interés. CV listo. 15-jul: avanzó a etapa de pruebas Hirint + entrevista técnica · 75/100 Buen Fit · AVANCE 2026-07-15: reclutador respondió; cargo base Santiago L-J presencial + viernes teletrabajo; pidió expectativa salarial y autorización para pruebas Hirint; luego entrevista técnica con jefatura. POSTULADA 2026-07-14 por correo a josabad.perdomo@starken.cl. Dashboards BI+ETL automatizado+documentación calzan directo; Python intermedio pedido exacto; gaps: SQL avanzado (tiene intermedio), título ing. TI (argumentar carrera afín), BD Oracle/MongoDB; oferta bajo Ley 21.015; postulación por correo con CV y área de interés",
    "category": "datos-bi",
    "source": "LinkedIn (correo directo)",
    "modality": "no_especificado",
