@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-17T16:36:09.440373+00:00",
+ "updated": "2026-07-19T22:33:21.613578+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -82,6 +82,26 @@
    "gaps": []
   },
   {
+   "id": "https://www.linkedin.com/jobs/view/4442540891",
+   "title": "Analista de Aprendizaje Senior",
+   "company": "Itaú Chile",
+   "url": "https://www.linkedin.com/jobs/view/4442540891",
+   "location": "Las Condes (híbrido, 40h)",
+   "first_seen": "2026-07-19",
+   "date_posted": "2026-07-19",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Learning analytics: KPIs de aprendizaje, insights, storytelling con datos para líderes (✓✓). Cruza directo con su analítica educacional SLEP (indicadores de aprendizaje) y el precedente PsicoLab. Excel avanzado (✓), ideal Power BI (✓), 3 años roles analíticos (✓), \"carrera afín\". Itaú es empresa objetivo; valoran medición sobre ejecución de capacitación. Gap: contexto RRHH/DO formal",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
    "id": "https://www.linkedin.com/jobs/view/4439242640",
    "title": "Analista de Negocios y Datos",
    "company": "BSponsor",
@@ -93,6 +113,26 @@
    "status": "nueva",
    "salary": "",
    "notes": "Pide exactamente Excel + Power BI (✓✓) y capacidad analítica, carrera \"o afín\", 0-4 años (✓), deseable inglés (✓ B2). Aviso escueto y empresa chica: evaluar seriedad/renta antes de invertir",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4439262937",
+   "title": "Analista en Estrategia Comercial Route to Market",
+   "company": "PepsiCo",
+   "url": "https://www.linkedin.com/jobs/view/4439262937",
+   "location": "Santiago",
+   "first_seen": "2026-07-19",
+   "date_posted": "2026-07-17",
+   "fit": "low",
+   "status": "descartada",
+   "salary": "",
+   "notes": "Estrategia comercial/trade RTM, foco ventas. Fuera de perfil",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -6071,6 +6111,16 @@
     "https://www.linkedin.com/jobs/view/4440852843"
    ],
    "cumulative": 284
+  },
+  {
+   "date": "2026-07-19",
+   "new": 2,
+   "new_high": 0,
+   "new_ids": [
+    "https://www.linkedin.com/jobs/view/4442540891",
+    "https://www.linkedin.com/jobs/view/4439262937"
+   ],
+   "cumulative": 286
   }
  ]
 }
