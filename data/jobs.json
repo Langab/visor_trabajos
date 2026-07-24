@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-23T21:43:35.483375+00:00",
+ "updated": "2026-07-24T00:16:04.651865+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -175,6 +175,26 @@
    "notes": "Cargo directivo (Director General de Estudios CMF): nivel de seniority muy por sobre su etapa (requiere trayectoria directiva). Fuera de alcance",
    "category": "investigacion",
    "source": "Empleos Públicos/Trabajando",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://forms.gle/LoMrbBsF4YFMS9Ar8",
+   "title": "Business Intelligence Specialist",
+   "company": "Empresa norteamericana de IA (vía consultora Brazo Derecho)",
+   "url": "https://forms.gle/LoMrbBsF4YFMS9Ar8",
+   "location": "Chile (cowork + remoto, horario Chile)",
+   "first_seen": "2026-07-23",
+   "date_posted": "2026-07-23",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Empresa de IA que sirve a financieras de EEUU (captación/gestión de clientes). Análisis de datos + reportes comerciales + visualización (✓✓ Power BI/SQL/Excel). Formación \"idealmente Ing. Comercial\" (no excluyente). EXCLUYENTE: inglés avanzado (gap B2 — el riesgo del proceso). Contrato inicial a plazo fijo; reporta al Gerente General. Postulación por Google Form · 70/100 Buen Fit (condicional a inglés) · Reclutadora contactó directo por LinkedIn. Stack calza (Power BI/SQL/Excel/perfil analítico-comercial); inglés avanzado EXCLUYENTE (tiene B2 = riesgo); contrato inicial plazo fijo; modalidad flexible cowork+remoto; empresa no identificada aún — preguntar nombre en primer contacto",
+   "category": "datos-bi",
+   "source": "LinkedIn (outreach reclutadora Maria Celeste Duarte)",
    "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
@@ -6554,7 +6574,7 @@
   },
   {
    "date": "2026-07-23",
-   "new": 6,
+   "new": 7,
    "new_high": 1,
    "new_ids": [
     "https://www.linkedin.com/jobs/view/4444457589",
@@ -6562,9 +6582,10 @@
     "https://www.linkedin.com/jobs/view/4444458659",
     "https://www.linkedin.com/jobs/view/4441536890",
     "https://cmfchile.trabajando.cl/trabajo/6104680-director-a-general-de-estudios",
+    "https://forms.gle/LoMrbBsF4YFMS9Ar8",
     "https://www.linkedin.com/jobs/view/4444220251"
    ],
-   "cumulative": 306
+   "cumulative": 307
   }
  ]
 }
