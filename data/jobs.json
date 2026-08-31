@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25T20:27:41.722484+00:00",
+ "updated": "2026-08-31T03:05:10.635408+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -80,6 +80,291 @@
    "applied_date": "",
    "match_pct": null,
    "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459749730",
+   "title": "Ingeniero/a Analista de Datos (minería)",
+   "company": "Mindco",
+   "url": "https://www.linkedin.com/jobs/view/4459749730",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-30",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Publicada hoy. Consultoría en gestión de activos para minería. Entre los requisitos excluyentes aparece 'calidad y gobernanza de datos', que es justamente lo que construiste desde cero en el SLEP y casi nadie pide con ese nombre. Power BI, Power Query, DAX, Python y SQL también son excluyentes. El obstáculo es el título de ingeniero civil y los 4 años en contexto industrial.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 66,
+   "gaps": [
+    "Título de ingeniero civil industrial o informático (excluyente)",
+    "DAX y Power Query a nivel avanzado",
+    "Experiencia en contexto industrial o minero"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459725565",
+   "title": "Consultor Analista (Achs)",
+   "company": "Fundación Científica y Tecnológica (FUCYT)",
+   "url": "https://www.linkedin.com/jobs/view/4459725565",
+   "location": "Providencia, Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-30",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Publicada hoy. Recolectar y analizar información cualitativa y cuantitativa para probar hipótesis, concluir y recomendar cursos de acción: es investigación aplicada con mirada de consultoría, y el mix cuali-cuanti es poco común de encontrar. Híbrido, 39 horas, muy buenos beneficios. Pide solo 0-2 años, pero la formación pedida es Ingeniería Civil o Comercial.",
+   "category": "investigacion",
+   "source": "LinkedIn",
+   "modality": "hibrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 55,
+   "gaps": [
+    "Formación pedida: Ingeniería Civil o Comercial (filtro duro)",
+    "Experiencia en consultoría estratégica o de operaciones",
+    "Inglés avanzado (deseable)"
+   ]
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142491&c=0&j=0&tipo=avisotrabajoficha",
+   "title": "Analista Control de Gestión Diurno - Grado 14 E.U.S",
+   "company": "Servicio de Salud Metropolitano Norte",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142491&c=0&j=0&tipo=avisotrabajoficha",
+   "location": "Independencia, Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-30",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Convocatoria vigente en la Región Metropolitana, grado 14 E.U.S. Control de gestión en un servicio de salud es terreno conocido para tu perfil de indicadores y reportería en el Estado. La ficha de empleospublicos.cl no se puede leer con scraper (es ASP.NET dinámico): hay que abrirla en el navegador para ver requisitos, renta bruta y plazo de cierre antes de invertir tiempo.",
+   "category": "sector_publico",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Requisitos y plazo sin verificar: falta abrir la ficha"
+   ]
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=3426&c=3883&j=0&tipo=convbasejefedpto",
+   "title": "Jefatura Departamento de Planificación y Control de Gestión",
+   "company": "Subsecretaría de Vivienda y Urbanismo (MINVU)",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=3426&c=3883&j=0&tipo=convbasejefedpto",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-30",
+   "fit": "low",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Cargo de jefatura de departamento en un ministerio: el contenido (planificación y control de gestión) calza con tu experiencia, pero el nivel es de jefatura y normalmente exige años de experiencia dirigiendo equipos y postgrado. Mismo problema de lectura que la anterior: hay que abrir las bases en el navegador para confirmar requisitos.",
+   "category": "sector_publico",
+   "source": "Empleos Públicos",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Cargo de jefatura: probable exigencia de experiencia dirigiendo equipos",
+    "Requisitos y plazo sin verificar: falta abrir las bases"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4460148934",
+   "title": "Analista Customer Insights",
+   "company": "SKY Airline",
+   "url": "https://www.linkedin.com/jobs/view/4460148934",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-28",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Segmentación de clientes, perfilamiento de clusters y modelos de propensión: análisis cuantitativo aplicado a comportamiento, que es exactamente el puente entre tu sociología y tus datos. SQL excluyente (lo tienes) y la herramienta de data mining puede ser Power BI, donde eres fuerte. Buenos beneficios (pasajes con tarifa reducida, seguro).",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 78,
+   "gaps": [
+    "Título pedido: Ingeniería Civil/Comercial/Informática o afín",
+    "Modelos predictivos y de propensión formalizados",
+    "Inglés intermedio"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4458972703",
+   "title": "Data Business Partner",
+   "company": "Empresa Confidencial (sector alimentario global)",
+   "url": "https://www.linkedin.com/jobs/view/4458972703",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-28",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "El cargo pide desarrollar y mantener el catálogo de datos, el diccionario de datos y los procesos de homologación de fuentes: es literalmente el marco de gobernanza que levantaste en el SLEP, con nombre y apellido. También asesorar a líderes de negocio, que es tu fuerte de comunicación. Lo que no calza son los 6-8 años de experiencia que piden.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 62,
+   "gaps": [
+    "6 a 8 años de experiencia en datos",
+    "Título de Ingeniería o Estadística",
+    "Normativa GDPR",
+    "Inglés intermedio"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459883829",
+   "title": "Analista de Datos Contact Center",
+   "company": "RedSalud CChC (Empresas SB)",
+   "url": "https://www.linkedin.com/jobs/view/4459883829",
+   "location": "Santiago (casa matriz)",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-27",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "El mejor calce de la pasada. Es tu trabajo del SLEP con otro membrete: indicadores de gestión, reportes operacionales, dashboards en Power BI, validación de calidad de la información y automatización de reportería, coordinando el levantamiento con distintas áreas. Y el título pedido incluye 'Análisis de Datos o carrera afín', sin exigir ingeniería. Piden 1-2 años; tú tienes más.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 85,
+   "gaps": [
+    "Genesys Cloud (extracción desde el contact center)",
+    "SAP y BigQuery (ambos deseables)"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459891831",
+   "title": "Analista de Datos BI",
+   "company": "Step Therapy",
+   "url": "https://www.linkedin.com/jobs/view/4459891831",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-27",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Salud. Consolidación de datos, KPIs documentados, reportería automatizada y ETL: el corazón del cargo es lo que haces hoy, y solo piden 1 año de experiencia. Plazo fijo con paso a indefinido al quinto mes. Lo raro del aviso es que mezcla SQL con PHP y HTML entre los lenguajes pedidos.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 70,
+   "gaps": [
+    "PHP y HTML en el listado de lenguajes",
+    "Administración de bases MySQL",
+    "Título de Ingeniería Informática o Analista de Sistemas"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459847700",
+   "title": "Business Intelligence Advanced Analytics (Marcas Propias Regional)",
+   "company": "Cencosud",
+   "url": "https://www.linkedin.com/jobs/view/4459847700",
+   "location": "Alto Las Condes, Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-27",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Paneles automatizados, levantamiento de KPIs y trabajo con las gerencias de varios países. Power BI, SQL y R/Python son excluyentes y los tienes los tres. Contrato indefinido y fecha esperada de contratación 30/09. El filtro está en el título profesional (piden ingenierías) y en AWS.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "2026-09-30",
+   "applied_date": "",
+   "match_pct": 68,
+   "gaps": [
+    "AWS / manejo en la nube",
+    "Título de ingeniería (Informática, Civil, Comercial)",
+    "Microstrategy (deseable)"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459845805",
+   "title": "Data Analyst Junior (social media, portafolio Nestlé)",
+   "company": "Ogilvy Chile",
+   "url": "https://www.linkedin.com/jobs/view/4459845805",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-27",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Agencia global, +13 marcas de Nestlé. Reportería automatizada, dashboards de KPIs y — lo interesante — construir y mantener agentes de IA de marca e integrar IA generativa (Copilot, Claude) al flujo diario. Es el aviso que más premia tu automatización con IA. Pide Power BI y Looker Studio en nivel intermedio.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 60,
+   "gaps": [
+    "Sprinklr y social listening",
+    "Meta Business Suite para extracción de datos",
+    "Looker Studio y GA4"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4458686447",
+   "title": "Analista de inteligencia empresarial (estudios y benchmarks)",
+   "company": "Empresa Confidencial (salud)",
+   "url": "https://www.linkedin.com/jobs/view/4458686447",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-27",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Apoyo a estudios y benchmarks: sistematización de información, seguimiento de fuentes secundarias (papers, reportes de industria, prensa especializada) y materiales de presentación de hallazgos. Es research estructurado, la línea CEP de tu perfil, con ruta declarada de crecimiento al rol senior. Aviso corto: conviene pedir la descripción completa.",
+   "category": "investigacion",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 58,
+   "gaps": [
+    "Título pedido: ingeniero comercial o civil industrial",
+    "Aviso muy escueto: hay que confirmar alcance y renta"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4457703078",
+   "title": "BI Data Analyst",
+   "company": "Randstad Chile",
+   "url": "https://www.linkedin.com/jobs/view/4457703078",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-26",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "El aviso nombra gobernanza —estándares de calidad, trazabilidad, control de versiones y documentación— junto a modelos de datos y dashboards en Power BI. Ahí calzas bien. El resto del stack es de ingeniería de datos pura y con herramientas específicas que no has usado.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 56,
+   "gaps": [
+    "SSIS y SQL Server",
+    "Prefect u orquestadores equivalentes",
+    "SAP y desarrollo RPA",
+    "Inglés intermedio-avanzado"
+   ]
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4457412700",
@@ -240,6 +525,30 @@
    "applied_date": "",
    "match_pct": null,
    "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4459048033",
+   "title": "CRM Business Intelligence SR",
+   "company": "Itaú Chile",
+   "url": "https://www.linkedin.com/jobs/view/4459048033",
+   "location": "Santiago",
+   "first_seen": "2026-08-30",
+   "date_posted": "2026-08-25",
+   "fit": "low",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Banco con muy buenos beneficios y jornada de 40 horas, pero el cargo es de arquitectura de datos: piden más de 5 años en ingeniería o arquitectura, nube (GCP, AWS, Databricks) y plataformas de marketing como Salesforce Marketing Cloud. Queda registrada como referencia de hacia dónde apunta el mercado bancario.",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "hibrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 42,
+   "gaps": [
+    "5+ años en ingeniería o arquitectura de datos",
+    "GCP, AWS o Databricks",
+    "Salesforce Marketing Cloud, Appsflyer, GA4"
+   ]
   },
   {
    "id": "https://lnkd.in/df9zA_R8",
@@ -8448,6 +8757,27 @@
     "https://www.linkedin.com/jobs/view/4458782229"
    ],
    "cumulative": 393
+  },
+  {
+   "date": "2026-08-30",
+   "new": 13,
+   "new_high": 2,
+   "new_ids": [
+    "https://www.linkedin.com/jobs/view/4459749730",
+    "https://www.linkedin.com/jobs/view/4459725565",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142491&c=0&j=0&tipo=avisotrabajoficha",
+    "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=3426&c=3883&j=0&tipo=convbasejefedpto",
+    "https://www.linkedin.com/jobs/view/4460148934",
+    "https://www.linkedin.com/jobs/view/4458972703",
+    "https://www.linkedin.com/jobs/view/4459883829",
+    "https://www.linkedin.com/jobs/view/4459891831",
+    "https://www.linkedin.com/jobs/view/4459847700",
+    "https://www.linkedin.com/jobs/view/4459845805",
+    "https://www.linkedin.com/jobs/view/4458686447",
+    "https://www.linkedin.com/jobs/view/4457703078",
+    "https://www.linkedin.com/jobs/view/4459048033"
+   ],
+   "cumulative": 406
   }
  ]
 }
