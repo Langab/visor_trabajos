@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-31T03:05:10.635408+00:00",
+ "updated": "2026-08-31T07:44:30.723450+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -175,6 +175,30 @@
    ]
   },
   {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7499171367288778753/",
+   "title": "Ingeniero/a de Datos — Analítica Avanzada",
+   "company": "Minera Los Pelambres",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7499171367288778753/",
+   "location": "Chile (contrato vía empresa colaboradora)",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-29",
+   "fit": "low",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Pipelines y ETL con Python y SQL te calzan, pero el cargo es de ingeniería de datos pura sobre Databricks, Delta Lake y arquitectura Lakehouse, y valoran conocer procesos metalúrgicos. Postulación por correo directo a dos contactos de la minera.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 48,
+   "gaps": [
+    "Databricks, Delta Lake y arquitecturas Lakehouse",
+    "Azure y Unity Catalog",
+    "Contexto minero y procesos metalúrgicos"
+   ]
+  },
+  {
    "id": "https://www.linkedin.com/jobs/view/4460148934",
    "title": "Analista Customer Insights",
    "company": "SKY Airline",
@@ -221,6 +245,30 @@
     "Título de Ingeniería o Estadística",
     "Normativa GDPR",
     "Inglés intermedio"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7498756811936669698/",
+   "title": "Analista de Sostenibilidad (proyecto 6 meses)",
+   "company": "Kellun (Asesorías Kellun)",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7498756811936669698/",
+   "location": "Chile",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-28",
+   "fit": "low",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Pide expresamente formación en Sociología o ciencias sociales, así que tu título abre la puerta sin pelear. Pero el contenido es reportería de sostenibilidad —GRI, SASB, CMF, doble materialidad, debida diligencia en DD.HH.— no análisis de datos, y es un proyecto acotado a 6 meses. Queda como opción lateral, no como dirección de carrera.",
+   "category": "sociologia",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 45,
+   "gaps": [
+    "Estándares GRI, SASB, CMF, NIIF y CSRD",
+    "Debida diligencia en derechos humanos",
+    "Contrato de proyecto por 6 meses"
    ]
   },
   {
@@ -548,6 +596,191 @@
     "5+ años en ingeniería o arquitectura de datos",
     "GCP, AWS o Databricks",
     "Salesforce Marketing Cloud, Appsflyer, GA4"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7497670571552419840/",
+   "title": "Data Scientist — Gerencia de Analytics & Data Governance",
+   "company": "Entel Chile",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7497670571552419840/",
+   "location": "Santiago",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-25",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "El nombre de la gerencia —Analytics & Data Governance— es literalmente tu combinación. Híbrido desde 2 días presenciales y postulación directa por correo a la reclutadora, lo que evita el filtro del portal. Contra: el perfil declarado es de 0 a 2 años, así que la renta puede quedar corta, y piden IA generativa y cloud.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "hibrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 62,
+   "gaps": [
+    "Servicios cloud (AWS o GCP)",
+    "IA generativa aplicada",
+    "Perfil declarado 0-2 años: posible desajuste de renta"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7495161955817787393/",
+   "title": "Jefe de Estudios de Mercado",
+   "company": "RG Principal",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7495161955817787393/",
+   "location": "Chile",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "La joya del feed: es de las poquísimas ofertas que nombran Sociología entre las formaciones aceptadas, junto a Ing. Comercial, Economía y Estadística. Liderar investigaciones cuantitativas Y cualitativas es exactamente el cruce INE + CEP de tu perfil. Piden 5+ años en estudios de mercado, research o consumer insights: tú tienes la técnica pero no los años en research de mercado propiamente tal, así que la carta tiene que traducir Censo y CEP a lenguaje de insights.",
+   "category": "investigacion",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 72,
+   "gaps": [
+    "5+ años específicos en estudios de mercado / consumer insights",
+    "Experiencia en investigación comercial (no de política pública)"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7496534318115160064/",
+   "title": "Profesional de Análisis Territorial y Datos Geoespaciales",
+   "company": "Municipalidad de Lo Barnechea — Centro de Desarrollo Laboral",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7496534318115160064/",
+   "location": "Lo Barnechea, Región Metropolitana",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "El aviso abre explícitamente a sociólogos con especialización espacial, además de geógrafos e ingenieros. Python y R en nivel intermedio-avanzado son excluyentes y ahí estás fuerte. Municipal, en la RM, aplicado a seguridad pública: encaja con tu línea de sector público. El muro de entrada es ArcGIS.",
+   "category": "sector_publico",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 68,
+   "gaps": [
+    "ArcGIS Pro y ArcGIS Online (excluyentes)",
+    "Especialización en análisis espacial",
+    "Postulación vía Bolsa Nacional de Empleo"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7496222166317887488/",
+   "title": "Profesional Analista de Transformación Digital",
+   "company": "Instituto de Salud Pública de Chile (ISP)",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7496222166317887488/",
+   "location": "Santiago",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Concurso público en un organismo técnico del Estado, que es donde tu experiencia INE + SLEP pesa de verdad. El post no trae requisitos: están en la ficha de empleospublicos.cl y hay que abrirla para ver renta, grado y plazo antes de invertir tiempo.",
+   "category": "sector_publico",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Requisitos, grado y plazo sin verificar: falta abrir la ficha en empleospublicos.cl"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7496303782440669185/",
+   "title": "Data Engineer (oferta inclusiva Ley 21.015)",
+   "company": "Metro de Santiago S.A.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7496303782440669185/",
+   "location": "Santiago",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Empresa estatal grande y estable, con vacante de datos. Dos cosas que revisar antes: está publicada como oferta inclusiva bajo la Ley 21.015, o sea dirigida a personas en situación de discapacidad —confirma si aplica a tu caso—, y el detalle de requisitos está solo en metro.trabajando.cl, no en el post.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Verificar si la oferta inclusiva aplica a tu situación",
+    "Requisitos sin publicar en el post: revisar metro.trabajando.cl"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7495963351362015232/",
+   "title": "Data Scientist Mid",
+   "company": "Datta",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7495963351362015232/",
+   "location": "LATAM (100% remoto)",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "100% remoto en LATAM, que amplía el mercado más allá de Santiago. El aviso es genérico —modelos y transformación de información en soluciones de valor— sin stack ni años declarados, así que no se puede estimar calce sin abrir el enlace de postulación.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "remoto",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Aviso sin requisitos técnicos ni años: hay que abrir el enlace"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7495473890882887680/",
+   "title": "Data Transformation Lead — Andean Markets",
+   "company": "Google",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7495473890882887680/",
+   "location": "Santiago o Bogotá",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "low",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "Santiago es una de las dos sedes posibles, y la marca pesa. Pero el cargo es de consultoría de medición publicitaria sobre Google Ads y Google Marketing Platform, acompañando a clientes en madurez digital: es adtech de cara al cliente, no análisis de datos propio. Queda registrada como referencia.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "no_especificado",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": 40,
+   "gaps": [
+    "Google Ads y Google Marketing Platform",
+    "Rol de consultoría comercial de cara al cliente",
+    "Inglés de trabajo en equipo regional"
+   ]
+  },
+  {
+   "id": "https://www.linkedin.com/feed/update/urn:li:share:7495883652229185536/",
+   "title": "Encargado/a de Gobierno de Datos",
+   "company": "Institución no identificada (Santiago, Metro Moneda)",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7495883652229185536/",
+   "location": "Santiago (Metro Moneda)",
+   "first_seen": "2026-08-31",
+   "date_posted": "2026-08-24",
+   "fit": "high",
+   "status": "cerrada",
+   "salary": "$3.390.000 bruto",
+   "notes": "CERRADA: la autora marcó el proceso como terminado. La registro igual porque es el mejor dato de mercado que trajo el feed: un cargo de gobierno de datos —modelo de gobierno, políticas, calidad, metadatos, interoperabilidad— con renta publicada de $3.390.000 bruto, pidiendo 5 años de experiencia y 3 específicos, DAMA-DMBOK, SQL avanzado y ETL. Es tu especialidad y te fija el techo al que apuntar. Vale la pena estudiar DAMA-DMBOK, que es el marco que están nombrando.",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed curado por Benjamín)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": [
+    "Certificación o manejo formal de DAMA-DMBOK",
+    "3 años de experiencia específica en gobierno de datos"
    ]
   },
   {
@@ -8778,6 +9011,24 @@
     "https://www.linkedin.com/jobs/view/4459048033"
    ],
    "cumulative": 406
+  },
+  {
+   "date": "2026-08-31",
+   "new": 10,
+   "new_high": 2,
+   "new_ids": [
+    "https://www.linkedin.com/feed/update/urn:li:share:7499171367288778753/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7498756811936669698/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7497670571552419840/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7495161955817787393/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7496534318115160064/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7496222166317887488/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7496303782440669185/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7495963351362015232/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7495473890882887680/",
+    "https://www.linkedin.com/feed/update/urn:li:share:7495883652229185536/"
+   ],
+   "cumulative": 416
   }
  ]
 }
