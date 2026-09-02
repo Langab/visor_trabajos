@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-31T07:44:30.723450+00:00",
+ "updated": "2026-09-02T22:50:33.882588+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -209,7 +209,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "Segmentación de clientes, perfilamiento de clusters y modelos de propensión: análisis cuantitativo aplicado a comportamiento, que es exactamente el puente entre tu sociología y tus datos. SQL excluyente (lo tienes) y la herramienta de data mining puede ser Power BI, donde eres fuerte. Buenos beneficios (pasajes con tarifa reducida, seguro).",
+   "notes": "Segmentación de clientes, perfilamiento de clusters y modelos de propensión: análisis cuantitativo aplicado a comportamiento, que es exactamente el puente entre tu sociología y tus datos. SQL excluyente (lo tienes) y la herramienta de data mining puede ser Power BI, donde eres fuerte. Buenos beneficios (pasajes con tarifa reducida, seguro). CV adaptado generado el 31-ago (cv/CV_BenjaminLang_SKY.docx); ficha en ofertas/2026-08-31_SKY_AnalistaCustomerInsights.md. Pendiente definir renta y postular. · 78/100 Fit Fuerte · Excluyentes cubiertos (SQL, Power BI como herramienta de data mining, inglés B2, grandes volúmenes vía Censo 2024). Brechas: título de ingeniería y modelos de propensión de compra. Proceso incluye evaluaciones en Genomawork. Renta por definir.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -282,7 +282,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "El mejor calce de la pasada. Es tu trabajo del SLEP con otro membrete: indicadores de gestión, reportes operacionales, dashboards en Power BI, validación de calidad de la información y automatización de reportería, coordinando el levantamiento con distintas áreas. Y el título pedido incluye 'Análisis de Datos o carrera afín', sin exigir ingeniería. Piden 1-2 años; tú tienes más.",
+   "notes": "El mejor calce de la pasada. Es tu trabajo del SLEP con otro membrete: indicadores de gestión, reportes operacionales, dashboards en Power BI, validación de calidad de la información y automatización de reportería, coordinando el levantamiento con distintas áreas. Y el título pedido incluye 'Análisis de Datos o carrera afín', sin exigir ingeniería. Piden 1-2 años; tú tienes más. CV adaptado y respuestas del formulario preparadas el 31-ago (ficha en ofertas/2026-08-31_RedSalud_AnalistaDatosContactCenter.md). OJO: el portal informa renta promedio solicitada de $1.166.872, muy por debajo de su piso habitual.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -413,6 +413,26 @@
     "SAP y desarrollo RPA",
     "Inglés intermedio-avanzado"
    ]
+  },
+  {
+   "id": "https://docs.google.com/forms/d/e/1FAIpQLSc5I-NJkyr_4EBQfQadVHUYxJ_HDWc9H4_QaHAT1jfQ1_BXuw/viewform",
+   "title": "Profesional de Evaluación - Depto. de Monitoreo y Evaluación",
+   "company": "DIDESOH · Gobierno de Santiago",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSc5I-NJkyr_4EBQfQadVHUYxJ_HDWc9H4_QaHAT1jfQ1_BXuw/viewform",
+   "location": "Santiago",
+   "first_seen": "2026-08-26",
+   "date_posted": "2026-08-26",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "$2.400.000 bruto",
+   "notes": "SOCIOLOGÍA nombrada PRIMERA en los títulos aceptados. Funciones: diseñar y ejecutar monitoreo y evaluación, contraparte técnica de estudios externos, seguimiento del marco de indicadores de programas sociales (✓✓ su trabajo SLEP). 3 años en evaluación/análisis de programas sociales (✓ 5), deseable R avanzado (✓✓). Programas: Cuidando a Quienes Cuidan, Quédate, Fondo Comunidad Activa. RIESGO: honorarios 1-oct a 31-dic-2026 (3 meses) con posible renovación, y $2.4M bruto ≈ $1,95M líquido. Cierra 14-sept · 88/100 Fit Fuerte · Sociología primera en títulos aceptados; monitoreo/evaluación e indicadores = su trabajo actual; R deseable. Renta $2.400.000 BRUTO (~$1,95M líquido). RIESGO: honorarios solo oct-dic 2026 con posible renovación. Cierra 14-sept. Requiere adjuntar CV, cédula, título y certificados de experiencia en PDF",
+   "category": "investigacion",
+   "source": "LinkedIn (Gobierno de Santiago)",
+   "modality": "no_especificado",
+   "deadline": "2026-09-14",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4457412700",
@@ -1632,16 +1652,20 @@
    "first_seen": "2026-08-21",
    "date_posted": "2026-08-21",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Consultora de datos (clientes financiero/logística/educación). Pide EXACTAMENTE su perfil: ETL y calidad de datos (✓✓), dashboards para audiencias técnicas y NO técnicas (✓✓), SQL con joins/agregaciones/ventanas (✓ intermedio basta), análisis exploratorio y segmentaciones (✓), estadística básica \"para inferir con cautela\" (✓✓ sobra), DOCUMENTACIÓN de supuestos y criterios de calidad (✓✓ su marca), comunicar metodología y limitaciones (✓✓). NO exige título de ingeniería ni años mínimos. Beneficios fuertes (seguros 100%, Udemy, flexi days)",
+   "notes": "Consultora de datos con clientes en financiero, logística y educación. NO pide título ni años de experiencia, y pide explícitamente inferir con cautela y comunicar supuestos: su formación de sociólogo cuantitativo es ventaja, no obstáculo. Brecha concreta: funciones de ventana en SQL. Híbrido Santiago, beneficios fuertes. CV adaptado el 31-ago; ficha en ofertas/2026-08-31_42Labs_DataAnalyst.md. · 88/100 Fit Muy Fuerte · No pide título ni años: se evalúa por criterio analítico. Pide explícitamente inferir con cautela y comunicar supuestos, que es su formación. Brecha concreta: funciones de ventana en SQL. Híbrido Santiago, beneficios fuertes. Postulación por getonbrd.com.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
-   "match_pct": null,
-   "gaps": []
+   "match_pct": 88,
+   "gaps": [
+    "Funciones de ventana en SQL (el aviso las nombra)",
+    "Definición de eventos y esquemas de medición de producto",
+    "Tableau"
+   ]
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4456281609",
@@ -8992,6 +9016,15 @@
    "cumulative": 393
   },
   {
+   "date": "2026-08-26",
+   "new": 1,
+   "new_high": 1,
+   "new_ids": [
+    "https://docs.google.com/forms/d/e/1FAIpQLSc5I-NJkyr_4EBQfQadVHUYxJ_HDWc9H4_QaHAT1jfQ1_BXuw/viewform"
+   ],
+   "cumulative": 394
+  },
+  {
    "date": "2026-08-30",
    "new": 13,
    "new_high": 2,
@@ -9010,7 +9043,7 @@
     "https://www.linkedin.com/jobs/view/4457703078",
     "https://www.linkedin.com/jobs/view/4459048033"
    ],
-   "cumulative": 406
+   "cumulative": 407
   },
   {
    "date": "2026-08-31",
@@ -9028,7 +9061,7 @@
     "https://www.linkedin.com/feed/update/urn:li:share:7495473890882887680/",
     "https://www.linkedin.com/feed/update/urn:li:share:7495883652229185536/"
    ],
-   "cumulative": 416
+   "cumulative": 417
   }
  ]
 }
