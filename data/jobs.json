@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06T16:54:10.223663+00:00",
+ "updated": "2026-09-06T17:30:27.413082+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -89,10 +89,10 @@
    "location": "Santiago",
    "first_seen": "2026-09-06",
    "date_posted": "2026-09-06",
-   "fit": "high",
-   "status": "nueva",
+   "fit": "low",
+   "status": "descartada",
    "salary": "",
-   "notes": "CRUCE DIRECTO con su experiencia CEP: sistematizó datos electorales y de opinión pública (Encuesta CEP, votaciones constitucionales 2023) y coescribió 13 publicaciones sobre política constitucional chilena. Un área de estudios en SERVEL es su terreno temático exacto. PENDIENTE: abrir las bases (formación aceptada, años, renta) — el portal de Empleos Públicos cambió de diseño y las URLs directas de ficha ahora redirigen al buscador; hay que buscar el cargo por nombre en empleospublicos.cl",
+   "notes": "BASES REVISADAS 6-sept: NO es un cargo de análisis de datos. Objetivo: \"producir y gestionar contenidos estratégicos para la Presidencia y Consejo Directivo\" — asesoría en política institucional, relaciones internacionales, posicionamiento y comunicación estratégica. CUMPLE: título en humanidades o cs. sociales (Sociología ✓), 5 años en organismos públicos/academia/centros de estudios (✓✓ CEP+INE+SLEP), producción escrita en registros académico/técnico/institucional/divulgativo (✓✓ 13 publicaciones + paper + boletín), sistema político y electoral chileno (✓ trabajo constitucional CEP y Tironi). NO CUMPLE: MAGÍSTER pertinente finalizado o en curso (requisito explícito, no lo tiene) e inglés a nivel profesional (B2). Contrata hasta 31-dic-2026, 44h. DESCARTADA por el magíster.",
    "category": "investigacion",
    "source": "Empleos Públicos",
    "modality": "no_especificado",
@@ -109,10 +109,10 @@
    "location": "Santiago",
    "first_seen": "2026-09-06",
    "date_posted": "2026-09-06",
-   "fit": "high",
-   "status": "nueva",
+   "fit": "low",
+   "status": "descartada",
    "salary": "",
-   "notes": "Un \"Observatorio de Datos\" público combina gobernanza, indicadores y difusión: los tres ejes de su trabajo en el SLEP. Transformación digital suma su experiencia automatizando con IA. PENDIENTE: revisar bases (ministerio exacto, formación, renta) buscando el cargo en empleospublicos.cl",
+   "notes": "BASES REVISADAS 6-sept: es del PROGRAMA DE DESARROLLO LOGÍSTICO del Min. de Transportes, no un observatorio de datos analítico. Funciones reales: coordinar plataformas SITCOMEX, VUMAR y observatorios logísticos, gestionar infraestructura informática y servidores, políticas de seguridad de la información, coordinación con la Unidad de Gestión de Tecnología y Procesos. Es coordinación de proyectos TI en logística, no análisis. RENTA MUY ALTA: $4.183.790 bruto promedio mensualizado (G°5), $3.522.228 sin incentivo y $5.506.914 en meses con Asignación de Modernización. Contrata hasta 31-dic con renovación sujeta a desempeño. DESCARTADA por perfil: dominio logístico e infraestructura TI ajenos a su experiencia.",
    "category": "sector_publico",
    "source": "Empleos Públicos",
    "modality": "no_especificado",
@@ -9366,7 +9366,7 @@
   {
    "date": "2026-09-06",
    "new": 15,
-   "new_high": 2,
+   "new_high": 0,
    "new_ids": [
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142489",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142227",
