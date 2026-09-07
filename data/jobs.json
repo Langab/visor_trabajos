@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07T02:43:28.462392+00:00",
+ "updated": "2026-09-07T02:48:43.207398+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -403,20 +403,20 @@
   },
   {
    "id": "https://lnkd.in/daUyKg4R",
-   "title": "Llamado masivo a concursos de planta municipal",
+   "title": "Profesional de Formación Social - DIDECO (Planta)",
    "company": "Ilustre Municipalidad de Santiago",
-   "url": "https://lnkd.in/daUyKg4R",
+   "url": "https://serviciosweb.munistgo.cl/portalaboralstgo/Login.aspx",
    "location": "Santiago",
    "first_seen": "2026-09-06",
    "date_posted": "2026-09-06",
-   "fit": "medium",
-   "status": "nueva",
+   "fit": "high",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Llamado masivo a cargos directivos y profesionales de planta. Los municipios suelen incluir cargos de estudios, planificación y control de gestión. Vale revisar el listado completo: cargo de PLANTA (no contrata ni honorarios) = estabilidad muy superior a lo que ha visto",
+   "notes": "CONCURSO PÚBLICO DE PLANTA MUNICIPAL. Cargo relevante: PROFESIONAL DE FORMACIÓN SOCIAL - DIDECO (Dirección de Desarrollo Comunitario), dos vacantes: GRADO 12 y GRADO 9. Calidad jurídica PLANTA = estabilidad muy superior a contrata u honorarios, lo mejor que ha aparecido en ese aspecto. También hay PROFESIONAL - SECPLAN y PROFESIONAL - DIDECO genéricos, potencialmente afines. OJO: LA POSTULACIÓN NO ABRE HASTA EL 16 DE SEPTIEMBRE (cierra el 23). Requiere registrarse en el Portal Laboral Santiago con RUT y clave propia. Los requisitos y renta de cada cargo se ven al expandir el concurso en el portal, probablemente tras iniciar sesión. CV listo: cv/CV_BenjaminLang_MuniSantiago.docx/pdf · Fit Fuerte (planta municipal) · CARGO DE PLANTA (estabilidad). Postulación 16 al 23 de septiembre — NO abre aún. Requiere cuenta propia en serviciosweb.munistgo.cl con RUT y clave. Dos grados: 12 y 9. Revisar requisitos al abrir el concurso",
    "category": "sector_publico",
    "source": "LinkedIn (feed curado por Benjamín)",
    "modality": "no_especificado",
-   "deadline": "",
+   "deadline": "Postulación 16-sept a 23-sept-2026",
    "applied_date": "",
    "match_pct": null,
    "gaps": []
@@ -9566,7 +9566,7 @@
   {
    "date": "2026-09-06",
    "new": 25,
-   "new_high": 1,
+   "new_high": 2,
    "new_ids": [
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142489",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142227",
