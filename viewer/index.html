@@ -56,6 +56,12 @@
          border-bottom:none; background:var(--pliego-alt); color:var(--tinta-2); cursor:pointer; }
   .tab.active { background:var(--papel); color:var(--tinta); box-shadow:inset 0 2px 0 var(--cian); }
 
+  .ciudades { display:flex; gap:2px; flex-wrap:wrap; margin-bottom:14px; border-bottom:1px solid var(--regla); }
+  .ciudad { font-family:var(--display); font-weight:600; font-size:.84rem; padding:8px 15px; border:1px solid var(--regla);
+            border-bottom:none; background:var(--pliego-alt); color:var(--tinta-2); cursor:pointer; display:inline-flex; align-items:center; gap:7px; }
+  .ciudad:hover { color:var(--tinta); }
+  .ciudad.active { background:var(--papel); color:var(--tinta); box-shadow:inset 0 2px 0 var(--cian); }
+  .ciudad .cnt { font-family:var(--dato); font-size:.68rem; opacity:.6; }
   .wrap { max-width:1120px; margin:0 auto; padding:22px 20px 80px; }
 
   /* ---------- métricas ---------- */
@@ -182,6 +188,8 @@
 
 <div class="wrap">
   <div id="view-ofertas">
+    <div class="ciudades" id="ciudad-tabs"></div>
+
     <div class="stats">
       <div><div class="n" id="s-total">–</div><div class="l">Activas</div></div>
       <div><div class="n" id="s-nuevas">–</div><div class="l">Nuevas últ. pasada</div></div>
@@ -392,7 +400,7 @@ const RECOS = [
 ];
 
 let DATA = { jobs: [], updated: null, history: [] };
-let state = { q:"", fit:"all", cat:"all", mod:"all", source:"all", salaryOnly:false, hideClosed:false, estado:"activas", orden:"fecha", view:"ofertas" };
+let state = { ciudad:"Santiago", q:"", fit:"all", cat:"all", mod:"all", source:"all", salaryOnly:false, hideClosed:false, estado:"activas", orden:"fecha", view:"ofertas" };
 const applied = new Set(JSON.parse(localStorage.getItem("postuladas") || "[]"));
 const responded = new Set(JSON.parse(localStorage.getItem("respondidas") || "[]"));
 const closed = new Set(JSON.parse(localStorage.getItem("cerradas") || "[]"));
@@ -414,8 +422,29 @@ async function load() {
   const d = new Date(DATA.updated);
   document.getElementById("updated").textContent =
     "Actualizado " + d.toLocaleDateString("es-CL", { day:"numeric", month:"long" }) + " · " + DATA.jobs.length + " ofertas registradas";
+  construirCiudades();
   construirFiltros();
   refreshAll();
+}
+
+const CIUDADES = [
+  { id:"Santiago",         label:"Santiago" },
+  { id:"Ciudad de México", label:"Ciudad de México" },
+  { id:"Bogotá",           label:"Bogotá" },
+  { id:"Buenos Aires",     label:"Buenos Aires" },
+];
+
+function construirCiudades() {
+  const cont = DATA.jobs.reduce((a, j) => { const c = j.city || "Santiago"; a[c] = (a[c] || 0) + 1; return a; }, {});
+  document.getElementById("ciudad-tabs").innerHTML =
+    CIUDADES.filter(c => cont[c.id]).map(c =>
+      `<span class="ciudad${state.ciudad === c.id ? " active" : ""}" data-ciudad="${c.id}">${c.label} <span class="cnt">${cont[c.id]}</span></span>`).join("") +
+    `<span class="ciudad${state.ciudad === "all" ? " active" : ""}" data-ciudad="all">Todas <span class="cnt">${DATA.jobs.length}</span></span>`;
+  document.querySelectorAll("#ciudad-tabs .ciudad").forEach(t => t.addEventListener("click", () => {
+    state.ciudad = t.dataset.ciudad;
+    construirCiudades();
+    refreshAll();
+  }));
 }
 
 function construirFiltros() {
@@ -497,6 +526,7 @@ function render() {
   let jobs = [...DATA.jobs];
   const q = state.q.toLowerCase();
   if (q) jobs = jobs.filter(j => (j.title + " " + j.company + " " + (j.notes || "")).toLowerCase().includes(q));
+  if (state.ciudad !== "all") jobs = jobs.filter(j => (j.city || "Santiago") === state.ciudad);
   if (state.cat !== "all") jobs = jobs.filter(j => j.category === state.cat);
   if (state.fit !== "all") jobs = jobs.filter(j => j.fit === state.fit);
   if (state.mod !== "all") jobs = jobs.filter(j => j.modality === state.mod);
