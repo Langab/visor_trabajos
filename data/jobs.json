@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07T02:48:43.207398+00:00",
+ "updated": "2026-09-08T03:44:25.797061+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -76,6 +76,26 @@
    "category": "investigacion",
    "source": "Sitio propio",
    "modality": "desconocida",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/posts/capital-humano-municipalidad-de-san-miguel-355413125_analistadedatos-dataanalytics-dataanalyst-activity-7502752226797400064-a4AN",
+   "title": "Analista de Datos SSr - Dirección Gral. de Estadísticas y Procesamiento",
+   "company": "Municipalidad de San Miguel (Buenos Aires, ARGENTINA)",
+   "url": "https://www.linkedin.com/posts/capital-humano-municipalidad-de-san-miguel-355413125_analistadedatos-dataanalytics-dataanalyst-activity-7502752226797400064-a4AN",
+   "location": "San Miguel, Buenos Aires, Argentina (híbrido 3x2)",
+   "first_seen": "2026-09-07",
+   "date_posted": "2026-09-07",
+   "fit": "high",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "ARGENTINA, no Chile (correo busquedas@msm.gov.ar y redacción en voseo). Benjamín confirmó disposición a relocalizarse. CALCE TÉCNICO FUERTE: Power BI con modelado avanzado, DAX y relaciones complejas (✓), pipelines ETL y estructuras de BD (✓✓), KPIs y reportes para decisiones (✓✓), relevamiento de requerimientos con equipos técnicos (✓✓), SQL y Excel (✓), 4 años de experiencia en tableros/BI/automatización (✓ tiene 5). GAP: formación pedida \"Sistemas, Ciencias de Datos, Ingeniería o carreras afines\" — Sociología entra por \"afines\" pero es estiramiento. Horario 08:00-16:00, híbrido 3x2, Palacio Municipal de San Miguel. Postulación por correo con remuneración pretendida. CV: cv/CV_BenjaminLang_MuniSanMiguelAR.pdf · Fit Fuerte técnico · ARGENTINA (Buenos Aires) - Benjamín acepta relocalizarse. Power BI/DAX/ETL/KPIs calzan directo; gap de formación (piden Sistemas/Ing. o afines). Híbrido 3x2, 08-16h. Piden enviar CV con remuneración pretendida. VERIFICAR: contratación de extranjeros, moneda y visa de trabajo",
+   "category": "datos-bi",
+   "source": "LinkedIn (feed)",
+   "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
    "match_pct": null,
@@ -9595,6 +9615,15 @@
     "https://lnkd.in/eM67TC_C"
    ],
    "cumulative": 442
+  },
+  {
+   "date": "2026-09-07",
+   "new": 1,
+   "new_high": 1,
+   "new_ids": [
+    "https://www.linkedin.com/posts/capital-humano-municipalidad-de-san-miguel-355413125_analistadedatos-dataanalytics-dataanalyst-activity-7502752226797400064-a4AN"
+   ],
+   "cumulative": 443
   }
  ]
 }
