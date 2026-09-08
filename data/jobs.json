@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-08T03:44:25.797061+00:00",
+ "updated": "2026-09-08T03:47:05.366978+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -76,6 +76,26 @@
    "category": "investigacion",
    "source": "Sitio propio",
    "modality": "desconocida",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4464354658",
+   "title": "Jefe(a) de Analítica - Casa Central",
+   "company": "Duoc UC",
+   "url": "https://www.linkedin.com/jobs/view/4464354658",
+   "location": "Providencia",
+   "first_seen": "2026-09-08",
+   "date_posted": "2026-09-08",
+   "fit": "medium",
+   "status": "evaluada",
+   "salary": "",
+   "notes": "MISMA Dirección de Estudios y Progresión Estudiantil donde postuló en jul-2026 (Analista de Datos, 80/100). A FAVOR: dominio educacional y progresión estudiantil = su trabajo actual en el SLEP (indicadores de trayectoria, asistencia, desvinculación); learning analytics mencionado explícitamente; gobernanza de datos y normativas (✓✓ construyó el marco desde cero); traducir hallazgos complejos a públicos diversos (✓✓); KPIs y dashboards institucionales (✓✓); R y SQL (✓); 4 años en roles técnicos (✓ tiene 5). GAPS DUROS: (1) es JEFATURA — \"lidera y gestiona el equipo de analítica\"; nunca ha liderado equipo formalmente. (2) Formación exigida: \"grado académico en alguna rama de las CIENCIAS EXACTAS O INFORMÁTICA, con estudios posteriores relacionados a analítica de datos\" — Sociología no entra en esa familia y no tiene postgrado en analítica; el aviso no ofrece la salida habitual de \"o carrera afín\". (3) Machine Learning e IA como conocimiento requerido (su ML es estadístico, no productivo). (4) Cloud Azure/AWS (básico). CV listo: cv/CV_BenjaminLang_DuocUC_JefeAnalitica.pdf · Fit Medio (dominio fuerte, requisitos formales en contra) · Misma dirección donde postuló en julio. Dominio educacional/progresión y gobernanza calzan muy bien; PERO es jefatura con gestión de equipo (sin experiencia formal) y la formación pedida es ciencias exactas o informática MÁS estudios posteriores en analítica, sin cláusula de carrera afín. También pide ML/IA y cloud",
+   "category": "datos-bi",
+   "source": "LinkedIn",
+   "modality": "no_especificado",
    "deadline": "",
    "applied_date": "",
    "match_pct": null,
@@ -9624,6 +9644,15 @@
     "https://www.linkedin.com/posts/capital-humano-municipalidad-de-san-miguel-355413125_analistadedatos-dataanalytics-dataanalyst-activity-7502752226797400064-a4AN"
    ],
    "cumulative": 443
+  },
+  {
+   "date": "2026-09-08",
+   "new": 1,
+   "new_high": 0,
+   "new_ids": [
+    "https://www.linkedin.com/jobs/view/4464354658"
+   ],
+   "cumulative": 444
   }
  ]
 }
