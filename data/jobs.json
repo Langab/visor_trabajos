@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T22:05:58.221600+00:00",
+ "updated": "2026-10-13T22:12:56.060718+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -107,6 +107,27 @@
    "gaps": []
   },
   {
+   "id": "https://www.linkedin.com/search/results/content/?keywords=Corporación%20Municipal%20de%20Educación%20Salud%20y%20Atención%20de%20Menores%20de%20Puente%20Alto",
+   "title": "Varios cargos - Corporación Municipal de Puente Alto",
+   "company": "Corporación Municipal de Puente Alto",
+   "url": "https://www.linkedin.com/search/results/content/?keywords=Corporación%20Municipal%20de%20Educación%20Salud%20y%20Atención%20de%20Menores%20de%20Puente%20Alto",
+   "location": "Puente Alto, Santiago",
+   "city": "Santiago",
+   "first_seen": "2026-10-13",
+   "date_posted": "2026-10-13",
+   "fit": "unrated",
+   "status": "feed_por_revisar",
+   "salary": "",
+   "notes": "Del muro: publica Alejandro Valdés Gallardo (reclutamiento). Educación, salud y atención de menores en Puente Alto; no se alcanzó a ver si hay cargos de datos o estudios. Revisar la publicación.",
+   "category": "sector_publico",
+   "source": "LinkedIn (muro)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
    "id": "https://www.linkedin.com/jobs/view/4477864230",
    "title": "Analista Inteligencia de Negocios BI",
    "company": "Agency Network",
@@ -121,6 +142,48 @@
    "notes": "POR REVISAR en detalle.",
    "category": "datos-bi",
    "source": "LinkedIn",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/jobs/view/4477831678",
+   "title": "Data Scientist SSR",
+   "company": "ACHS",
+   "url": "https://www.linkedin.com/jobs/view/4477831678",
+   "location": "Santiago",
+   "city": "Santiago",
+   "first_seen": "2026-10-13",
+   "date_posted": "2026-10-09",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Del muro: la publica Catalina Han Choi (Talent Acquisition ACHS). Casa Central, mutualidad. Proyectos de analytics de punta a punta: minería de datos, algoritmos, modelos y presentación de resultados. Su minería de datos y comunicación calzan; el título dice Data Scientist y pesa el modelamiento, que es su brecha. Ver requisitos completos antes de postular.",
+   "category": "datos-bi",
+   "source": "LinkedIn (muro)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/search/results/content/?keywords=Analista%20de%20Gestión%20y%20Datos%20Dirección%20de%20Evaluación%20del%20Gasto%20Ministerio%20de%20Hábitat",
+   "title": "Analista de Gestión y Datos - Dirección de Evaluación del Gasto",
+   "company": "Ministerio de Hábitat y Desarrollo Urbano (verificar país)",
+   "url": "https://www.linkedin.com/search/results/content/?keywords=Analista%20de%20Gestión%20y%20Datos%20Dirección%20de%20Evaluación%20del%20Gasto%20Ministerio%20de%20Hábitat",
+   "location": "Por determinar",
+   "city": "Buenos Aires",
+   "first_seen": "2026-10-13",
+   "date_posted": "2026-10-09",
+   "fit": "medium",
+   "status": "feed_por_revisar",
+   "salary": "",
+   "notes": "Del muro: publica Nicolás Azcuy, Director de Evaluación del Gasto. El rol combina análisis presupuestario y control de datos. OJO: el Ministerio de Hábitat y Desarrollo Urbano es argentino, hay que confirmar ciudad y condiciones; él aceptó Buenos Aires. Contactar directo al autor de la publicación.",
+   "category": "sector_publico",
+   "source": "LinkedIn (muro)",
    "modality": "presencial",
    "deadline": "",
    "applied_date": "",
@@ -11465,11 +11528,14 @@
   },
   {
    "date": "2026-10-13",
-   "new": 9,
+   "new": 12,
    "new_high": 1,
    "new_ids": [
     "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=138975&c=0&j=0&tipo=convpostularavisoTrabajo",
+    "https://www.linkedin.com/search/results/content/?keywords=Corporación%20Municipal%20de%20Educación%20Salud%20y%20Atención%20de%20Menores%20de%20Puente%20Alto",
     "https://www.linkedin.com/jobs/view/4477864230",
+    "https://www.linkedin.com/jobs/view/4477831678",
+    "https://www.linkedin.com/search/results/content/?keywords=Analista%20de%20Gestión%20y%20Datos%20Dirección%20de%20Evaluación%20del%20Gasto%20Ministerio%20de%20Hábitat",
     "https://www.linkedin.com/jobs/view/4477401757",
     "https://www.linkedin.com/jobs/view/4476121535",
     "https://www.linkedin.com/jobs/view/4475144828",
@@ -11478,7 +11544,7 @@
     "https://www.linkedin.com/jobs/view/4472574227",
     "https://www.linkedin.com/jobs/view/4473544779"
    ],
-   "cumulative": 505
+   "cumulative": 508
   }
  ]
 }
