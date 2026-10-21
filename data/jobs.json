@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T00:33:44.331039+00:00",
+ "updated": "2026-10-21T00:46:33.645681+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -1151,9 +1151,9 @@
    "first_seen": "2026-10-13",
    "date_posted": "2026-10-02",
    "fit": "medium",
-   "status": "nueva",
+   "status": "postulada",
    "salary": "",
-   "notes": "Investigación de mercado senior: ejecutar estudios de punta a punta, interpretar y narrar resultados para clientes, y guiar analistas junior. Su perfil CEP (encuestas, análisis e informes) calza bien; el dominio consumo masivo y la consultoría a clientes son nuevos. Probable inglés.",
+   "notes": "POSTULADA 20-10-2026 por Solicitud sencilla con CV_BenjaminLang_NielsenIQ_EN.pdf; renta declarada CLP 37M brutos/año. Acepta Social Sciences; pide inglés fluido. Investigación de mercado senior: ejecutar estudios de punta a punta, interpretar y narrar resultados para clientes, y guiar analistas junior. Su perfil CEP (encuestas, análisis e informes) calza bien; el dominio consumo masivo y la consultoría a clientes son nuevos. Probable inglés. · Fit Medio (ciencias sociales OK; inglés fluido y consumo masivo en contra) · Renta declarada CLP 37M brutos/año. Santiago híbrido",
    "category": "investigacion",
    "source": "LinkedIn",
    "modality": "presencial",
@@ -1363,7 +1363,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "CV LISTO (cv/CV_BenjaminLang_DuocUC_GestionDocente.pdf). Postulación por el portal SAP SuccessFactors de Duoc: requiere cuenta propia. LA MEJOR DE LA SEMANA EN PRIVADO. Dominio idéntico al suyo pero en educación superior: sistematizar datos del ciclo de gestión docente, tableros, ALERTAS automatizadas, calidad de datos y validación de fuentes, asesorar a áreas internas en cómo estructurar sus datos. Pide Power BI y Excel avanzado (los tiene), 3 años de experiencia (tiene 5) y formación de Ingeniero en Control de Gestión 'o título afín' + curso o diplomado en gestión de datos (NO tiene el diplomado). Brecha: datos de LMS y SAP. Tercera postulación a Duoc este año. · Fit Fuerte (dominio) / brecha formal: diplomado en gestión de datos · Híbrido, Providencia, jornada completa, renta no publicada. ID solicitud 240. Funciones: alertas automatizadas, tableros, calidad de datos y asesoría a áreas internas. Requiere cuenta en empleosduoc.jobs.hr.cloud.sap",
+   "notes": "CERRADA en LinkedIn ('Ya no se aceptan solicitudes', 20-10-2026) sin que se completara el login en el portal. CV LISTO (cv/CV_BenjaminLang_DuocUC_GestionDocente.pdf). Postulación por el portal SAP SuccessFactors de Duoc: requiere cuenta propia. LA MEJOR DE LA SEMANA EN PRIVADO. Dominio idéntico al suyo pero en educación superior: sistematizar datos del ciclo de gestión docente, tableros, ALERTAS automatizadas, calidad de datos y validación de fuentes, asesorar a áreas internas en cómo estructurar sus datos. Pide Power BI y Excel avanzado (los tiene), 3 años de experiencia (tiene 5) y formación de Ingeniero en Control de Gestión 'o título afín' + curso o diplomado en gestión de datos (NO tiene el diplomado). Brecha: datos de LMS y SAP. Tercera postulación a Duoc este año. · Fit Fuerte (dominio) / brecha formal: diplomado en gestión de datos · Híbrido, Providencia, jornada completa, renta no publicada. ID solicitud 240. Funciones: alertas automatizadas, tableros, calidad de datos y asesoría a áreas internas. Requiere cuenta en empleosduoc.jobs.hr.cloud.sap",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "presencial",
