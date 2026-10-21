@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T03:48:45.893840+00:00",
+ "updated": "2026-10-21T03:51:16.670428+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -681,6 +681,27 @@
    "gaps": []
   },
   {
+   "id": "https://mindwork.teamtailor.com/jobs/8546612-analista-de-datos-y-reporteria",
+   "title": "Analista de Datos y Reportería (fundación educacional)",
+   "company": "Fundación educacional (vía Mindwork)",
+   "url": "https://mindwork.teamtailor.com/jobs/8546612-analista-de-datos-y-reporteria",
+   "location": "Santiago Centro",
+   "city": "Santiago",
+   "first_seen": "2026-10-20",
+   "date_posted": "2026-10-20",
+   "fit": "high",
+   "status": "cv_listo",
+   "salary": "",
+   "notes": "Le ofrecieron el cargo por mensaje (Carolina Quiroz, Mindwork). Cuestionario lleno y CV adjunto (cv/CV_BenjaminLang_Mindwork.pdf), PENDIENTE de que Benjamín revise, agregue su renta actual y envíe. Looker Studio avanzado excluyente; Sociología mencionada explícitamente.",
+   "category": "datos-bi",
+   "source": "Contacto directo (Mindwork)",
+   "modality": "híbrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
    "id": "https://www.linkedin.com/jobs/view/4480999135",
    "title": "Analista de datos (Ingeniero/a Power BI)",
    "company": "CONKORD",
@@ -802,13 +823,13 @@
    "first_seen": "2026-10-20",
    "date_posted": "2026-10-19",
    "fit": "low",
-   "status": "nueva",
+   "status": "cv_listo",
    "salary": "$1.750.000 bruto honorarios hasta marzo",
-   "notes": "Del muro. Rendiciones, pagos, programación financiera e indicadores de ejecución. Perfil Administrador Público o Ing. Comercial. Renta y estabilidad bajo su piso.",
+   "notes": "Formulario Google lleno con CV, título y diplomado; FALTAN cédula, certificado de inhabilidades, postgrado (no aplica), registro de prestadores de salud (no aplica) y dirección. Cierra 21-10. Del muro. Rendiciones, pagos, programación financiera e indicadores de ejecución. Perfil Administrador Público o Ing. Comercial. Renta y estabilidad bajo su piso.",
    "category": "sector_publico",
    "source": "LinkedIn (muro)",
    "modality": "presencial",
-   "deadline": "",
+   "deadline": "21-10-2026",
    "applied_date": "",
    "match_pct": null,
    "gaps": []
@@ -2581,7 +2602,7 @@
    "fit": "high",
    "status": "nueva",
    "salary": "",
-   "notes": "MUY BUEN CALCE. Gerencia de Operaciones: automatización de reportería, ETL desde múltiples fuentes, controles de calidad e integridad, atención de requerimientos, documentación. Formación pedida: Ingeniería, Informática, Analítica, Administración 'o carrera afín' y está como deseable ('será un plus'), no excluyente.",
+   "notes": "PENDIENTE: postular en metlifecareers.com (requiere crear cuenta) con cv/CV_BenjaminLang_ChileCompra.pdf. MUY BUEN CALCE. Gerencia de Operaciones: automatización de reportería, ETL desde múltiples fuentes, controles de calidad e integridad, atención de requerimientos, documentación. Formación pedida: Ingeniería, Informática, Analítica, Administración 'o carrera afín' y está como deseable ('será un plus'), no excluyente.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -12457,8 +12478,8 @@
   },
   {
    "date": "2026-10-20",
-   "new": 41,
-   "new_high": 3,
+   "new": 42,
+   "new_high": 4,
    "new_ids": [
     "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=142887&c=0&j=0&tipo=convpostularavisoTrabajo",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=143723&c=0&j=0&tipo=avisotrabajoficha",
@@ -12487,6 +12508,7 @@
     "https://www.linkedin.com/jobs/view/4465909867",
     "https://www.linkedin.com/jobs/view/4481279395",
     "https://www.linkedin.com/jobs/view/4477732748",
+    "https://mindwork.teamtailor.com/jobs/8546612-analista-de-datos-y-reporteria",
     "https://www.linkedin.com/jobs/view/4480999135",
     "https://www.linkedin.com/jobs/view/4481222347",
     "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144016&c=0&j=0&tipo=convpostularavisoTrabajo",
@@ -12502,7 +12524,7 @@
     "https://www.linkedin.com/jobs/view/4475240419",
     "https://www.linkedin.com/jobs/view/4477406352"
    ],
-   "cumulative": 549
+   "cumulative": 550
   },
   {
    "date": "2026-10-21",
@@ -12511,7 +12533,7 @@
    "new_ids": [
     "https://oversoft.peopleforce.io/careers/v/246948-simplidata-bsqueda-analista-de-datos"
    ],
-   "cumulative": 550
+   "cumulative": 551
   }
  ]
 }
