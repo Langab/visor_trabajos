@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T00:07:41.956919+00:00",
+ "updated": "2026-10-21T00:33:44.331039+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -707,6 +707,90 @@
     "Snowflake",
     "DAX avanzado"
    ]
+  },
+  {
+   "id": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144016&c=0&j=0&tipo=convpostularavisoTrabajo",
+   "title": "Analista de Gestión de Reportes",
+   "company": "Agencia de Calidad de la Educación",
+   "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144016&c=0&j=0&tipo=convpostularavisoTrabajo",
+   "location": "Santiago",
+   "city": "Santiago",
+   "first_seen": "2026-10-20",
+   "date_posted": "2026-10-19",
+   "fit": "high",
+   "status": "nueva",
+   "salary": "$2.203.289 bruto promedio (grado 13, contrata; $3.019.823 en meses con bono)",
+   "notes": "LA MEJOR DEL MURO. Sociólogo(a) tiene PUNTAJE PREFERENTE (junto a Docente, Psicólogo, Diseñador de Servicios e ingenierías). Funciones: elaborar y evaluar reportes de resultados de las evaluaciones de aprendizaje y desempeño de la Agencia, bases de licitación, asesoría técnica. Deseable: diplomado o curso en BI, análisis de datos o data storytelling; 3 años en reportería/BI/análisis de datos/educación; 3 años en sector público. Calza directo con su trabajo en el SLEP con datos SIMCE. Cierra 27-10.",
+   "category": "sector_publico",
+   "source": "LinkedIn (muro) → Empleos Públicos",
+   "modality": "presencial",
+   "deadline": "27-10-2026",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://lnkd.in/dNVkaG5V",
+   "title": "Business Insights & Analytics - Data Analytics",
+   "company": "Accenture Argentina",
+   "url": "https://lnkd.in/dNVkaG5V",
+   "location": "Argentina (CABA y otras ciudades, o remoto en el país)",
+   "city": "Buenos Aires",
+   "first_seen": "2026-10-20",
+   "date_posted": "2026-10-19",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Del muro. Varios niveles de seniority; BI, dashboards, analytics. Requiere residir en Argentina o mudarse; hay un requisito de idioma excluyente que no se leyó completo (probablemente inglés).",
+   "category": "datos-bi",
+   "source": "LinkedIn (muro)",
+   "modality": "híbrido/remoto",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "mailto:naragon@executivecon.com",
+   "title": "Business Intelligence Sr. Analyst (bilingüe)",
+   "company": "Cliente de consultora (vía Nathaly Aragon)",
+   "url": "mailto:naragon@executivecon.com",
+   "location": "Bogotá, Colombia",
+   "city": "Bogotá",
+   "first_seen": "2026-10-20",
+   "date_posted": "2026-10-19",
+   "fit": "medium",
+   "status": "nueva",
+   "salary": "",
+   "notes": "Del muro. 4+ años de BI comercial, Power BI para equipos comerciales globales, Salesforce/CRM, deseable Snowflake. INGLÉS AVANZADO B2+/C1: es su brecha (B2). Enviar hoja de vida con asunto 'BI Sr. Analyst'.",
+   "category": "datos-bi",
+   "source": "LinkedIn (muro)",
+   "modality": "híbrido",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://www.linkedin.com/search/results/content/?keywords=Gobierno%20de%20Santiago%20control%20de%20gesti%C3%B3n%20Cuidando%20a%20Quienes%20Cuidan",
+   "title": "Control de gestión - Programa Cuidando a Quienes Cuidan",
+   "company": "Gobierno de Santiago",
+   "url": "https://www.linkedin.com/search/results/content/?keywords=Gobierno%20de%20Santiago%20control%20de%20gesti%C3%B3n%20Cuidando%20a%20Quienes%20Cuidan",
+   "location": "Santiago",
+   "city": "Santiago",
+   "first_seen": "2026-10-20",
+   "date_posted": "2026-10-19",
+   "fit": "low",
+   "status": "nueva",
+   "salary": "$1.750.000 bruto honorarios hasta marzo",
+   "notes": "Del muro. Rendiciones, pagos, programación financiera e indicadores de ejecución. Perfil Administrador Público o Ing. Comercial. Renta y estabilidad bajo su piso.",
+   "category": "sector_publico",
+   "source": "LinkedIn (muro)",
+   "modality": "presencial",
+   "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
   },
   {
    "id": "https://cenia.cl/2026/10/15/trabaja-en-cenia-4/",
@@ -12352,8 +12436,8 @@
   },
   {
    "date": "2026-10-20",
-   "new": 37,
-   "new_high": 2,
+   "new": 41,
+   "new_high": 3,
    "new_ids": [
     "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=142887&c=0&j=0&tipo=convpostularavisoTrabajo",
     "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=143723&c=0&j=0&tipo=avisotrabajoficha",
@@ -12384,6 +12468,10 @@
     "https://www.linkedin.com/jobs/view/4477732748",
     "https://www.linkedin.com/jobs/view/4480999135",
     "https://www.linkedin.com/jobs/view/4481222347",
+    "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144016&c=0&j=0&tipo=convpostularavisoTrabajo",
+    "https://lnkd.in/dNVkaG5V",
+    "mailto:naragon@executivecon.com",
+    "https://www.linkedin.com/search/results/content/?keywords=Gobierno%20de%20Santiago%20control%20de%20gesti%C3%B3n%20Cuidando%20a%20Quienes%20Cuidan",
     "https://cenia.cl/2026/10/15/trabaja-en-cenia-4/",
     "https://www.linkedin.com/jobs/view/4477000118",
     "https://www.linkedin.com/jobs/view/4475249000",
@@ -12393,7 +12481,7 @@
     "https://www.linkedin.com/jobs/view/4475240419",
     "https://www.linkedin.com/jobs/view/4477406352"
    ],
-   "cumulative": 545
+   "cumulative": 549
   }
  ]
 }
