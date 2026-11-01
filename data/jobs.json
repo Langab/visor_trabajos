@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T14:35:04.731285+00:00",
+ "updated": "2026-11-01T22:32:50.736208+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -375,6 +375,27 @@
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
+   "applied_date": "",
+   "match_pct": null,
+   "gaps": []
+  },
+  {
+   "id": "https://lnkd.in/p/diDBxX8R",
+   "title": "Persona investigadora de Monitoreo, Evaluación y Aprendizaje (MEL)",
+   "company": "Estudio PLURAL (Colombia)",
+   "url": "https://lnkd.in/p/diDBxX8R",
+   "location": "Remoto (Colombia)",
+   "city": "Remoto",
+   "first_seen": "2026-10-31",
+   "date_posted": "2026-10-30",
+   "fit": "medium",
+   "status": "cv_listo",
+   "salary": "COP 5.250.000 mensuales, prestación de servicios sin exclusividad (~CLP 1,5 M)",
+   "notes": "Diseño de sistemas de indicadores, líneas base, tableros e informes a donantes (PNUD) en proyectos de discapacidad/víctimas de minas en el conflicto y prevención de VBG. Pide 4 años (3 en M&E con reportes a donantes), experiencia en género/violencias/conflicto, Kobo/ODK. Brechas: donantes, temática, Kobo, posgrado. Borrador con CV en Gmail; ficha 2026-10-31_EstudioPlural_InvestigadoraMEL.md",
+   "category": "monitoreo-evaluacion",
+   "source": "LinkedIn (muro)",
+   "modality": "remoto",
+   "deadline": "03-11-2026",
    "applied_date": "",
    "match_pct": null,
    "gaps": []
@@ -2967,7 +2988,7 @@
    "fit": "high",
    "status": "postulada",
    "salary": "$2.203.289 bruto promedio (grado 13, contrata; $3.019.823 en meses con bono)",
-   "notes": "POSTULADA 21-10-2026 (N° postulación 11666547) con CV electrónico + CV_BenjaminLang_AgenciaCalidad.pdf en \"Otros\". OJO: certificado de experiencia laboral sigue siendo el PDF vacío de 2025. LA MEJOR DEL MURO. Sociólogo(a) tiene PUNTAJE PREFERENTE (junto a Docente, Psicólogo, Diseñador de Servicios e ingenierías). Funciones: elaborar y evaluar reportes de resultados de las evaluaciones de aprendizaje y desempeño de la Agencia, bases de licitación, asesoría técnica. Deseable: diplomado o curso en BI, análisis de datos o data storytelling; 3 años en reportería/BI/análisis de datos/educación; 3 años en sector público. Calza directo con su trabajo en el SLEP con datos SIMCE. Cierra 27-10. · Fit Fuerte (Sociólogo con puntaje preferente) · N° postulación 11666547. Grado 13, $2.203.289 bruto promedio. Cierra 27-10",
+   "notes": "EN PROCESO 30-10-2026: pasó admisibilidad. Prueba técnica online (Talana, Assertive Consulting) lun 02-11-2026 11:00-11:20, única oportunidad; temario SQL, validación de datos, modelamiento/integración, Python, Power BI, evaluaciones educativas. POSTULADA 21-10-2026 (N° postulación 11666547) con CV electrónico + CV_BenjaminLang_AgenciaCalidad.pdf en \"Otros\". OJO: certificado de experiencia laboral sigue siendo el PDF vacío de 2025. LA MEJOR DEL MURO. Sociólogo(a) tiene PUNTAJE PREFERENTE (junto a Docente, Psicólogo, Diseñador de Servicios e ingenierías). Funciones: elaborar y evaluar reportes de resultados de las evaluaciones de aprendizaje y desempeño de la Agencia, bases de licitación, asesoría técnica. Deseable: diplomado o curso en BI, análisis de datos o data storytelling; 3 años en reportería/BI/análisis de datos/educación; 3 años en sector público. Calza directo con su trabajo en el SLEP con datos SIMCE. Cierra 27-10. · Fit Fuerte (Sociólogo con puntaje preferente) · N° postulación 11666547. Grado 13, $2.203.289 bruto promedio. Cierra 27-10",
    "category": "sector_publico",
    "source": "LinkedIn (muro) → Empleos Públicos",
    "modality": "presencial",
@@ -15102,6 +15123,15 @@
     "https://www.linkedin.com/jobs/view/4477012772"
    ],
    "cumulative": 667
+  },
+  {
+   "date": "2026-10-31",
+   "new": 1,
+   "new_high": 0,
+   "new_ids": [
+    "https://lnkd.in/p/diDBxX8R"
+   ],
+   "cumulative": 668
   }
  ]
 }
