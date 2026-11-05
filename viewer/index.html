@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
 <style>
   /* Concepto: un RPG de monstruos de 16 bits. Cada sección es un lugar del mapa y cada oferta es un encuentro.
-     Los sprites y las escenas se dibujan aquí mismo, en canvas: son originales, no usan arte de ningún juego. Un solo look, sin modo oscuro. */
+     Los Pokémon son los sprites frontales de Pokémon Esmeralda (se cargan desde PokéAPI, no se guardan en el repo) y el entrenador viene de Pokémon Showdown. Las escenas se dibujan aquí en canvas; los sprites de canvas quedan de respaldo si falla la carga. Un solo look, sin modo oscuro. */
   :root {
     --noche:#283860; --noche-2:#384878; --borde:#303848; --borde-2:#78a0c8;
     --crema:#f8f8e8; --crema-2:#e8e8d0; --papel:#fffff8;
@@ -54,7 +54,7 @@
   /* ---------- escena y vestíbulo ---------- */
   .escena-hero { position:relative; background:var(--pasto); border-bottom:4px solid var(--borde); overflow:hidden; }
   .escena-hero canvas { display:block; width:100%; height:clamp(128px,23vw,250px); object-fit:cover; }
-  .actor { position:absolute; bottom:18%; width:clamp(48px,6.5vw,80px); height:auto; animation:paso .9s steps(2) infinite; }
+  .actor { position:absolute; bottom:18%; width:auto; height:auto; animation:paso .9s steps(2) infinite; }
   .actor.a1 { left:30%; }
   .actor.a2 { left:58%; bottom:30%; animation-duration:1.4s; }
   @keyframes paso { 50% { transform:translateY(-6%); } }
@@ -123,9 +123,9 @@
   .enc-arriba { display:grid; grid-template-columns:92px minmax(0,1fr); gap:0; background:linear-gradient(#c8e8f8 0 58%, #a8d878 58%); border-bottom:3px solid var(--borde); }
   .enc-pose { position:relative; display:grid; place-items:end center; padding:8px 0 4px; }
   .enc-pose::after { content:""; position:absolute; bottom:4px; left:12px; right:12px; height:10px; background:#70a848; border-radius:50%; z-index:0; }
-  .sprite { width:72px; height:72px; position:relative; z-index:1; }
+  .sprite { width:64px; height:64px; position:relative; z-index:1; }
   .brillo { position:absolute; top:4px; left:6px; color:var(--oro); font-family:var(--pixel); font-size:.8rem; z-index:2; text-shadow:1px 1px 0 var(--tinta); animation:pestanea 1.2s steps(2) infinite; }
-  .capturada { position:absolute; bottom:6px; right:4px; width:28px; height:28px; z-index:2; }
+  .capturada { position:absolute; bottom:2px; right:0; width:30px; height:30px; z-index:2; }
   .enc-hud { margin:8px 8px 8px 0; background:var(--papel); border:3px solid var(--borde); border-radius:6px 6px 14px 6px; padding:8px 10px; min-width:0; }
   .enc-num { font-family:var(--pixel); font-size:.56rem; color:var(--tinta-3); }
   .enc-titulo { display:block; font-size:1.34rem; line-height:1.04; font-weight:700; color:var(--noche); margin:3px 0 2px; overflow-wrap:anywhere; }
@@ -174,7 +174,7 @@
   .linea .pc { font-family:var(--pixel); font-size:.58rem; min-width:42px; color:var(--noche); }
   .linea a { font-size:1.18rem; font-weight:700; color:var(--noche); }
   .linea small { display:block; font-size:1.02rem; color:var(--tinta-2); }
-  .linea .sp { width:44px; height:44px; }
+  .linea .sp { width:64px; height:64px; margin:-10px; }
   .linea .dcha { justify-self:end; }
   @media (max-width:520px) { .linea { grid-template-columns:auto minmax(0,1fr); } .linea .dcha { grid-column:1 / -1; justify-self:start; } }
   .lista { margin:0; padding:0; list-style:none; display:grid; gap:10px; font-size:1.18rem; line-height:1.1; }
@@ -355,7 +355,8 @@
 <footer>
   <div class="wrap">
     <p>Datos en <a href="../data/jobs.json">data/jobs.json</a>, actualizados con Claude Code. Las marcas de postulación se guardan solo en este navegador.</p>
-    <p>Homenaje a los RPG de monstruos de 16 bits. Sprites y escenas dibujados para este tablero; sin relación con Nintendo ni The Pokémon Company.</p>
+    <p>La evolución del Pokémon indica el calce: primera etapa, bajo; etapa final, alto.</p>
+    <p>Proyecto personal sin fines de lucro. Pokémon y sus sprites de Pokémon Esmeralda © Nintendo, Game Freak y Creatures, cargados desde <a href="https://github.com/PokeAPI/sprites" target="_blank" rel="noopener">PokéAPI</a>; entrenador desde Pokémon Showdown. Sin relación oficial con sus dueños.</p>
   </div>
 </footer>
 
@@ -646,7 +647,30 @@ function sprite(nombre, pal) {
 }
 const PAL_ENT = { A:"#3858a8", B:"#283880", C:"#78a0e0", H:"#f0c8a0", D:"#d84830", L:"#f8f8e8", G:"#404858" };
 const PAL_ORBE = { A:"#3070c8", B:"#204890", C:"#a8d0f8" };
-const orbeURL = () => sprite("orbe", PAL_ORBE);
+const BASE_POKE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites";
+const pokeURL = n => `${BASE_POKE}/pokemon/versions/generation-iii/emerald/${n}.png`;
+const orbeURL = () => `${BASE_POKE}/items/poke-ball.png`;
+const entrenadorURL = () => "https://play.pokemonshowdown.com/sprites/trainers/brendan-gen3.png";
+const NOMBRES = { 63:"Abra",64:"Kadabra",65:"Alakazam",81:"Magnemite",82:"Magneton",137:"Porygon",163:"Hoothoot",164:"Noctowl",177:"Natu",178:"Xatu",233:"Porygon2",252:"Treecko",253:"Grovyle",254:"Sceptile",255:"Torchic",256:"Combusken",257:"Blaziken",258:"Mudkip",259:"Marshtomp",260:"Swampert",263:"Zigzagoon",264:"Linoone",270:"Lotad",271:"Lombre",272:"Ludicolo",276:"Taillow",277:"Swellow",278:"Wingull",279:"Pelipper",280:"Ralts",281:"Kirlia",282:"Gardevoir",285:"Shroomish",286:"Breloom",287:"Slakoth",288:"Vigoroth",289:"Slaking",293:"Whismur",294:"Loudred",295:"Exploud",304:"Aron",305:"Lairon",306:"Aggron",309:"Electrike",310:"Manectric",328:"Trapinch",329:"Vibrava",330:"Flygon",333:"Swablu",334:"Altaria",343:"Baltoy",344:"Claydol",374:"Beldum",375:"Metang",376:"Metagross" };
+const LINEAS = {
+  "datos-bi": [[309,310],[374,375,376],[81,82],[137,233]],
+  "investigacion": [[163,164],[63,64,65],[177,178],[343,344]],
+  "sociologia": [[263,264],[287,288,289],[293,294,295],[252,253,254]],
+  "sector_publico": [[304,305,306],[258,259,260],[255,256,257],[328,329,330]],
+  "monitoreo-evaluacion": [[278,279],[333,334],[285,286],[280,281,282]],
+};
+const LINEAS_DEF = [[276,277],[270,271,272]];
+function hashTexto(t) { let h = 0; for (const c of String(t)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+/* La línea evolutiva sale de la categoría y la oferta; la etapa, del calce. */
+function pokemonDe(j, fit) {
+  const lineas = LINEAS[j.category] || LINEAS_DEF, l = lineas[hashTexto(j.id) % lineas.length];
+  return fit === "high" ? l[l.length - 1] : (fit === "medium" && l.length === 3) ? l[1] : l[0];
+}
+/* Si un sprite externo no carga, se usa el dibujado en canvas. */
+addEventListener("error", e => {
+  const im = e.target; if (!im || im.tagName !== "IMG" || !/PokeAPI|pokemonshowdown/.test(im.src)) return;
+  im.src = /trainers/.test(im.src) ? sprite("entrenador", PAL_ENT) : /poke-ball/.test(im.src) ? sprite("orbe", PAL_ORBE) : sprite("gentil", { A:"#b0b0a8", B:"#808078", C:"#d8d8d0" });
+}, true);
 
 /* ---------- escenas: se pintan con tiles de 16x16 ---------- */
 function rng(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
@@ -746,10 +770,8 @@ const tipoDe = j => TIPOS[j.category] || TIPO_DEF;
 const fitOf = j => FIT_ORDER[j.fit] == null ? "low" : j.fit;
 const activas = () => DATA.jobs.filter(j => estadoDe(j) !== "descartada" && !estaCerrada(j));
 
-function spriteDe(j) {
-  const t = tipoDe(j), pal = { A:t.A, B:t.B, C:t.C };
-  return fitOf(j) === "low" ? sprite("huevo", pal) : sprite(t.sp, pal);
-}
+const spriteDe = j => pokeURL(pokemonDe(j, fitOf(j)));
+const nombreDe = j => NOMBRES[pokemonDe(j, fitOf(j))] || "";
 
 async function load() {
   try {
@@ -809,8 +831,8 @@ function encuentroHTML(j) {
     <div class="enc-arriba">
       <div class="enc-pose">
         ${esNueva(j) ? '<span class="brillo" aria-hidden="true">✦</span>' : ""}
-        <img class="sprite" src="${spriteDe(j)}" alt="" width="72" height="72" loading="lazy">
-        ${post ? `<img class="capturada" src="${orbeURL()}" alt="Postulada" width="28" height="28">` : ""}
+        <img class="sprite" src="${spriteDe(j)}" alt="" title="${nombreDe(j)}" width="64" height="64" loading="lazy">
+        ${post ? `<img class="capturada" src="${orbeURL()}" alt="Postulada" width="30" height="30">` : ""}
       </div>
       <div class="enc-hud">
         <span class="enc-num">No ${String(dexNum[j.id] || 0).padStart(3, "0")}</span>
@@ -931,7 +953,7 @@ function renderLab() {
   dist("dist-src", j => j.source || "Sin dato", k => k);
   const parseSal = s => { const m = (s || "").replace(/\./g, "").match(/\d{3,7}/g); return m ? Math.max(...m.map(Number)) : 0; };
   const conSal = a.filter(j => j.salary).sort((x, y) => parseSal(y.salary) - parseSal(x.salary));
-  $("salary-list").innerHTML = conSal.length ? conSal.slice(0, 30).map(j => lineaHTML(j, `<img class="sp" src="${spriteDe(j)}" alt="" width="44" height="44" loading="lazy">`)).join("") : '<div class="vacio">Aún no hay ofertas con renta publicada</div>';
+  $("salary-list").innerHTML = conSal.length ? conSal.slice(0, 30).map(j => lineaHTML(j, `<img class="sp" src="${spriteDe(j)}" alt="" width="64" height="64" loading="lazy">`)).join("") : '<div class="vacio">Aún no hay ofertas con renta publicada</div>';
   const tops = a.filter(j => estadoDe(j) !== "postulada").sort((x, y) => matchDe(y) - matchDe(x) || (esCurado(y) ? 1 : 0) - (esCurado(x) ? 1 : 0)).slice(0, 10);
   $("top-ops").innerHTML = tops.map(j => lineaHTML(j, pcHTML(j))).join("") || '<div class="vacio">Sin datos</div>';
   const gc = {};
@@ -979,7 +1001,7 @@ function renderEquipo() {
   post.sort((a, b) => (responded.has(a.id) ? 1 : 0) - (responded.has(b.id) ? 1 : 0) || (dias(b) ?? -1) - (dias(a) ?? -1));
   $("sg-list").innerHTML = post.length ? post.map(j => {
     const r = responded.has(j.id), d = dias(j), f = fechaAppl(j);
-    return `<div class="linea"><img class="sp" src="${spriteDe(j)}" alt="" width="44" height="44" loading="lazy">
+    return `<div class="linea"><img class="sp" src="${spriteDe(j)}" alt="" width="64" height="64" loading="lazy">
       <div><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a><small>${esc(j.company)}${f ? ` · ${fechaCorta(f)}, hace ${Math.max(0, d)} días` : ""} · ${r ? "respondió" : "en espera"}</small></div>
       <button class="boton dcha ${r ? "resp" : ""}" data-act="resp" data-id="${esc(j.id)}" aria-pressed="${r}">${r ? "Respondieron" : "Marcar respuesta"}</button></div>`;
   }).join("") : '<div class="vacio">Aún no atrapas ninguna. Marca "postulada" en Ofertas.</div>';
@@ -989,12 +1011,12 @@ function refreshAll() { render(); renderLab(); renderMapa(); renderDiario(); ren
 /* ---------- lugares ---------- */
 const LUGARES = {
   ofertas:{ titulo:"Hierba alta", texto:() => { const a = activas(), h = a.filter(j => j.fit === "high").length, n = a.filter(esNueva).length;
-    return `Hay ${a.length} ofertas abiertas en la región. ${h} son de calce alto y ${n === 1 ? "1 apareció" : n + " aparecieron"} en la última pasada.`; }, a1:() => sprite("entrenador", PAL_ENT), a2:() => sprite("biton", { A:TIPOS["datos-bi"].A, B:TIPOS["datos-bi"].B, C:TIPOS["datos-bi"].C }) },
+    return `Hay ${a.length} ofertas abiertas en la región. ${h} son de calce alto y ${n === 1 ? "1 apareció" : n + " aparecieron"} en la última pasada. Mientras más evolucionado el Pokémon, mejor el calce.`; }, a1:() => entrenadorURL(), a2:() => pokeURL(310) },
   equipo:{ titulo:"Centro de equipo", texto:() => { const p = DATA.jobs.filter(j => estadoDe(j) === "postulada").length, r = DATA.jobs.filter(j => responded.has(j.id)).length;
-    return `Llevas ${p} postulaciones en tu equipo y ${r} con respuesta marcada. Aquí se ve cuáles siguen esperando.`; }, a1:() => sprite("entrenador", PAL_ENT), a2:() => orbeURL() },
-  lab:{ titulo:"Laboratorio", texto:() => "Tus estadísticas contra lo que pide el mercado: dónde estás fuerte, qué te falta y qué conviene entrenar.", a1:() => sprite("buhoc", { A:TIPOS.investigacion.A, B:TIPOS.investigacion.B, C:TIPOS.investigacion.C }), a2:() => sprite("entrenador", PAL_ENT) },
-  mapa:{ titulo:"Mapa de la región", texto:() => "Portales, muros, centros de estudio y palabras clave: todos los lugares donde conviene buscar.", a1:() => sprite("timbron", { A:TIPOS.sector_publico.A, B:TIPOS.sector_publico.B, C:TIPOS.sector_publico.C }), a2:() => sprite("gentil", { A:TIPOS.sociologia.A, B:TIPOS.sociologia.B, C:TIPOS.sociologia.C }) },
-  diario:{ titulo:"Diario de ruta", texto:() => { const R = DATA.reporte; return R && R.resumen ? R.resumen : "Lo que trajo cada pasada, para postular temprano a lo recién publicado."; }, a1:() => sprite("entrenador", PAL_ENT), a2:() => sprite("huevo", { A:"#78a0e0", B:"#808890", C:"#a8c8f0" }) },
+    return `Llevas ${p} postulaciones en tu equipo y ${r} con respuesta marcada. Aquí se ve cuáles siguen esperando.`; }, a1:() => entrenadorURL(), a2:() => orbeURL() },
+  lab:{ titulo:"Laboratorio", texto:() => "Tus estadísticas contra lo que pide el mercado: dónde estás fuerte, qué te falta y qué conviene entrenar.", a1:() => pokeURL(164), a2:() => entrenadorURL() },
+  mapa:{ titulo:"Mapa de la región", texto:() => "Portales, muros, centros de estudio y palabras clave: todos los lugares donde conviene buscar.", a1:() => pokeURL(279), a2:() => pokeURL(277) },
+  diario:{ titulo:"Diario de ruta", texto:() => { const R = DATA.reporte; return R && R.resumen ? R.resumen : "Lo que trajo cada pasada, para postular temprano a lo recién publicado."; }, a1:() => entrenadorURL(), a2:() => pokeURL(280) },
 };
 let tipeo = null;
 function escribir(texto) {
@@ -1067,7 +1089,7 @@ $("btn-filtros").addEventListener("click", () => { const p = $("panel"); p.hidde
 $("q").addEventListener("input", e => { state.q = e.target.value; render(); });
 ["estado", "orden", "source", "frescura"].forEach(k => $(k).addEventListener("change", e => { state[k] = e.target.value; render(); }));
 ["salaryOnly", "soloNuevas", "hideClosed"].forEach(k => $(k).addEventListener("change", e => { state[k] = e.target.checked; render(); }));
-$("ent-img").src = sprite("entrenador", PAL_ENT);
+$("ent-img").src = entrenadorURL();
 const ancla = (location.hash || "").slice(1);
 if (LUGARES[ancla]) state.view = ancla;
 addEventListener("hashchange", () => { const h = location.hash.slice(1); if (LUGARES[h] && h !== state.view) irA(h); });
