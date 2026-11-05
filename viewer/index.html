@@ -2,379 +2,135 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#283860">
-<title>Liga Lang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Visor de trabajos</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath fill='%237A2E2E' d='M2 1h1v1h1V1h1v1h1V1h1v13H1V1h1zM9 1h1v1h1V1h1v1h1V1h1v13H9z'/%3E%3Cpath fill='%237A2E2E' d='M6 5h4v9H6z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  /* Concepto: un RPG de monstruos de 16 bits. Cada sección es un lugar del mapa y cada oferta es un encuentro.
-     Los Pokémon son los sprites frontales de Pokémon Esmeralda (se cargan desde PokéAPI, no se guardan en el repo) y el entrenador viene de Pokémon Showdown. Las escenas se dibujan aquí en canvas; los sprites de canvas quedan de respaldo si falla la carga. Un solo look, sin modo oscuro. */
-  :root {
-    --noche:#283860; --noche-2:#384878; --borde:#303848; --borde-2:#78a0c8;
-    --crema:#f8f8e8; --crema-2:#e8e8d0; --papel:#fffff8;
-    --tinta:#282830; --tinta-2:#505868; --tinta-3:#68707f;
-    --pasto:#78c850; --pasto-2:#58a838; --pasto-3:#387828; --camino:#e8d8a0;
-    --oro:#f8c830; --oro-2:#b88810; --rojo:#d84830; --verde:#38a848; --ambar:#e8a020; --azul:#3070c8; --lila:#8050b0;
-    --pixel:"Press Start 2P","Courier New",monospace;
-    --texto:"VT323","Courier New",monospace;
-    color-scheme:light;
-  }
-  *, *::before, *::after { box-sizing:border-box; }
-  [hidden] { display:none !important; }
-  html { -webkit-text-size-adjust:100%; }
-  body { margin:0; background:var(--crema); color:var(--tinta); font-family:var(--texto); font-size:21px; line-height:1.18;
-    background-image:linear-gradient(45deg, #efefd8 25%, transparent 25%, transparent 75%, #efefd8 75%), linear-gradient(45deg, #efefd8 25%, transparent 25%, transparent 75%, #efefd8 75%);
-    background-size:16px 16px; background-position:0 0, 8px 8px; }
-  a { color:var(--azul); }
-  button, input, select { font:inherit; color:inherit; }
-  button { cursor:pointer; }
-  img, canvas { image-rendering:pixelated; }
-  :focus-visible { outline:3px solid var(--rojo); outline-offset:2px; }
-  .wrap { max-width:1180px; margin-inline:auto; padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px)); }
-  h1, h2, h3 { font-family:var(--pixel); font-weight:400; margin:0; }
+:root{
+  --fondo:#F4EEDF;--superficie:#FBF7EC;--tinta:#2B2420;--suave:#5F574C;--linea:#D9CFB8;
+  --vino:#7A2E2E;--oro:#B8862D;--oro-fondo:#F0E3BF;--bosque:#2F5A3B;--piedra:#8A8172;
+  --pixel:"Pixelify Sans","Fira Sans",sans-serif;--texto:"Fira Sans",system-ui,sans-serif;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{
+  --fondo:#1C1814;--superficie:#26211B;--tinta:#EFE7D6;--suave:#B8AE9C;--linea:#3D362C;
+  --vino:#E09A8E;--oro:#D4A94A;--oro-fondo:#3A3020;--bosque:#8CC49B;--piedra:#9A9080;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 16px/1.5 var(--texto);overflow-wrap:anywhere}
+a{color:inherit}
+.pix{display:block;width:24px;height:24px;flex:none}
+.saltar{position:absolute;left:-999px;top:0;background:var(--superficie);padding:12px 16px;z-index:5}
+.saltar:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--vino);outline-offset:2px}
+.marco{max-width:880px;margin:0 auto;padding:0 16px}
 
-  /* caja de diálogo: el borde doble de las consolas de 16 bits */
-  .caja { background:var(--papel); border:4px solid var(--borde); border-radius:10px; box-shadow:inset 0 0 0 3px var(--borde-2), 0 4px 0 rgba(40,56,96,.28); padding:14px 16px; }
+/* Cabecera */
+.cabecera{padding:20px 16px 12px}
+.marca{display:flex;align-items:center;gap:12px}
+.marca .pix{width:32px;height:32px}
+h1{font:600 28px/1.1 var(--pixel);margin:0}
+.actualizado{margin:2px 0 0;font-size:14px;color:var(--suave)}
+.almenas{height:8px;background:
+  repeating-linear-gradient(90deg,var(--tinta) 0 12px,transparent 12px 20px) top/100% 4px no-repeat,
+  linear-gradient(var(--tinta),var(--tinta)) bottom/100% 4px no-repeat}
 
-  /* ---------- barra ---------- */
-  .barra { position:sticky; top:0; z-index:20; background:var(--noche); border-bottom:4px solid var(--oro); }
-  .barra .wrap { display:flex; align-items:center; gap:18px; }
-  .marca { font-family:var(--pixel); font-size:.72rem; color:var(--oro); white-space:nowrap; text-shadow:2px 2px 0 #101830; }
-  .tabs { display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; }
-  .tabs::-webkit-scrollbar { display:none; }
-  .tab { flex:0 0 auto; min-height:48px; padding:0 12px; border:0; background:none; color:#d8e0f0; font-family:var(--pixel); font-size:.62rem; position:relative; }
-  .tab:hover { color:#fff; }
-  .tab[aria-selected="true"] { color:#fff; background:var(--noche-2); }
-  .tab[aria-selected="true"]::before { content:"▶"; color:var(--oro); margin-right:6px; }
-  @media (max-width:760px) { .marca { display:none; } }
+/* Navegación */
+.nav{position:sticky;top:0;z-index:3;background:var(--fondo);border-bottom:1px solid var(--linea)}
+.nav ul{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;margin:0;padding:0}
+.nav a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:6px 4px;
+  font:500 17px/1.15 var(--pixel);text-decoration:none;color:var(--suave);border-bottom:4px solid transparent;text-align:center}
+.nav a:hover{color:var(--tinta);background:var(--superficie)}
+.nav a[aria-current=page]{color:var(--tinta);border-bottom-color:var(--vino);font-weight:600}
+.nav .n{font:500 14px/1 var(--texto);font-variant-numeric:tabular-nums}
+.nav .rotulo{display:flex;flex-wrap:wrap;gap:0 6px;align-items:baseline;justify-content:center}
 
-  /* ---------- escena y vestíbulo ---------- */
-  .escena-hero { position:relative; background:var(--pasto); border-bottom:4px solid var(--borde); overflow:hidden; }
-  .escena-hero canvas { display:block; width:100%; height:clamp(128px,23vw,250px); object-fit:cover; }
-  .actor { position:absolute; bottom:18%; width:auto; height:auto; animation:paso .9s steps(2) infinite; }
-  .actor.a1 { left:30%; }
-  .actor.a2 { left:58%; bottom:30%; animation-duration:1.4s; }
-  @keyframes paso { 50% { transform:translateY(-6%); } }
-  .vest { display:grid; gap:18px; margin-top:-28px; position:relative; padding-bottom:22px; }
-  @media (min-width:900px) { .vest { grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); align-items:start; } }
-  .dialogo h1 { font-size:clamp(1rem,2.6vw,1.45rem); line-height:1.35; color:var(--noche); margin-bottom:10px; text-shadow:2px 2px 0 var(--crema-2); }
-  .dialogo p { margin:0; font-size:1.34rem; line-height:1.16; min-height:3.4em; }
-  .dialogo p::after { content:" ▼"; color:var(--rojo); animation:pestanea 1s steps(2) infinite; font-size:.8em; }
-  @keyframes pestanea { 50% { opacity:0; } }
-  .entrenador { display:grid; gap:10px; }
-  .ent-top { display:flex; align-items:center; gap:12px; }
-  .ent-top img { width:64px; height:64px; background:#c8e8f8; border:3px solid var(--borde); border-radius:6px; flex:0 0 auto; }
-  .ent-top b { font-family:var(--pixel); font-weight:400; font-size:.76rem; display:block; color:var(--noche); margin-bottom:6px; }
-  .ent-top small { font-size:1.02rem; color:var(--tinta-2); display:block; line-height:1.05; }
-  .cifras { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
-  .cifras > div { background:var(--crema-2); border:2px solid var(--borde); border-radius:4px; padding:6px 4px; text-align:center; font-size:1rem; line-height:1; color:var(--tinta-2); }
-  .cifras b { display:block; font-family:var(--pixel); font-weight:400; font-size:1rem; color:var(--tinta); margin-bottom:6px; }
-  .cifras .caliente b { color:var(--rojo); }
-  .medallas { display:flex; flex-wrap:wrap; gap:5px; align-items:center; font-size:1rem; color:var(--tinta-2); }
-  .medalla { width:26px; height:26px; background:#d8d8c8; border:2px solid var(--borde); border-radius:4px; display:grid; place-items:center; font-size:.85rem; color:#909088; }
-  .medalla.ok { background:var(--oro); color:var(--tinta); }
-  .ruta { display:flex; align-items:center; gap:0; }
-  .parada { flex:1 1 0; min-width:0; min-height:44px; padding:4px 2px; background:none; border:0; font-size:1rem; line-height:1; color:var(--tinta-2); display:grid; justify-items:center; gap:4px; position:relative; }
-  .parada i { width:18px; height:18px; display:block; background:var(--crema-2); border:3px solid var(--borde); position:relative; z-index:1; }
-  .parada::before { content:""; position:absolute; top:11px; left:-50%; width:100%; border-top:4px dotted var(--borde-2); }
-  .parada:first-child::before { display:none; }
-  .parada[aria-current="true"] { color:var(--tinta); font-weight:700; }
-  .parada[aria-current="true"] i { background:var(--rojo); }
+/* Vistas */
+main.marco{padding:24px 16px 32px}
+main:focus{outline:none}
+h2{font:600 22px/1.2 var(--pixel);margin:0}
+h2:focus{outline:none}
+.intro{margin:4px 0 16px;color:var(--suave)}
+.herramientas{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:0 0 8px}
+.campo{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--suave);flex:0 1 auto}
+.campo.buscar{flex:1 1 220px}
+input[type=search],select{font:400 16px var(--texto);color:var(--tinta);background:var(--superficie);
+  border:1px solid var(--piedra);border-radius:2px;min-height:44px;padding:8px 10px;width:100%}
+.casilla{display:flex;align-items:center;gap:8px;min-height:44px;color:var(--tinta);font-size:16px;cursor:pointer}
+.casilla input{width:20px;height:20px;accent-color:var(--vino);margin:0}
+.estado{min-height:24px;margin:0 0 8px;font-size:14px;color:var(--suave)}
+.estado:focus{outline:none}
+.estado button{margin-left:8px}
 
-  /* ---------- controles ---------- */
-  .controles { display:grid; gap:10px; margin-bottom:18px; }
-  .fila { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  .fila input[type=search] { flex:1 1 240px; min-width:0; min-height:44px; padding:6px 10px; background:var(--papel); border:3px solid var(--borde); border-radius:4px; font-size:1.25rem; }
-  select { min-height:44px; max-width:100%; padding:4px 8px; background:var(--papel); border:3px solid var(--borde); border-radius:4px; font-size:1.15rem; }
-  .boton { min-height:44px; padding:6px 12px; background:var(--crema-2); border:3px solid var(--borde); border-radius:4px; font-size:1.15rem; box-shadow:0 3px 0 var(--borde); position:relative; text-decoration:none; color:var(--tinta); display:inline-flex; align-items:center; gap:6px; }
-  .boton:hover { background:#fff; }
-  .boton:active { top:3px; box-shadow:none; }
-  .boton.on { background:var(--oro); }
-  .boton.primero { background:var(--noche); color:#fff; }
-  .boton.primero:hover { background:var(--noche-2); }
-  .boton.resp { background:#a8e0a8; }
-  .chip { min-height:40px; padding:4px 10px; background:var(--papel); border:2px solid var(--borde); border-radius:4px; font-size:1.1rem; }
-  .chip[aria-pressed="true"] { background:var(--noche); color:#fff; }
-  .chip small { font-size:.9em; opacity:.75; }
-  .panel { display:grid; gap:12px; }
-  @media (min-width:800px) { .panel { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-  .panel h3 { font-family:var(--texto); font-size:1.1rem; font-weight:700; letter-spacing:.04em; margin-bottom:6px; color:var(--noche); }
-  .check { display:flex; gap:8px; align-items:center; min-height:32px; font-size:1.15rem; }
-  .check input { width:20px; height:20px; accent-color:var(--noche); }
-  .resultado { margin:0; font-size:1.2rem; color:var(--tinta-2); }
+/* Grupos y filas */
+.grupo{margin-top:20px}
+.grupo>h3,summary.titulo{font:500 18px/1.3 var(--pixel);margin:0;padding:8px 0;border-bottom:2px solid var(--tinta);color:var(--tinta)}
+summary.titulo{cursor:pointer;min-height:44px;display:list-item}
+summary.titulo:hover{color:var(--vino)}
+.grupo .n{font:400 14px var(--texto);color:var(--suave);margin-left:4px}
+.lista{list-style:none;margin:0;padding:0}
+.fila{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--linea)}
+.logo{position:relative;display:block;width:40px;height:40px;background:var(--oro-fondo);color:var(--tinta);
+  font:600 15px/40px var(--pixel);text-align:center;
+  clip-path:polygon(0 0,100% 0,100% 72%,90% 72%,90% 82%,80% 82%,80% 90%,60% 90%,60% 100%,40% 100%,40% 90%,20% 90%,20% 82%,10% 82%,10% 72%,0 72%)}
+.logo.con-imagen{background:#fff;clip-path:none;border:1px solid var(--linea);border-radius:2px;overflow:hidden}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;background:#fff;image-rendering:auto}
+.logo img.chico{image-rendering:pixelated;padding:8px}
+.cuerpo{min-width:0}
+.cargo{font:500 16px/1.35 var(--texto);margin:0}
+.cargo a{text-decoration:none}
+.cargo a:hover{text-decoration:underline;color:var(--vino)}
+.empresa{margin:0;color:var(--suave)}
+.meta{display:flex;flex-wrap:wrap;gap:2px 12px;margin:2px 0 0;font-size:14px;color:var(--suave);font-variant-numeric:tabular-nums}
+.detalle{margin:4px 0 0;font-size:14px;color:var(--suave)}
+.marca-t{font-weight:600;color:var(--bosque)}
+.alerta{font-weight:600;color:var(--vino)}
+.acciones{display:flex;gap:8px;align-items:flex-start}
+.fecha{font-size:14px;color:var(--suave);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fecha b{display:block;font-weight:500;color:var(--tinta)}
+button{font:500 14px var(--texto);color:var(--tinta);background:transparent;border:1px solid var(--piedra);
+  border-radius:2px;min-height:44px;padding:0 12px;cursor:pointer;white-space:nowrap}
+button:hover{background:var(--superficie);border-color:var(--tinta)}
+.vacio{padding:24px 0;color:var(--suave)}
+.mas{margin:16px 0 0}
 
-  /* ---------- zonas ---------- */
-  .zona { margin-bottom:26px; }
-  .zona-tit { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; padding:12px 14px; border:4px solid var(--borde); border-radius:8px 8px 0 0; color:#fff; background:var(--z); background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 8px,transparent 8px 16px); }
-  .zona-tit h2 { font-size:clamp(.72rem,1.8vw,.9rem); text-shadow:2px 2px 0 rgba(0,0,0,.4); }
-  .zona-tit span { font-size:1.15rem; }
-  .zona-cuerpo { border:4px solid var(--borde); border-top:0; border-radius:0 0 8px 8px; padding:14px; background:var(--zb); display:grid; gap:14px; }
-  @media (min-width:1000px) { .zona-cuerpo { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; } }
-  .zona-cuerpo > .mas { grid-column:1 / -1; justify-self:center; }
-  .z-high { --z:#b87808; --zb:#f8e8a8; }
-  .z-medium { --z:#387828; --zb:#c8e8a8; }
-  .z-low { --z:#484058; --zb:#c8c4d4; }
+/* Pie */
+.pie{padding:16px 16px 32px;font-size:14px;color:var(--suave)}
+.pie a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--tinta);font-weight:500}
+.pie .pix{width:20px;height:20px}
 
-  /* ---------- encuentro (oferta) ---------- */
-  .encuentro { background:var(--papel); border:3px solid var(--borde); border-radius:8px; box-shadow:0 3px 0 rgba(40,56,96,.3); overflow:hidden; min-width:0; }
-  .enc-arriba { display:grid; grid-template-columns:92px minmax(0,1fr); gap:0; background:linear-gradient(#c8e8f8 0 58%, #a8d878 58%); border-bottom:3px solid var(--borde); }
-  .enc-pose { position:relative; display:grid; place-items:end center; padding:8px 0 4px; }
-  .enc-pose::after { content:""; position:absolute; bottom:4px; left:12px; right:12px; height:10px; background:#70a848; border-radius:50%; z-index:0; }
-  .sprite { width:64px; height:64px; position:relative; z-index:1; }
-  .brillo { position:absolute; top:4px; left:6px; color:var(--oro); font-family:var(--pixel); font-size:.8rem; z-index:2; text-shadow:1px 1px 0 var(--tinta); animation:pestanea 1.2s steps(2) infinite; }
-  .capturada { position:absolute; bottom:2px; right:0; width:30px; height:30px; z-index:2; }
-  .enc-hud { margin:8px 8px 8px 0; background:var(--papel); border:3px solid var(--borde); border-radius:6px 6px 14px 6px; padding:8px 10px; min-width:0; }
-  .enc-num { font-family:var(--pixel); font-size:.56rem; color:var(--tinta-3); }
-  .enc-titulo { display:block; font-size:1.34rem; line-height:1.04; font-weight:700; color:var(--noche); margin:3px 0 2px; overflow-wrap:anywhere; }
-  .enc-emp { display:flex; align-items:center; gap:6px; font-size:1.1rem; color:var(--tinta-2); line-height:1.02; min-width:0; }
-  .logo { width:20px; height:20px; flex:0 0 auto; position:relative; display:grid; place-items:center; background:var(--crema-2); border:2px solid var(--borde); font-size:.7rem; line-height:1; overflow:hidden; }
-  .logo img { position:absolute; inset:0; width:100%; height:100%; background:#fff; }
-  .ps { display:flex; align-items:center; gap:6px; margin-top:7px; font-family:var(--pixel); font-size:.54rem; color:var(--tinta); }
-  .ps-barra { flex:1 1 auto; min-width:40px; height:10px; background:#404858; border:2px solid var(--borde); border-radius:5px; overflow:hidden; }
-  .ps-barra i { display:block; height:100%; background:var(--c); }
-  .enc-cuerpo { padding:10px 12px 12px; display:grid; gap:9px; }
-  .tipos { display:flex; flex-wrap:wrap; gap:5px; }
-  .tipo { font-size:1rem; line-height:1; padding:3px 7px 4px; border:2px solid var(--borde); border-radius:4px; background:var(--t,#e8e8d0); color:var(--tc,var(--tinta)); }
-  .tipo.nueva { --t:var(--rojo); --tc:#fff; font-weight:700; }
-  .tipo.renta { --t:#fff0b0; font-weight:700; }
-  .notas { margin:0; font-size:1.2rem; line-height:1.12; overflow-wrap:anywhere; }
-  .notas.corta { display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden; }
-  .leer { background:none; border:0; padding:2px 0; color:var(--azul); text-decoration:underline; font-size:1.08rem; min-height:28px; justify-self:start; }
-  .meta { display:flex; flex-wrap:wrap; gap:2px 12px; font-size:1.05rem; color:var(--tinta-2); line-height:1.05; }
-  .plazo { font-size:1.15rem; font-weight:700; color:var(--tinta); }
-  .plazo.urge { color:var(--rojo); }
-  .plazo.fin { color:var(--tinta-3); font-weight:400; }
-  .debil { font-size:1.1rem; line-height:1.08; }
-  .debil b { font-family:var(--pixel); font-weight:400; font-size:.54rem; color:var(--rojo); margin-right:6px; }
-  .acciones { display:flex; flex-wrap:wrap; gap:7px; }
-  .acciones .boton { font-size:1.08rem; padding:4px 10px; }
-  .encuentro.apagada { opacity:.62; }
-  .orb-mini { width:18px; height:18px; }
-
-  /* ---------- paneles ---------- */
-  .seccion { display:grid; gap:16px; padding-bottom:28px; }
-  .dos { display:grid; gap:16px; }
-  @media (min-width:800px) { .dos { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; } }
-  .caja h2 { font-size:.72rem; line-height:1.5; color:var(--noche); margin-bottom:10px; }
-  .pista { margin:0 0 10px; font-size:1.12rem; color:var(--tinta-2); line-height:1.1; }
-  .pista .i1, .pista .i2 { display:inline-block; width:14px; height:10px; border:2px solid var(--borde); margin-right:3px; }
-  .pista .i1 { background:var(--azul); } .pista .i2 { background:var(--oro); }
-  .stat { display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr) auto; gap:4px 10px; align-items:center; margin-bottom:6px; font-size:1.12rem; line-height:1; }
-  .stat .nom { overflow-wrap:anywhere; }
-  .stat .val { color:var(--tinta-2); white-space:nowrap; font-size:1.02rem; }
-  .barrita { height:10px; background:#d8d8c8; border:2px solid var(--borde); border-radius:3px; overflow:hidden; }
-  .barrita i { display:block; height:100%; background:var(--azul); }
-  .barrita i.o { background:var(--oro); } .barrita i.g { background:var(--verde); } .barrita i.r { background:var(--rojo); } .barrita i.n { background:var(--tinta-3); }
-  @media (max-width:520px) { .stat { grid-template-columns:minmax(0,1fr) auto; } .stat .barrita { grid-column:1 / -1; grid-row:2; } }
-  .linea { display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:4px 10px; align-items:center; padding:7px 0; border-top:2px dotted var(--borde-2); line-height:1.04; }
-  .linea:first-of-type { border-top:0; }
-  .linea .pc { font-family:var(--pixel); font-size:.58rem; min-width:42px; color:var(--noche); }
-  .linea a { font-size:1.18rem; font-weight:700; color:var(--noche); }
-  .linea small { display:block; font-size:1.02rem; color:var(--tinta-2); }
-  .linea .sp { width:64px; height:64px; margin:-10px; }
-  .linea .dcha { justify-self:end; }
-  @media (max-width:520px) { .linea { grid-template-columns:auto minmax(0,1fr); } .linea .dcha { grid-column:1 / -1; justify-self:start; } }
-  .lista { margin:0; padding:0; list-style:none; display:grid; gap:10px; font-size:1.18rem; line-height:1.1; }
-  .lista li { padding-left:18px; position:relative; }
-  .lista li::before { content:"▶"; position:absolute; left:0; top:0; font-size:.72em; color:var(--rojo); }
-  .palabras { display:flex; flex-wrap:wrap; gap:6px; }
-  .palabras span { padding:2px 8px; background:var(--crema-2); border:2px solid var(--borde); border-radius:4px; font-size:1.1rem; }
-  .fuente { padding:7px 0; border-top:2px dotted var(--borde-2); }
-  .fuente:first-of-type { border-top:0; }
-  .fuente a { font-size:1.2rem; font-weight:700; }
-  .fuente p { margin:1px 0 0; font-size:1.08rem; color:var(--tinta-2); line-height:1.06; }
-  .fuente b { font-size:1.2rem; }
-  .vacio { padding:14px 4px; font-size:1.2rem; color:var(--tinta-2); text-align:center; }
-  .cifras-g { grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); }
-  .mision { background:#fff8c8; }
-  .mision ol { margin:0; padding-left:0; list-style:none; display:grid; gap:10px; counter-reset:m; }
-  .mision li { counter-increment:m; display:grid; grid-template-columns:30px minmax(0,1fr); gap:8px; font-size:1.16rem; line-height:1.08; }
-  .mision li::before { content:counter(m); font-family:var(--pixel); font-size:.72rem; background:var(--noche); color:#fff; width:26px; height:26px; display:grid; place-items:center; border-radius:4px; }
-  .mision a { font-weight:700; color:var(--noche); }
-  footer { background:var(--noche); color:#d8e0f0; padding:18px 0 max(22px,env(safe-area-inset-bottom,0px)); font-size:1.08rem; line-height:1.1; border-top:4px solid var(--oro); }
-  footer p { margin:0 0 6px; }
-  footer a { color:var(--oro); }
-  @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+@media (max-width:620px){
+  h1{font-size:24px}
+  .nav a{flex-direction:column;gap:2px;font-size:15px;min-height:64px}
+  .nav .rotulo{flex-direction:column;align-items:center}
+  .fila{grid-template-columns:40px minmax(0,1fr)}
+  .acciones{grid-column:2}
+  .fecha{grid-column:2;text-align:left}
+  .fecha b{display:inline;margin-right:8px}
+  .campo.buscar{flex-basis:100%}
+  .campo{flex:1 1 40%}
+}
+@media (prefers-reduced-motion:no-preference){a,button{transition:color .12s,background-color .12s,border-color .12s}}
 </style>
 </head>
 <body>
-
-<div class="barra">
-  <div class="wrap">
-    <span class="marca">LIGA LANG</span>
-    <nav class="tabs" role="tablist" aria-label="Lugares del mapa">
-      <button class="tab" role="tab" data-view="ofertas" id="tab-ofertas" aria-controls="view-ofertas">Ofertas</button>
-      <button class="tab" role="tab" data-view="equipo" id="tab-equipo" aria-controls="view-equipo">Postulaciones</button>
-      <button class="tab" role="tab" data-view="lab" id="tab-lab" aria-controls="view-lab">Análisis</button>
-      <button class="tab" role="tab" data-view="mapa" id="tab-mapa" aria-controls="view-mapa">Dónde buscar</button>
-      <button class="tab" role="tab" data-view="diario" id="tab-diario" aria-controls="view-diario">Histórico</button>
-    </nav>
-  </div>
-</div>
-
-<header>
-  <div class="escena-hero" aria-hidden="true">
-    <canvas id="escena" width="640" height="176"></canvas>
-    <img class="actor a1" id="actor1" alt="" width="80" height="80">
-    <img class="actor a2" id="actor2" alt="" width="80" height="80">
-  </div>
-  <div class="wrap vest">
-    <div class="caja dialogo">
-      <h1 id="v-titulo">Liga Lang</h1>
-      <p id="v-texto" aria-live="polite"></p>
-    </div>
-    <div class="caja entrenador">
-      <div class="ent-top">
-        <img id="ent-img" alt="" width="64" height="64">
-        <div><b>Benjamín</b><small id="updated">Cargando…</small></div>
-      </div>
-      <div class="cifras">
-        <div><b id="s-total">–</b>abiertas</div>
-        <div class="caliente"><b id="s-high">–</b>calce alto</div>
-        <div><b id="s-nuevas">–</b>nuevas</div>
-      </div>
-      <div class="medallas" id="medallas" aria-label="Medallas"></div>
-      <nav class="ruta" aria-label="Plano">
-        <button class="parada" data-view="ofertas"><i></i>Hierba</button>
-        <button class="parada" data-view="equipo"><i></i>Equipo</button>
-        <button class="parada" data-view="lab"><i></i>Lab</button>
-        <button class="parada" data-view="mapa"><i></i>Mapa</button>
-        <button class="parada" data-view="diario"><i></i>Diario</button>
-      </nav>
-    </div>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera marco">
+  <div class="marca" id="marca">
+    <div><h1>Visor de trabajos</h1><p class="actualizado" id="actualizado">Cargando…</p></div>
   </div>
 </header>
-
-<main>
-  <section id="view-ofertas" role="tabpanel" aria-labelledby="tab-ofertas">
-    <div class="wrap">
-      <div class="caja controles">
-        <div class="fila">
-          <input type="search" id="q" placeholder="Buscar cargo, institución o palabra" aria-label="Buscar ofertas" autocomplete="off">
-          <button class="boton" id="btn-filtros" aria-expanded="false" aria-controls="panel">Filtros<span id="f-count"></span></button>
-        </div>
-        <div class="fila" id="fit-chips" role="group" aria-label="Filtrar por calce"></div>
-        <div class="panel" id="panel" hidden>
-          <div><h3>ORDEN</h3>
-            <select id="orden" aria-label="Ordenar">
-              <option value="match">Por zona de calce</option>
-              <option value="fecha">Más recientes primero</option>
-              <option value="empresa">Por institución (A-Z)</option>
-            </select></div>
-          <div><h3>FRESCURA</h3>
-            <select id="frescura" aria-label="Antigüedad">
-              <option value="7">Últimos 7 días</option>
-              <option value="30" selected>Últimos 30 días</option>
-              <option value="90">Últimos 90 días</option>
-              <option value="all">Todas las fechas</option>
-            </select></div>
-          <div><h3>ÁREA</h3><div class="fila" id="cat-chips" role="group" aria-label="Área"></div></div>
-          <div><h3>MODALIDAD</h3><div class="fila" id="mod-chips" role="group" aria-label="Modalidad"></div></div>
-          <div><h3>REGIÓN</h3><div class="fila" id="ciudad-chips" role="group" aria-label="Ciudad"></div></div>
-          <div><h3>PORTAL Y ESTADO</h3>
-            <div class="fila">
-              <select id="source" aria-label="Portal"><option value="all">Todos los portales</option></select>
-              <select id="estado" aria-label="Estado">
-                <option value="activas">Activas</option>
-                <option value="todas">Todas</option>
-                <option value="evaluada">Evaluadas</option>
-                <option value="postulada">Postuladas</option>
-                <option value="descartada">Descartadas</option>
-              </select>
-            </div>
-            <label class="check"><input type="checkbox" id="soloNuevas"> Solo nuevas de la última pasada</label>
-            <label class="check"><input type="checkbox" id="salaryOnly"> Solo con renta publicada</label>
-            <label class="check"><input type="checkbox" id="hideClosed" checked> Ocultar cerradas</label>
-          </div>
-        </div>
-        <p class="resultado" id="resultado" aria-live="polite"></p>
-      </div>
-      <div id="list"></div>
-    </div>
-  </section>
-
-  <section id="view-equipo" role="tabpanel" aria-labelledby="tab-equipo" hidden>
-    <div class="wrap seccion">
-      <div class="caja"><div class="cifras cifras-g">
-        <div><b id="sg-post">–</b>postuladas</div>
-        <div><b id="sg-resp">–</b>con respuesta</div>
-        <div><b id="sg-esp">–</b>en espera</div>
-        <div><b id="sg-tasa">–</b>tasa de respuesta</div>
-        <div><b id="sg-dias">–</b>días prom. en espera</div>
-      </div></div>
-      <div class="caja"><h2>Mi equipo</h2><p class="pista">Cada oferta atrapada es una postulación. Marca cuando respondan. Tus marcas se guardan en este navegador.</p><div id="sg-list"></div></div>
-    </div>
-  </section>
-
-  <section id="view-lab" role="tabpanel" aria-labelledby="tab-lab" hidden>
-    <div class="wrap seccion">
-      <div class="caja"><h2>Mis estadísticas frente al mercado</h2>
-        <p class="pista"><span class="i1"></span>mi nivel &nbsp; <span class="i2"></span>qué tan pedido está en las ofertas</p>
-        <div id="perfil-skills"></div></div>
-      <div class="dos">
-        <div class="caja"><h2>Las 10 con más opciones</h2><p class="pista">Sin el signo ~ es calce revisado leyendo el aviso. Con ~ es una estimación.</p><div id="top-ops"></div></div>
-        <div class="caja"><h2>Debilidades que se repiten</h2><p class="pista">Brechas detectadas en los avisos revisados.</p><div id="gaps-list"></div></div>
-      </div>
-      <div class="dos">
-        <div class="caja"><h2>Por calce</h2><div id="dist-fit"></div></div>
-        <div class="caja"><h2>Por modalidad</h2><div id="dist-mod"></div></div>
-        <div class="caja"><h2>Por área</h2><div id="dist-cat"></div></div>
-        <div class="caja"><h2>Por portal</h2><div id="dist-src"></div></div>
-      </div>
-      <div class="caja"><h2>Con renta publicada</h2><div id="salary-list"></div></div>
-      <div class="caja"><h2>Consejos del profesor</h2><ul class="lista" id="recos"></ul></div>
-    </div>
-  </section>
-
-  <section id="view-mapa" role="tabpanel" aria-labelledby="tab-mapa" hidden>
-    <div class="wrap seccion">
-      <div class="caja"><h2>Palabras para buscar</h2><div class="palabras" id="palabras"></div></div>
-      <div class="dos" id="fuentes"></div>
-    </div>
-  </section>
-
-  <section id="view-diario" role="tabpanel" aria-labelledby="tab-diario" hidden>
-    <div class="wrap seccion">
-      <div class="caja mision" id="mision" hidden></div>
-      <div class="caja"><div class="cifras cifras-g">
-        <div><b id="h-hoy">–</b>nuevas última pasada</div>
-        <div><b id="h-hoy-high">–</b>de calce alto</div>
-        <div><b id="h-prom">–</b>promedio por pasada</div>
-        <div><b id="h-total">–</b>registradas</div>
-      </div></div>
-      <div class="dos" id="muros" hidden></div>
-      <div class="caja"><h2>Ofertas nuevas por pasada</h2><p class="pista"><span class="i1"></span>nuevas &nbsp; <span class="i2"></span>de calce alto</p><div id="hist-chart"></div></div>
-      <div class="caja"><h2>Nuevas de la última pasada</h2><p class="pista">En estas conviene postular temprano.</p><div id="hist-nuevas"></div></div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>Datos en <a href="../data/jobs.json">data/jobs.json</a>, actualizados con Claude Code. Las marcas de postulación se guardan solo en este navegador.</p>
-    <p>La evolución del Pokémon indica el calce: primera etapa, bajo; etapa final, alto.</p>
-    <p>Proyecto personal sin fines de lucro. Pokémon y sus sprites de Pokémon Esmeralda © Nintendo, Game Freak y Creatures, cargados desde <a href="https://github.com/PokeAPI/sprites" target="_blank" rel="noopener">PokéAPI</a>; entrenador desde Pokémon Showdown. Sin relación oficial con sus dueños.</p>
-  </div>
-</footer>
+<div class="marco"><div class="almenas" aria-hidden="true"></div></div>
+<nav class="nav" aria-label="Listas"><div class="marco"><ul id="nav"></ul></div></nav>
+<main class="marco" id="contenido" tabindex="-1"></main>
+<footer class="pie marco" id="pie"></footer>
 
 <script>
-const CATS = [
-  { id:"datos-bi",       label:"Datos & BI",     ink:"var(--a-datosbi)" },
-  { id:"investigacion",  label:"Investigación",  ink:"var(--a-investigacion)" },
-  { id:"sociologia",     label:"Sociología",     ink:"var(--a-sociologia)" },
-  { id:"sector_publico", label:"Sector público", ink:"var(--a-publico)" },
-];
-const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.id, c.label]));
-const CAT_INK   = Object.fromEntries(CATS.map(c => [c.id, c.ink]));
-const FIT_LABEL = { high:"Calce alto", medium:"Calce medio", low:"Calce bajo" };
-const FIT_ORDER = { high:0, medium:1, low:2 };
-const FIT_EST   = { high:80, medium:60, low:40 };
-const MOD_LABEL = { remoto:"Remoto", hibrido:"Híbrido", presencial:"Presencial", no_especificado:"Sin declarar" };
-
-// Dominios verificados uno por uno (los que no están muestran iniciales)
 const DOMINIOS = {
   // Banca y finanzas
   "Banco de Chile":"bancochile.cl", "Banchile":"banchileinversiones.cl", "Banco Falabella":"bancofalabella.cl",
@@ -431,670 +187,264 @@ const DOMINIOS = {
   "SLEP Santa Rosa":"slepsantarosa.cl", "Instituto de Previsión Social":"ips.gob.cl",
   "Min. Desarrollo Social":"desarrollosocialyfamilia.gob.cl", "CliO Chile":"cliochile.cl",
   "Cámara de Comercio de Santiago":"ccs.cl", "Opinando Online":"opinando.cl",
+  // Agregados en el rediseño (nov-2026)
+  "SIP Red de Colegios":"sip.cl", "SumUp":"sumup.com", "Rappi":"rappi.com", "Omnicom":"omnicommediagroup.com",
+  "Gobierno de Santiago":"gobiernosantiago.cl", "DIDESOH":"gobiernosantiago.cl", "Agencia de Calidad":"agenciaeducacion.cl",
+  "Servicio de Evaluación Ambiental":"sea.gob.cl", "Subsecretaría de Transportes":"mtt.gob.cl",
+  "Secretaría y Adm. General de Transportes":"mtt.gob.cl", "Ministerio de Transportes":"mtt.gob.cl",
+  "ChileCompra":"chilecompra.cl", "SERNAC":"sernac.cl", "ANID":"anid.cl", "Servicio Electoral":"servel.cl",
+  "Superintendencia de Pensiones":"spensiones.cl", "Comisión Nacional de Acreditación":"cnachile.cl",
+  "Dirección de Educación Pública":"educacionpublica.gob.cl", "INE":"ine.gob.cl", "UTEM":"utem.cl",
+  "Copec Flux":"copecflux.cl", "PsicoLab":"psicolab.cl", "Metro de Santiago":"metro.cl", "CEP":"cepchile.cl",
+  "CONAF":"conaf.cl", "DIPRECA":"dipreca.cl", "IPCHILE":"ipchile.cl", "Parque Metropolitano":"parquemet.cl",
+  "Pinturas Tricolor":"tricolor.cl", "Instituto Sanitas":"sanitas.cl", "QuePlan":"queplan.cl", "Muck Consultores":"muck.cl",
+  "Grupo Simma":"simma.cl", "Elitsoft":"elitsoft.cl", "MACHBANK":"machbank.com", "Ripley":"ripley.cl",
+  "Euromonitor":"euromonitor.com", "Globant":"globant.com", "Evertec":"evertecinc.com", "dentsu":"dentsu.com",
+  "Worldpanel":"worldpanel.com", "Inter-American Development Bank":"iadb.org", "London School of Economics":"lse.ac.uk",
+  "UANDES":"uandes.cl", "College UC":"uc.cl", "Subsecretaría de las Culturas":"cultura.gob.cl",
 };
-const dominioDe = empresa => {
-  const hit = Object.keys(DOMINIOS).find(k => empresa.toLowerCase().includes(k.toLowerCase()));
-  return hit ? DOMINIOS[hit] : null;
+const quitarAcentos = s => (s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9&]+/g," ").trim();
+const CLAVES = Object.keys(DOMINIOS).map(k=>[` ${quitarAcentos(k)} `,DOMINIOS[k]]).sort((a,b)=>b[0].length-a[0].length);
+const dominioDe = empresa => { const e=` ${quitarAcentos(empresa)} `; const hit=CLAVES.find(([k])=>e.includes(k)); return hit?hit[1]:null; };
+const inicialesDe = empresa => (empresa||"").replace(/^(grupo|holding|empresa)\s+/i,"").split(/[\s(,.]+/)
+  .filter(w=>w.length>1 && !/^(de|del|la|el|los|las|y)$/i.test(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase() || "?";
+
+/* Iconos 16×16 dibujados a mano: x tinta, s piedra, P pergamino, r vino, g oro, i hoja */
+const COL={x:"var(--tinta)",s:"var(--piedra)",P:"var(--oro-fondo)",r:"var(--vino)",g:"var(--oro)",i:"var(--suave)"};
+const ICONOS={
+castillo:["................","..s.s.s..s.s.s..","..sssss..sssss..","..sssss..sssss..","..ssxss..ssxss..","..ssssssssssss..","..ssssssssssss..","..ssssssssssss..","..sssssxxsssss..","..ssssxxxxssss..","..ssssxxxxssss..","..ssssxxxxssss..",".sssssxxxxsssss.",".ssssssssssssss.","................","................"],
+pergamino:["................","..xxxxxxxxxxxx..",".xPPPPPPPPPPPPx.",".xxPPPPPPPPPPxx.","..xPiiiiiiiiPx..","..xPPPPPPPPPPx..","..xPiiiiiiiPPx..","..xPPPPPPPPPPx..","..xPiiiiiiiiPx..","..xPPPPPPPPPPx..","..xPiiiiiPPPPx..","..xPPPPPPPPPPx..",".xxPPPPPPPPPPxx.",".xPPPPPPPPPPPPx.","..xxxxxxxxxxxx..","................"],
+carta:["................","................",".xxxxxxxxxxxxxx.",".xPPPPPPPPPPPPx.",".xxPPPPPPPPPPxx.",".xPxPPPPPPPPxPx.",".xPPxxPPPPxxPPx.",".xPPPPxrrxPPPPx.",".xPPPPrrrrPPPPx.",".xPPPPrrrrPPPPx.",".xPPPPPrrPPPPPx.",".xPPPPPPPPPPPPx.",".xxxxxxxxxxxxxx.","................","................","................"],
+espadas:["................",".ss..........ss.",".sis........sis.","..sis......sis..","...sis....sis...","....sis..sis....",".....sissis.....","......siis......","......siis......",".....sissis.....","..g.sis..sis.g..","..ggis....siggg.","...gg......gg...","..xggg....gggx..",".xx..........xx.","................"],
+libro:["................","..xxxxxxxxxxxx..","..xrrrrrrrrrrx..","..xrrgggggrrrx..","..xrrrrrrrrrrx..","..xrrgggrrrrrx..","..xrrrrrrrrrrx..","..xrrrrrrrrrrx..","..xrrrrrrrrrrx..","..xrrrrrrrrrrx..","..xPPPPPPPPPPx..","..xPPPPPPPPPPx..","..xxxxxxxxxxxx..","................","................","................"],
 };
-const inicialesDe = empresa => empresa.replace(/^(grupo|holding|empresa)\s+/i, "")
-  .split(/[\s(]+/).filter(w => w.length > 1).slice(0, 2).map(w => w[0]).join("").toUpperCase() || "?";
-
-const PERFIL = [
-  { name:"R / RStudio",              nivel:92, demanda:35, lvl:"Avanzado ⭐" },
-  { name:"Power BI",                 nivel:88, demanda:88, lvl:"Avanzado ⭐" },
-  { name:"Excel",                    nivel:88, demanda:82, lvl:"Avanzado" },
-  { name:"Comunicación e informes",  nivel:92, demanda:70, lvl:"Fortaleza ⭐" },
-  { name:"Gobernanza y calidad dato",nivel:88, demanda:45, lvl:"Fortaleza ⭐" },
-  { name:"Encuestas y métodos mixtos",nivel:90, demanda:20, lvl:"Fortaleza" },
-  { name:"IA aplicada (Claude Code)",nivel:80, demanda:55, lvl:"Diferenciador ⭐" },
-  { name:"Git / GitLab",             nivel:85, demanda:25, lvl:"Avanzado" },
-  { name:"Python",                   nivel:55, demanda:72, lvl:"Intermedio" },
-  { name:"SQL",                      nivel:55, demanda:95, lvl:"Intermedio ⚠" },
-  { name:"Inglés",                   nivel:62, demanda:48, lvl:"B2 ⚠" },
-  { name:"Cloud (GCP/AWS/Azure)",    nivel:30, demanda:52, lvl:"Básico ⚠" },
-  { name:"Econometría / eval. impacto",nivel:40, demanda:18, lvl:"Brecha ⚠" },
-  { name:"ML productivo",            nivel:25, demanda:40, lvl:"Brecha ⚠" },
-];
-
-const RECOS = [
-  { t:"SQL avanzado es la brecha nº1 del mercado", d:"Aparece como excluyente o deseable en casi todos los avisos de BI que hemos revisado: Itaú, Banco de Chile, GM Financial, KPMG, Walmart, Cencosud Scotiabank. Tu nivel intermedio te deja fuera de varias en el primer filtro. Es también la brecha más rápida de cerrar con tu base: ventanas, CTEs y optimización de consultas. Es la inversión con mejor retorno del listado." },
-  { t:"El inglés avanzado ya te costó procesos", d:"Es excluyente en Banco Central (se valida en entrevista), Brazo Derecho, Cabify y GM Financial. Tu B2 alcanza para leer y escribir, pero el filtro es conversacional. Practicar entrevista técnica en inglés vale más que cualquier certificación." },
-  { t:"La IA aplicada dejó de ser un plus y es un requisito", d:"Cencosud Analytics pide 'uso de IA generativa para análisis y documentación', Itaú Unibanco pide impulsar su adopción, Walmart habla de 'mantener capacidades IA' y GM Financial evalúa el uso responsable de Copilot. Tu trabajo diario con Claude Code te pone por delante: ponlo con nombre propio en el CV, no como adorno." },
-  { t:"Gobernanza y documentación: tu diferenciador raro", d:"Construiste el marco de gobernanza del SLEP desde cero y casi nadie lo tiene. Aparece pedido en Abastible, 42Labs, Zerviz, Walmart y Universidad San Sebastián. Ábrelo en el CV como 'gobernanza de datos y estándares de calidad', no escondido entre los bullets." },
-  { t:"El título de ingeniería es tu fricción constante, no un muro", d:"La mayoría de los avisos dice 'o carrera afín'. Los que sí bloquean son los concursos públicos con carreras taxativas (FNE, MOP) y algunos privados estrictos. Vale la pena revisar ese requisito antes de invertir horas en un CV." },
-  { t:"Para roles de estudios, refuerza el vocabulario econométrico", d:"CENIA te rechazó por escrito señalando menor profundidad en econometría y evaluación de políticas públicas. Tienes el sustrato (análisis inferencial en CEP, validación estadística del Censo): falta nombrarlo con ese vocabulario y sumar experiencia formal de evaluación, como la que dan Fundación Luksic o la asesoría de la UMCE." },
-  { t:"Tu red te ve como investigador, no como analista corporativo", d:"Tu feed de LinkedIn está lleno de concursos académicos, postdocs y consultorías sociales; las vacantes de BI corporativo las encuentras solo por el scraper. Es una ventaja para roles tipo Luksic o Subsecretaría de Evaluación Social, y la razón por la que conviene mantener las dos búsquedas en paralelo." },
-  { t:"Pocas ofertas publican renta: pregúntala temprano", d:"Menos de una de cada diez publica rango. Mantén consistencia con lo ya declarado (Banco Central $2,8M · Brazo Derecho $2,5M · Starken y Luksic $2,0M líquidos) porque el mercado de datos en Santiago es chico y los reclutadores se cruzan." },
-];
-
-const PALABRAS = ["analista de datos","data analyst","business intelligence","analista BI","Power BI","analista de estudios","estudios y monitoreo","analista cuantitativo","investigador/a","asistente de investigación","monitoreo y evaluación","sociólogo/a","cientista social","observatorio","políticas públicas","research analyst","people analytics","UX research"];
-
-const FUENTES = [
-  { grupo:"Muro de LinkedIn", nota:"Lo que nunca llega a un portal: reclutadores, fundaciones y centros que publican como post.", items:[
-    { nombre:"Tu muro", url:"https://www.linkedin.com/feed/", que:"500 publicaciones por pasada, solo lectura." },
-  ]},
-  { grupo:"Portales", nota:"Se revisan en cada pasada.", items:[
-    { nombre:"Empleos Públicos", url:"https://www.empleospublicos.cl/", que:"Ministerios, SLEP, INE. Tu experiencia pesa mucho aquí." },
-    { nombre:"LinkedIn Empleos", url:"https://www.linkedin.com/jobs/", que:"Vía CLI, con búsquedas de datos, BI, estudios e investigación." },
-    { nombre:"Get on Board", url:"https://www.getonbrd.com/jobs/data-science-analytics", que:"Tech y startups. Casi siempre publica renta." },
-    { nombre:"Laborum", url:"https://www.laborum.cl/", que:"Generalista, área de investigación y desarrollo." },
-    { nombre:"Trabajando", url:"https://www.trabajando.cl/", que:"Generalista, empresas establecidas." },
-    { nombre:"On Think Tanks", url:"https://onthinktanks.org/jobs/", que:"Think tanks de América Latina. Requiere navegador." },
-  ]},
-  { grupo:"Centros de estudios", nota:"Tu nicho ideal: investigación aplicada con componente técnico.", items:[
-    { nombre:"CENIA", url:"https://cenia.cl/category/trabaja-en-cenia/", que:"Centro Nacional de IA." },
-    { nombre:"CEP", url:"https://www.cepchile.cl/oportunidades-en-el-cep/", que:"Centro de Estudios Públicos." },
-    { nombre:"Centro de Encuestas UC", url:"https://encuestas.uc.cl/", que:"Encuestas y estudios longitudinales." },
-    { nombre:"Microdatos U. de Chile", url:"https://www.microdatos.cl/", que:"Encuestas y evaluación." },
-    { nombre:"COES", url:"https://coes.cl/", que:"Conflicto y cohesión social." },
-    { nombre:"Data Observatory", url:"https://www.dataobservatory.net/", que:"Datos con impacto público." },
-    { nombre:"Espacio Público", url:"https://www.espaciopublico.cl/trabaja-con-nosotros/", que:"Think tank de políticas públicas." },
-  ]},
-  { grupo:"Estado y agencias", nota:"Publican en Empleos Públicos, a veces solo ahí.", items:[
-    { nombre:"ANID", url:"https://anid.cl/trabaja-con-nosotros/", que:"Agencia de investigación." },
-    { nombre:"Universidad Católica", url:"https://trabajaennuestrosequipos.uc.cl/", que:"Portal propio de la UC." },
-    { nombre:"Encuestadoras", url:"https://www.linkedin.com/jobs/", que:"Cadem, Criteria, Activa, Ipsos, Datavoz, Feedback: publican en LinkedIn." },
-  ]},
-];
-
-/* ---------- pixel art: mapas de 16x16 dibujados a mano ---------- */
-const SPRITES = {
-  biton: [
-    ".......KK.......",
-    "......KCCK......",
-    ".......KK.......",
-    "..KK...KK...KK..",
-    ".KCAKKKKKKKKACK.",
-    ".KAAAAAAAAAAAAK.",
-    "..KAWWKAAWWKAK..",
-    "..KAWKKAAWKKAK..",
-    "..KAAAAAAAAAAK..",
-    "..KCAAKAAKAACK..",
-    "..KAAAAKKAAAAK..",
-    "..KBWWWWWWWWBK..",
-    "..KBWGWRWYWWBK..",
-    "...KKKKKKKKKK...",
-    "...KBK....KBK...",
-    "...KKK....KKK...",
-  ],
-  buhoc: [
-    "..KK........KK..",
-    "..KAK......KAK..",
-    "..KAAKKKKKKAAK..",
-    "..KAAAAAAAAAAK..",
-    ".KAKKKKAAKKKKAK.",
-    ".KAKWWKKKKWWKAK.",
-    ".KAKWKKAAKWKKAK.",
-    ".KAAKKKYYKKKAAK.",
-    ".KBAAAAYYAAAABK.",
-    ".KBBAAAAAAAABBK.",
-    ".KBAWWWWWWWWABK.",
-    "..KBWCWWWWCWBK..",
-    "..KBWWKKKKWWBK..",
-    "...KKKKKKKKKK...",
-    "...KYK....KYK...",
-    "...KKK....KKK...",
-  ],
-  gentil: [
-    "......KKKK......",
-    ".....KAAAAK.....",
-    "....KACAAAAK....",
-    "....KAWKWKAK....",
-    "....KAWKWKAK....",
-    "..KKKAAAAAAKKK..",
-    ".KCCKAAKKAAKCCK.",
-    "KCCCCKAAAAKCCCCK",
-    "KCWKCKBBBBKCWKCK",
-    "KCWKCK.KK.KCWKCK",
-    "KCCCCK.KK.KCCCCK",
-    "KBCKCK.KK.KCKCBK",
-    "KBCCCK....KCCCBK",
-    ".KBBK......KBBK.",
-    "..KK........KK..",
-    "................",
-  ],
-  timbron: [
-    ".....KKKKKK.....",
-    "....KCAAAAAK....",
-    "....KAAAAAAK....",
-    ".....KBAABK.....",
-    ".....KAAAAK.....",
-    "...KKKAAAAKKK...",
-    "..KAAAAAAAAAAK..",
-    "..KAWWKAAWWKAK..",
-    "..KAWKKAAWKKAK..",
-    "..KAAAAKKAAAAK..",
-    "..KBBBBBBBBBBK..",
-    ".KKKKKKKKKKKKKK.",
-    ".KRRRRRRRRRRRRK.",
-    ".KKKKKKKKKKKKKK.",
-    "...KBK....KBK...",
-    "...KKK....KKK...",
-  ],
-  huevo: [
-    "................",
-    "......KKKK......",
-    ".....KWWWWK.....",
-    "....KWWCCWWK....",
-    "...KWWCAACWWK...",
-    "...KWWWCCWWWK...",
-    "..KWWWWWWWWWWK..",
-    "..KWCCWWWWWCWK..",
-    "..KCAACWWWCACK..",
-    "..KWCCWWWWWCWK..",
-    "..KWWWWCCWWWWK..",
-    "...KWWCAACWWK...",
-    "...KBWWCCWWBK...",
-    "....KBBBBBBK....",
-    ".....KKKKKK.....",
-    "................",
-  ],
-  entrenador: [
-    "....KKKKKKKK....",
-    "...KAAAAAAAAK...",
-    "..KAAACAAAAAAK..",
-    "..KBBBBBBBBBBK..",
-    "..KKHHHHHHHHKK..",
-    "..KHKKHHHHKKHK..",
-    "..KHWKHHHHKWHK..",
-    "...KHHHHHHHHK...",
-    "...KKHHKKHHKK...",
-    "..KDDKKKKKKDDK..",
-    ".KHKDDDDDDDDKHK.",
-    ".KHKDLLLLLLDKHK.",
-    "..KKDLLLLLLDKK..",
-    "...KKKKKKKKKK...",
-    "...KGGK..KGGK...",
-    "...KKKK..KKKK...",
-  ],
-  orbe: [
-    "....KKKKKKKK....",
-    "..KKAAAAAAAAKK..",
-    ".KAACAAAAAAAAAK.",
-    ".KACCAAAAAAAAAK.",
-    "KAAAAAAAAAAAAAAK",
-    "KAAAAAAKKAAAAAAK",
-    "KBBBBBKWWKBBBBBK",
-    "KKKKKKWYYWKKKKKK",
-    "KKKKKKWYYWKKKKKK",
-    "KWWWWWKWWKWWWWWK",
-    "KWWWWWWKKWWWWWWK",
-    "KWWWWWWWWWWWWWWK",
-    ".KWWWWWWWWWWWGK.",
-    ".KWWWWWWWWWWGGK.",
-    "..KKWWWWWWGGKK..",
-    "....KKKKKKKK....",
-  ],
+const icono = nombre => {
+  let r=""; ICONOS[nombre].forEach((fila,y)=>{let x=0;while(x<16){const c=fila[x];let w=1;while(x+w<16&&fila[x+w]===c)w++;
+    if(c!==".")r+=`<rect x="${x}" y="${y}" width="${w}" height="1" fill="${COL[c]}"/>`;x+=w;}});
+  return `<svg class="pix" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
 };
-const BASE = { K:"#282830", W:"#ffffff", R:"#d84830", Y:"#f8c830", G:"#58a838" };
-const TIPOS = {
-  "datos-bi":             { sp:"biton",   A:"#f8d030", B:"#c89820", C:"#fff0a0", t:"#f8d030", tc:"#282830", nombre:"Bitón" },
-  "investigacion":        { sp:"buhoc",   A:"#b078d8", B:"#8048a8", C:"#e8c8f8", t:"#8050b0", tc:"#ffffff", nombre:"Búhoc" },
-  "sociologia":           { sp:"gentil",  A:"#e89860", B:"#b86838", C:"#f0c090", t:"#b86838", tc:"#ffffff", nombre:"Gentil" },
-  "sector_publico":       { sp:"timbron", A:"#7898c0", B:"#506888", C:"#c8d8e8", t:"#506888", tc:"#ffffff", nombre:"Timbrón" },
-  "monitoreo-evaluacion": { sp:"buhoc",   A:"#50c0a0", B:"#2f8870", C:"#b0e8d0", t:"#2f8870", tc:"#ffffff", nombre:"Búhoc" },
-};
-const TIPO_DEF = { sp:"gentil", A:"#b0b0a8", B:"#808078", C:"#d8d8d0", t:"#e8e8d0", tc:"#282830", nombre:"Gentil" };
-const cacheSprite = {};
-function sprite(nombre, pal) {
-  const clave = nombre + JSON.stringify(pal || {});
-  if (cacheSprite[clave]) return cacheSprite[clave];
-  const filas = SPRITES[nombre], c = document.createElement("canvas");
-  c.width = c.height = 16;
-  const x = c.getContext("2d"), colores = Object.assign({}, BASE, pal || {});
-  filas.forEach((f, y) => [...f].forEach((ch, i) => { if (ch !== "." && colores[ch]) { x.fillStyle = colores[ch]; x.fillRect(i, y, 1, 1); } }));
-  return cacheSprite[clave] = c.toDataURL();
-}
-const PAL_ENT = { A:"#3858a8", B:"#283880", C:"#78a0e0", H:"#f0c8a0", D:"#d84830", L:"#f8f8e8", G:"#404858" };
-const PAL_ORBE = { A:"#3070c8", B:"#204890", C:"#a8d0f8" };
-const BASE_POKE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites";
-const pokeURL = n => `${BASE_POKE}/pokemon/versions/generation-iii/emerald/${n}.png`;
-const orbeURL = () => `${BASE_POKE}/items/poke-ball.png`;
-const entrenadorURL = () => "https://play.pokemonshowdown.com/sprites/trainers/brendan-gen3.png";
-const NOMBRES = { 63:"Abra",64:"Kadabra",65:"Alakazam",81:"Magnemite",82:"Magneton",137:"Porygon",163:"Hoothoot",164:"Noctowl",177:"Natu",178:"Xatu",233:"Porygon2",252:"Treecko",253:"Grovyle",254:"Sceptile",255:"Torchic",256:"Combusken",257:"Blaziken",258:"Mudkip",259:"Marshtomp",260:"Swampert",263:"Zigzagoon",264:"Linoone",270:"Lotad",271:"Lombre",272:"Ludicolo",276:"Taillow",277:"Swellow",278:"Wingull",279:"Pelipper",280:"Ralts",281:"Kirlia",282:"Gardevoir",285:"Shroomish",286:"Breloom",287:"Slakoth",288:"Vigoroth",289:"Slaking",293:"Whismur",294:"Loudred",295:"Exploud",304:"Aron",305:"Lairon",306:"Aggron",309:"Electrike",310:"Manectric",328:"Trapinch",329:"Vibrava",330:"Flygon",333:"Swablu",334:"Altaria",343:"Baltoy",344:"Claydol",374:"Beldum",375:"Metang",376:"Metagross" };
-const LINEAS = {
-  "datos-bi": [[309,310],[374,375,376],[81,82],[137,233]],
-  "investigacion": [[163,164],[63,64,65],[177,178],[343,344]],
-  "sociologia": [[263,264],[287,288,289],[293,294,295],[252,253,254]],
-  "sector_publico": [[304,305,306],[258,259,260],[255,256,257],[328,329,330]],
-  "monitoreo-evaluacion": [[278,279],[333,334],[285,286],[280,281,282]],
-};
-const LINEAS_DEF = [[276,277],[270,271,272]];
-function hashTexto(t) { let h = 0; for (const c of String(t)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
-/* La línea evolutiva sale de la categoría y la oferta; la etapa, del calce. */
-function pokemonDe(j, fit) {
-  const lineas = LINEAS[j.category] || LINEAS_DEF, l = lineas[hashTexto(j.id) % lineas.length];
-  return fit === "high" ? l[l.length - 1] : (fit === "medium" && l.length === 3) ? l[1] : l[0];
-}
-/* Si un sprite externo no carga, se usa el dibujado en canvas. */
-addEventListener("error", e => {
-  const im = e.target; if (!im || im.tagName !== "IMG" || !/PokeAPI|pokemonshowdown/.test(im.src)) return;
-  im.src = /trainers/.test(im.src) ? sprite("entrenador", PAL_ENT) : /poke-ball/.test(im.src) ? sprite("orbe", PAL_ORBE) : sprite("gentil", { A:"#b0b0a8", B:"#808078", C:"#d8d8d0" });
-}, true);
 
-/* ---------- escenas: se pintan con tiles de 16x16 ---------- */
-function rng(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
-function pintarEscena(cual) {
-  const cv = document.getElementById("escena"), g = cv.getContext("2d"), W = cv.width, H = cv.height, T = 16;
-  const r = rng(cual.length * 7919 + 13);
-  const noche = cual === "diario";
-  const P = noche
-    ? { pasto:"#3a6a58", pasto2:"#2c5448", alto:"#1e4038", camino:"#8a8078", cielo:"#283060", cielo2:"#a85878", arbol:"#183830", arbol2:"#245048", agua:"#304878" }
-    : { pasto:"#78c850", pasto2:"#60b040", alto:"#388828", camino:"#e8d8a0", cielo:"#88d0f8", cielo2:"#c8ecfc", arbol:"#2c7830", arbol2:"#48a040", agua:"#58a8e8" };
-  const rect = (x, y, w, h, c) => { g.fillStyle = c; g.fillRect(x, y, w, h); };
-  const cielo = () => { rect(0, 0, W, 48, P.cielo); rect(0, 32, W, 16, P.cielo2);
-    for (let i = 0; i < 6; i++) { const x = r() * W | 0, y = 6 + r() * 22 | 0; rect(x, y, 26, 6, noche ? "#4a4a80" : "#fff"); rect(x + 6, y - 4, 14, 4, noche ? "#4a4a80" : "#fff"); }
-    if (noche) { for (let i = 0; i < 26; i++) rect(r() * W | 0, r() * 34 | 0, 1, 1, "#fff8c8"); } };
-  const suelo = (y0 = 48) => { for (let y = y0; y < H; y += T) for (let x = 0; x < W; x += T) { rect(x, y, T, T, P.pasto);
-      if (r() > .68) { rect(x + (r() * 12 | 0), y + (r() * 12 | 0), 2, 2, P.pasto2); rect(x + (r() * 12 | 0), y + (r() * 12 | 0), 2, 1, P.pasto2); } } };
-  const alto = (tx, ty) => { const x = tx * T, y = ty * T; rect(x, y, T, T, P.pasto2); for (let i = 0; i < 4; i++) for (let j = 0; j < 2; j++) { const bx = x + i * 4, by = y + j * 8; rect(bx + 1, by + 1, 2, 6, P.alto); rect(bx, by + 3, 1, 3, P.alto); rect(bx + 3, by + 3, 1, 3, P.alto); } };
-  const camino = (tx, ty) => { const x = tx * T, y = ty * T; rect(x, y, T, T, P.camino); rect(x + (r() * 12 | 0), y + (r() * 12 | 0), 2, 2, noche ? "#706860" : "#d0c088"); };
-  const arbol = (x, y) => { rect(x + 6, y + 18, 5, 6, "#6a4830"); rect(x + 2, y + 4, 13, 15, P.arbol); rect(x + 5, y, 7, 6, P.arbol); rect(x, y + 9, 17, 7, P.arbol); rect(x + 4, y + 4, 5, 4, P.arbol2); rect(x + 2, y + 10, 4, 3, P.arbol2); };
-  const flor = (x, y, c) => { rect(x, y, 2, 2, c); rect(x + 3, y + 2, 2, 2, c); rect(x + 1, y + 4, 2, 2, c); };
-  const casa = (x, y, w, h, techo, muro) => { rect(x - 3, y, w + 6, 14, techo); rect(x, y - 5, w, 6, techo); rect(x - 3, y + 11, w + 6, 3, "rgba(0,0,0,.25)"); rect(x, y + 14, w, h, muro); rect(x, y + 14 + h - 3, w, 3, "rgba(0,0,0,.18)");
-    rect(x + w / 2 - 5, y + 14 + h - 15, 10, 15, "#604030"); rect(x + w / 2 - 3, y + 14 + h - 13, 6, 5, "#a8d8f0"); for (let i = 8; i < w - 12; i += 22) { if (Math.abs(i + 4 - w / 2) > 12) { rect(x + i, y + 20, 10, 9, "#284868"); rect(x + i + 1, y + 21, 8, 7, "#a8d8f0"); } } };
-  const cartel = (x, y) => { rect(x + 7, y + 8, 3, 9, "#6a4830"); rect(x, y, 17, 10, "#a87840"); rect(x + 2, y + 2, 13, 2, "#e8d8a0"); rect(x + 2, y + 6, 9, 2, "#e8d8a0"); };
-  const agua = (y0) => { rect(0, y0, W, H - y0, P.agua); for (let i = 0; i < 60; i++) rect(r() * W | 0, y0 + r() * (H - y0) | 0, 8, 2, "#a8d8f8"); };
-  const filaTiles = H / T | 0;
-  cielo();
-  if (cual === "ofertas") {
-    suelo();
-    for (let x = 0; x < 40; x++) { camino(x, filaTiles - 2); }
-    for (let i = 0; i < 80; i++) { const tx = r() * 40 | 0, ty = 3 + (r() * (filaTiles - 5) | 0); if (r() > .25) alto(tx, ty); }
-    for (let i = 0; i < 40; i++) alto(16 + (i % 8), 4 + (i % 3) + (i > 23 ? 0 : 0));
-    for (let i = 0; i < 18; i++) arbol(i * 38 + (r() * 16 | 0), 32 + (r() * 8 | 0));
-    cartel(150, H - 58);
-  } else if (cual === "equipo") {
-    suelo();
-    for (let x = 0; x < 40; x++) camino(x, filaTiles - 2);
-    for (let i = 0; i < 18; i++) arbol(i * 38 + (r() * 14 | 0), 28 + (r() * 6 | 0));
-    casa(220, 50, 180, 62, "#d84830", "#f8f0e0");
-    rect(304, 42, 12, 12, "#f8f8f8"); rect(308, 44, 4, 8, "#d84830"); rect(306, 46, 8, 4, "#d84830");
-    casa(60, 72, 80, 42, "#3070c8", "#e8e0d0"); casa(470, 72, 90, 42, "#e8a020", "#e8e0d0");
-    for (let i = 0; i < 26; i++) flor(r() * W | 0, 118 + (r() * 22 | 0), ["#f8e060", "#f87090", "#fff"][i % 3]);
-  } else if (cual === "lab") {
-    suelo();
-    for (let x = 0; x < 40; x++) camino(x, filaTiles - 2);
-    for (let i = 0; i < 18; i++) arbol(i * 38 + (r() * 14 | 0), 26 + (r() * 8 | 0));
-    casa(180, 48, 280, 64, "#e8e8e0", "#c8d8e8");
-    rect(320, 28, 3, 22, "#606878"); rect(308, 24, 26, 5, "#606878"); rect(308, 20, 4, 6, "#d84830"); rect(330, 20, 4, 6, "#3070c8");
-    for (let i = 0; i < 18; i++) flor(r() * W | 0, 118 + (r() * 22 | 0), i % 2 ? "#f8e060" : "#88a8f0");
-  } else if (cual === "mapa") {
-    agua(48);
-    const isla = (cx, cy, rx, ry) => { for (let y = -ry; y <= ry; y += 4) for (let x = -rx; x <= rx; x += 4) if ((x * x) / (rx * rx) + (y * y) / (ry * ry) < 1 - r() * .08) rect(cx + x, cy + y, 4, 4, P.pasto); };
-    isla(170, 112, 150, 56); isla(470, 104, 140, 62);
-    for (let i = 0; i < 26; i++) arbol(60 + r() * 240 | 0, 70 + r() * 60 | 0);
-    for (let i = 0; i < 22; i++) arbol(360 + r() * 220 | 0, 66 + r() * 66 | 0);
-    for (let x = 60; x < 590; x += 8) if (x < 310 || x > 340) rect(x, 118, 6, 3, P.camino); else rect(x, 118, 6, 3, "#a87840");
-    [[90,118],[190,118],[280,118],[390,118],[480,118],[570,118]].forEach(([x, y], i) => { rect(x - 7, y - 7, 15, 15, "#282830"); rect(x - 5, y - 5, 11, 11, i === 3 ? "#d84830" : "#f8c830"); });
-  } else {
-    suelo();
-    for (let x = 0; x < 40; x++) camino(x, filaTiles - 2);
-    for (let i = 0; i < 24; i++) arbol(i * 28 + (r() * 12 | 0), 30 + (r() * 12 | 0));
-    for (let i = 0; i < 40; i++) alto(r() * 40 | 0, 5 + (r() * 3 | 0));
-    casa(420, 66, 90, 46, "#6a4890", "#b8b0c8"); rect(450, 92, 8, 8, "#f8e060");
-    cartel(250, H - 58);
-  }
+/* Utilidades */
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const urlSegura = u => /^https?:\/\//i.test(u||"")?u:"";
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const MESES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+const aFecha = t => { const m=/^(\d{4})-(\d{2})(?:-(\d{2}))?/.exec(t||""); return m?new Date(+m[1],+m[2]-1,+(m[3]||1)):null; };
+const esAprox = t => /^\d{4}-\d{2}$/.test(t||"");
+const fechaTxt = t => { const d=aFecha(t); if(!d)return "Fecha no registrada"; return esAprox(t)?`≈ ${MESES[d.getMonth()]} ${d.getFullYear()}`:`${d.getDate()} ${MESES[d.getMonth()]} ${d.getFullYear()}`; };
+const HOY=new Date(); HOY.setHours(0,0,0,0);
+const diasDesde = t => { const d=aFecha(t); return d?Math.round((HOY-d)/864e5):null; };
+const haceTxt = t => { if(esAprox(t))return ""; const n=diasDesde(t); if(n===null||n<0)return ""; return n===0?"hoy":n===1?"hace 1 día":`hace ${n} días`; };
+const plazoDe = j => { const s=String(j.deadline||""); let m=/(\d{4})-(\d{2})-(\d{2})/.exec(s); if(m)return new Date(+m[1],+m[2]-1,+m[3]); m=/(\d{2})[-/](\d{2})[-/](\d{4})/.exec(s); return m?new Date(+m[3],+m[2]-1,+m[1]):null; };
+const AFIN={high:"alta",medium:"media",low:"baja"};
+const puntaje = j => j.match_pct ?? ({high:75,medium:55,low:30}[j.fit] ?? 50);
+const calceTxt = j => j.match_pct!=null?`Calce ${j.match_pct}/100`:(AFIN[j.fit]?`Afinidad ${AFIN[j.fit]}`:"Sin evaluar");
+const MODAL={remoto:"Remoto",hibrido:"Híbrido",presencial:"Presencial"};
+const AREA={"datos-bi":"Datos y BI",investigacion:"Investigación",sociologia:"Sociología"};
+
+function logoHTML(empresa){
+  const dom=dominioDe(empresa);
+  const ini=esc(inicialesDe(empresa).slice(0,2));
+  if(!dom) return `<span class="logo" aria-hidden="true">${ini}</span>`;
+  return `<span class="logo con-imagen" aria-hidden="true">${ini}<img alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-dom="${esc(dom)}" src="https://www.google.com/s2/favicons?domain=${esc(dom)}&sz=64"></span>`;
+}
+/* Fuentes de logo: Google, el favicon del propio sitio y DuckDuckGo. Sin logo real queda el escudo con iniciales. */
+const FUENTES=[d=>`https://${d}/favicon.ico`,d=>`https://icons.duckduckgo.com/ip3/${d}.ico`];
+function siguienteLogo(img){
+  const n=+(img.dataset.paso||0);
+  if(n>=FUENTES.length){const s=img.parentElement;img.remove();if(s)s.classList.remove("con-imagen");return;}
+  img.dataset.paso=n+1;img.src=FUENTES[n](img.dataset.dom);
+}
+document.addEventListener("load",e=>{
+  const img=e.target; if(img.tagName!=="IMG"||!img.dataset.dom)return;
+  const paso=+(img.dataset.paso||0);
+  /* Google entrega un globo de 16 px si no conoce el dominio; DuckDuckGo, una flecha gris de 48 px. */
+  if((paso===0&&img.naturalWidth<=16)||(paso===2&&img.naturalWidth===48)){siguienteLogo(img);return;}
+  img.classList.toggle("chico",img.naturalWidth<32);
+},true);
+document.addEventListener("error",e=>{
+  const img=e.target; if(img.tagName==="IMG"&&img.dataset.dom)siguienteLogo(img);
+},true);
+
+/* Estado */
+let DATOS=null, jobs=[], postulaciones=[];
+let marcadas=store.get("visor_marcadas",{}), cerradas=store.get("visor_cerradas",{});
+const filtros={q:"",area:"",orden:"calce",nuevas:false,qP:"",canal:"",qR:"",verR:50};
+let ultimaFecha="";
+
+const pendientes=()=>jobs.filter(j=>j.etapa==="pendiente"&&!marcadas[j.id]&&!cerradas[j.id]);
+const sinRespuesta=()=>postulaciones.filter(p=>p.etapa==="sin_respuesta");
+const enProceso=()=>postulaciones.filter(p=>p.etapa==="proceso");
+const conResultado=()=>postulaciones.filter(p=>p.etapa==="cerrada");
+const caducadas=()=>jobs.filter(j=>j.etapa==="caducada");
+const porId=id=>jobs.find(j=>j.id===id);
+const contiene=(q,...c)=>!q||quitarAcentos(c.join(" ")).includes(quitarAcentos(q));
+
+/* Navegación */
+const VISTAS={pendientes:["Por postular","pergamino"],postuladas:["Postuladas","carta"],proceso:["En proceso","espadas"]};
+const vistaActual=()=>{const h=location.hash.slice(1);return (VISTAS[h]||h==="registro")?h:"pendientes";};
+function pintarNav(){
+  const v=vistaActual();
+  const n={pendientes:pendientes().length,postuladas:sinRespuesta().length+Object.keys(marcadas).length,proceso:enProceso().length};
+  document.getElementById("nav").innerHTML=Object.entries(VISTAS).map(([k,[t,ic]])=>
+    `<li><a href="#${k}" ${v===k?'aria-current="page"':""}>${icono(ic)}<span class="rotulo">${t} <span class="n">${n[k]}</span></span></a></li>`).join("");
+  document.getElementById("pie").innerHTML=`<a href="#registro" ${v==="registro"?'aria-current="page"':""}>${icono("libro")}Registro anterior (${caducadas().length+conResultado().length+Object.keys(cerradas).length})</a>`;
 }
 
-/* ---------- estado ---------- */
-let DATA = { jobs:[], updated:null, history:[], reporte:null };
-const store = {
-  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
-};
-const applied = new Set(store.get("postuladas", []));
-const responded = new Set(store.get("respondidas", []));
-const closed = new Set(store.get("cerradas", []));
-const appliedDates = store.get("postuladas_fechas", {});
-const state = { ciudad:"Santiago", q:"", fit:"all", cat:"all", mod:"all", source:"all", salaryOnly:false, soloNuevas:false, hideClosed:true, estado:"activas", orden:"match", frescura:"30", view:"ofertas" };
-const limites = { high:24, medium:16, low:0 };
-const $ = id => document.getElementById(id);
-const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
-const hoyISO = () => new Date().toISOString().slice(0, 10);
-const dexNum = {};
+/* Filas */
+function filaOferta(j){
+  const url=urlSegura(j.url), plazo=plazoDe(j), d=[];
+  d.push(`<span>${esc(calceTxt(j))}</span>`);
+  if(plazo){const dias=Math.round((plazo-HOY)/864e5);d.push(`<span class="${dias<=7?"alerta":""}">Cierra ${plazo.getDate()} ${MESES[plazo.getMonth()]}${dias<=7?` (${dias===0?"hoy":dias===1?"mañana":`en ${dias} días`})`:""}</span>`);}
+  if(MODAL[j.modality])d.push(`<span>${MODAL[j.modality]}</span>`);
+  if(j.salary)d.push(`<span>${esc(j.salary)}</span>`);
+  d.push(`<span>${esc(j.source)}</span>`);
+  if(j.first_seen===ultimaFecha)d.unshift(`<span class="marca-t">Nueva</span>`);
+  if(j.ya_postulada)d.unshift(`<span class="alerta">Ya postulaste: ${esc(fechaTxt(j.ya_postulada))}</span>`);
+  return `<li class="fila">${logoHTML(j.company)}<div class="cuerpo">
+    <h4 class="cargo">${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(j.title)}</a>`:esc(j.title)}</h4>
+    <p class="empresa">${esc(j.company)}</p><p class="meta">${d.join("")}</p></div>
+    <div class="acciones"><button type="button" data-postule="${esc(j.id)}">Ya postulé</button><button type="button" data-cerro="${esc(j.id)}">Ya cerró</button></div></li>`;
+}
+function filaPostulacion(p){
+  const url=urlSegura(p.url), hace=haceTxt(p.fecha);
+  return `<li class="fila">${logoHTML(p.empresa)}<div class="cuerpo">
+    <h4 class="cargo">${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(p.cargo)}</a>`:esc(p.cargo)}</h4>
+    <p class="empresa">${esc(p.empresa)}</p><p class="meta"><span>${esc(p.canal)}</span></p>
+    ${p.detalle?`<p class="detalle">${esc(p.detalle)}</p>`:""}</div>
+    <div class="fecha"><b>${esc(fechaTxt(p.fecha))}</b>${esc(hace)}</div></li>`;
+}
+function filaLocal(j,fecha,attr,boton){
+  const url=urlSegura(j.url);
+  return `<li class="fila">${logoHTML(j.company)}<div class="cuerpo">
+    <h4 class="cargo">${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(j.title)}</a>`:esc(j.title)}</h4>
+    <p class="empresa">${esc(j.company)}</p><p class="meta"><span>Marcada el ${esc(fechaTxt(fecha))}</span></p></div>
+    <div class="acciones"><button type="button" ${attr}="${esc(j.id)}">${boton}</button></div></li>`;
+}
+const grupo=(titulo,filas,extra="")=>filas.length?`<section class="grupo"><h3>${titulo}<span class="n">${filas.length}</span></h3>${extra}<ul class="lista">${filas.join("")}</ul></section>`:"";
+const plegado=(titulo,filas)=>filas.length?`<details class="grupo"><summary class="titulo">${titulo}<span class="n">${filas.length}</span></summary><ul class="lista">${filas.join("")}</ul></details>`:"";
 
-const estadoDe = j => (applied.has(j.id) || j.status === "postulada") ? "postulada" : j.status;
-const matchDe = j => j.match_pct != null ? j.match_pct : (FIT_EST[j.fit] || 40);
-const esCurado = j => j.match_pct != null;
-const ultimaPasada = () => (DATA.history && DATA.history.length) ? DATA.history[DATA.history.length - 1].date : null;
-const esNueva = j => j.first_seen === ultimaPasada();
-const fechaDe = j => (j.date_posted && j.date_posted !== "desconocida") ? j.date_posted : j.first_seen;
-const plazoVencido = j => j.deadline && /^\d{4}-\d{2}-\d{2}$/.test(j.deadline) && j.deadline < hoyISO();
-const estaCerrada = j => closed.has(j.id) || j.status === "cerrada" || plazoVencido(j);
-const fechaAppl = j => appliedDates[j.id] || j.applied_date || null;
-const diasDesde = f => Math.floor((Date.now() - new Date(f + "T12:00:00").getTime()) / 864e5);
-const colorPS = p => p >= 70 ? "var(--verde)" : p >= 50 ? "var(--ambar)" : "var(--rojo)";
-const fechaCorta = f => new Date(f + "T12:00:00").toLocaleDateString("es-CL", { day:"numeric", month:"short" });
-const tipoDe = j => TIPOS[j.category] || TIPO_DEF;
-const fitOf = j => FIT_ORDER[j.fit] == null ? "low" : j.fit;
-const activas = () => DATA.jobs.filter(j => estadoDe(j) !== "descartada" && !estaCerrada(j));
+/* Vistas */
+function cuerpoPendientes(){
+  let L=pendientes().filter(j=>contiene(filtros.q,j.title,j.company,j.location)&&(!filtros.area||j.category===filtros.area)&&(!filtros.nuevas||j.first_seen===ultimaFecha));
+  const orden={calce:(a,b)=>puntaje(b)-puntaje(a),recientes:(a,b)=>(b.first_seen||"").localeCompare(a.first_seen||""),
+    plazo:(a,b)=>(plazoDe(a)||9e15)-(plazoDe(b)||9e15)}[filtros.orden];
+  L=[...L].sort(orden);
+  const listas=L.filter(j=>j.cv_listo), resto=L.filter(j=>!j.cv_listo);
+  const buenas=resto.filter(j=>puntaje(j)>=50), bajas=resto.filter(j=>puntaje(j)<50);
+  if(!L.length)return `<p class="vacio">No hay ofertas con estos filtros.</p>`;
+  return grupo("Listas para enviar",listas.map(filaOferta),`<p class="detalle">Con CV preparado. Solo falta enviarlas.</p>`)
+    +grupo("Abiertas",buenas.map(filaOferta))+plegado("Calce bajo",bajas.map(filaOferta));
+}
+function vistaPendientes(){
+  const nuevas=pendientes().filter(j=>j.first_seen===ultimaFecha).length;
+  return `<h2 tabindex="-1">Por postular</h2>
+  <p class="intro">Ofertas abiertas a las que aún no postulas. ${nuevas?`${nuevas} ${nuevas===1?"apareció":"aparecieron"} en la última revisión.`:""}</p>
+  <form class="herramientas" onsubmit="return false">
+    <label class="campo buscar">Buscar<input type="search" id="q" value="${esc(filtros.q)}" placeholder="Cargo o empresa"></label>
+    <label class="campo">Área<select id="area"><option value="">Todas</option>${Object.entries(AREA).map(([k,v])=>`<option value="${k}" ${filtros.area===k?"selected":""}>${v}</option>`).join("")}</select></label>
+    <label class="campo">Ordenar por<select id="orden"><option value="calce" ${filtros.orden==="calce"?"selected":""}>Mejor calce</option><option value="recientes" ${filtros.orden==="recientes"?"selected":""}>Más recientes</option><option value="plazo" ${filtros.orden==="plazo"?"selected":""}>Cierre más próximo</option></select></label>
+    <label class="casilla"><input type="checkbox" id="nuevas" ${filtros.nuevas?"checked":""}>Solo nuevas</label>
+  </form>
+  <p class="estado" id="estado" role="status" tabindex="-1"></p>
+  <div id="resultados">${cuerpoPendientes()}</div>`;
+}
+function cuerpoPostuladas(){
+  const L=sinRespuesta().filter(p=>contiene(filtros.qP,p.cargo,p.empresa)&&(!filtros.canal||p.canal===filtros.canal));
+  const rec=L.filter(p=>{const n=diasDesde(p.fecha);return n!==null&&n<=60}), ant=L.filter(p=>!rec.includes(p));
+  const loc=Object.entries(marcadas).map(([id,f])=>{const j=porId(id);return j&&contiene(filtros.qP,j.title,j.company)?filaLocal(j,f,"data-deshacer-post","Deshacer"):""}).filter(Boolean);
+  if(!L.length&&!loc.length)return `<p class="vacio">No hay postulaciones con estos filtros.</p>`;
+  return grupo("Marcadas en este navegador",loc,`<p class="detalle">Solo se ven aquí hasta anotarlas en el registro.</p>`)
+    +grupo("Últimos 60 días",rec.map(filaPostulacion))+plegado("Más antiguas",ant.map(filaPostulacion));
+}
+function vistaPostuladas(){
+  const canales=[...new Set(sinRespuesta().map(p=>p.canal))].sort();
+  return `<h2 tabindex="-1">Postuladas sin respuesta</h2>
+  <p class="intro">Enviadas y sin respuesta registrada. ≈ indica una fecha aproximada.</p>
+  <form class="herramientas" onsubmit="return false">
+    <label class="campo buscar">Buscar<input type="search" id="qP" value="${esc(filtros.qP)}" placeholder="Cargo o empresa"></label>
+    <label class="campo">Canal<select id="canal"><option value="">Todos</option>${canales.map(c=>`<option ${filtros.canal===c?"selected":""}>${esc(c)}</option>`).join("")}</select></label>
+  </form>
+  <p class="estado" id="estado" role="status" tabindex="-1"></p>
+  <div id="resultados">${cuerpoPostuladas()}</div>`;
+}
+function vistaProceso(){
+  const L=enProceso();
+  return `<h2 tabindex="-1">En proceso</h2>
+  <p class="intro">Procesos con entrevista, prueba u otro avance real.</p>
+  ${L.length?`<ul class="lista">${L.map(filaPostulacion).join("")}</ul>`:`<p class="vacio">No hay procesos activos.</p>`}`;
+}
+function cuerpoRegistro(){
+  const L=caducadas().filter(j=>contiene(filtros.qR,j.title,j.company));
+  const vis=L.slice(0,filtros.verR).map(j=>`<li class="fila">${logoHTML(j.company)}<div class="cuerpo">
+    <h4 class="cargo">${esc(j.title)}</h4><p class="empresa">${esc(j.company)}</p>
+    <p class="meta"><span>${esc(j.motivo)}</span></p></div><div class="fecha"><b>${esc(fechaTxt(j.date_posted&&aFecha(j.date_posted)?j.date_posted:j.first_seen))}</b></div></li>`);
+  return `<section class="grupo"><h3>Ofertas caducadas<span class="n">${L.length}</span></h3>${vis.length?`<ul class="lista">${vis.join("")}</ul>`:`<p class="vacio">Sin resultados.</p>`}
+  ${L.length>filtros.verR?`<p class="mas"><button type="button" id="verMas">Mostrar 50 más</button></p>`:""}</section>`;
+}
+function vistaRegistro(){
+  const loc=Object.entries(cerradas).map(([id,f])=>{const j=porId(id);return j?filaLocal(j,f,"data-deshacer-cerro","Deshacer"):""}).filter(Boolean);
+  return `<h2 tabindex="-1">Registro anterior</h2>
+  <p class="intro">Lo que ya no está en las listas principales. Nada se borra.</p>
+  <p class="estado" id="estado" role="status" tabindex="-1"></p>
+  ${grupo("Con resultado",conResultado().map(filaPostulacion))}
+  ${grupo("Marcadas como cerradas en este navegador",loc)}
+  <form class="herramientas" onsubmit="return false" style="margin-top:20px"><label class="campo buscar">Buscar en caducadas<input type="search" id="qR" value="${esc(filtros.qR)}" placeholder="Cargo o empresa"></label></form>
+  <div id="resultados">${cuerpoRegistro()}</div>`;
+}
+function render(foco){
+  const v=vistaActual();
+  pintarNav();
+  const m=document.getElementById("contenido");
+  m.innerHTML={pendientes:vistaPendientes,postuladas:vistaPostuladas,proceso:vistaProceso,registro:vistaRegistro}[v]();
+  document.title=`${v==="registro"?"Registro anterior":VISTAS[v][0]} · Visor de trabajos`;
+  if(foco){m.querySelector("h2").focus({preventScroll:true});window.scrollTo(0,0);}
+}
+function refrescarResultados(){
+  const v=vistaActual(), r=document.getElementById("resultados"); if(!r)return;
+  r.innerHTML={pendientes:cuerpoPendientes,postuladas:cuerpoPostuladas,registro:cuerpoRegistro}[v]();
+}
+function avisar(html){const e=document.getElementById("estado");if(!e)return;e.innerHTML=html;e.focus({preventScroll:true});}
 
-const spriteDe = j => pokeURL(pokemonDe(j, fitOf(j)));
-const nombreDe = j => NOMBRES[pokemonDe(j, fitOf(j))] || "";
-
-async function load() {
-  try {
-    const r = await fetch("../data/jobs.json?v=" + Date.now());
-    DATA = await r.json();
-  } catch (e) {
-    $("list").innerHTML = '<div class="caja vacio">No se pudo cargar data/jobs.json</div>';
-    return;
-  }
-  const ALIAS = { datos:"datos-bi", bi:"datos-bi" };
-  const MOD = { "híbrido":"hibrido", "híbrido/remoto":"hibrido", desconocida:"no_especificado" };
-  DATA.jobs.forEach(j => {
-    j.category = ALIAS[j.category] || j.category || "datos-bi";
-    j.modality = MOD[j.modality] || j.modality || "no_especificado";
-    j.city = j.city || "Santiago";
-  });
-  [...DATA.jobs].sort((a, b) => (a.first_seen || "").localeCompare(b.first_seen || "")).forEach((j, i) => dexNum[j.id] = i + 1);
-  const d = new Date(DATA.updated);
-  $("updated").textContent = "Última pasada: " + d.toLocaleDateString("es-CL", { day:"numeric", month:"long" }) + " · " + DATA.jobs.length + " ofertas vistas";
-  construirFiltros();
-  refreshAll();
-  pintarLugar(false);
-}
-
-function chips(cont, key, items) {
-  $(cont).innerHTML = items.map(([v, l, n]) => `<button class="chip" data-key="${key}" data-val="${esc(v)}" aria-pressed="${state[key] === v}">${esc(l)}${n != null ? ` <small>${n}</small>` : ""}</button>`).join("");
-}
-function construirFiltros() {
-  const cuenta = f => DATA.jobs.reduce((a, j) => (a[f(j)] = (a[f(j)] || 0) + 1, a), {});
-  const cCat = cuenta(j => j.category);
-  chips("cat-chips", "cat", [["all", "Todas"], ...CATS.filter(c => cCat[c.id]).map(c => [c.id, c.label, cCat[c.id]])]);
-  chips("fit-chips", "fit", [["all", "Todas"], ["high", "★ Calce alto"], ["medium", "Calce medio"], ["low", "Calce bajo"]]);
-  const cMod = cuenta(j => j.modality);
-  chips("mod-chips", "mod", [["all", "Todas"], ...["remoto", "hibrido", "presencial", "no_especificado"].filter(m => cMod[m]).map(m => [m, MOD_LABEL[m], cMod[m]])]);
-  const cCiu = cuenta(j => j.city);
-  chips("ciudad-chips", "ciudad", [["Santiago", "Santiago", cCiu.Santiago || 0], ...Object.keys(cCiu).filter(c => c !== "Santiago").sort((a, b) => cCiu[b] - cCiu[a]).map(c => [c, c, cCiu[c]]), ["all", "Todas"]]);
-  const src = $("source");
-  [...new Set(DATA.jobs.map(j => j.source).filter(Boolean))].sort().forEach(s => { const o = document.createElement("option"); o.value = s; o.textContent = s; src.appendChild(o); });
-}
-
-function plazoHTML(j) {
-  if (!j.deadline || !/^\d{4}-\d{2}-\d{2}$/.test(j.deadline)) return "";
-  const dias = Math.ceil((new Date(j.deadline + "T23:59:00").getTime() - Date.now()) / 864e5);
-  if (dias < 0) return `<div class="plazo fin">Plazo cerrado (${fechaCorta(j.deadline)})</div>`;
-  const c = dias === 0 ? "cierra hoy" : dias === 1 ? "queda 1 día" : `quedan ${dias} días`;
-  return `<div class="plazo ${dias <= 5 ? "urge" : ""}">Cierra el ${fechaCorta(j.deadline)} · ${c}</div>`;
-}
-function logoHTML(j) {
-  const dom = dominioDe(j.company);
-  const img = dom ? `<img src="https://icons.duckduckgo.com/ip3/${dom}.ico" alt="" loading="lazy" onerror="this.remove()">` : "";
-  return `<span class="logo" aria-hidden="true">${esc(inicialesDe(j.company).slice(0, 2))}${img}</span>`;
-}
-function encuentroHTML(j) {
-  const est = estadoDe(j), post = est === "postulada", cerrada = estaCerrada(j), p = matchDe(j), t = tipoDe(j);
-  const resp = responded.has(j.id), fa = post ? fechaAppl(j) : null;
-  return `<article class="encuentro ${(est === "descartada" || cerrada) ? "apagada" : ""}">
-    <div class="enc-arriba">
-      <div class="enc-pose">
-        ${esNueva(j) ? '<span class="brillo" aria-hidden="true">✦</span>' : ""}
-        <img class="sprite" src="${spriteDe(j)}" alt="" title="${nombreDe(j)}" width="64" height="64" loading="lazy">
-        ${post ? `<img class="capturada" src="${orbeURL()}" alt="Postulada" width="30" height="30">` : ""}
-      </div>
-      <div class="enc-hud">
-        <span class="enc-num">No ${String(dexNum[j.id] || 0).padStart(3, "0")}</span>
-        <a class="enc-titulo" href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>
-        <div class="enc-emp">${logoHTML(j)}<span>${esc(j.company)}</span></div>
-        <div class="ps" role="img" aria-label="Calce ${esCurado(j) ? "" : "estimado "}${p} por ciento">
-          <span>CALCE</span><span class="ps-barra"><i style="width:${p}%;--c:${colorPS(p)}"></i></span><span>${esCurado(j) ? "" : "~"}${p}</span>
-        </div>
-      </div>
-    </div>
-    <div class="enc-cuerpo">
-      <div class="tipos">
-        <span class="tipo" style="--t:${t.t};--tc:${t.tc}">${esc(CAT_LABEL[j.category] || j.category)}</span>
-        ${esNueva(j) ? '<span class="tipo nueva">NUEVA</span>' : ""}
-        ${j.salary ? `<span class="tipo renta">${esc(j.salary)}</span>` : ""}
-        ${est === "descartada" ? '<span class="tipo">Descartada</span>' : ""}
-        ${cerrada ? '<span class="tipo">Cerrada</span>' : ""}
-      </div>
-      ${plazoHTML(j)}
-      ${fa ? `<div class="meta">Postulada el ${fechaCorta(fa)} · hace ${Math.max(0, diasDesde(fa))} días</div>` : ""}
-      ${j.notes ? `<p class="notas ${j.notes.length > 260 ? "corta" : ""}">${esc(j.notes)}</p>${j.notes.length > 260 ? '<button class="leer" data-leer>Seguir leyendo</button>' : ""}` : ""}
-      ${j.gaps && j.gaps.length ? `<div class="debil"><b>TE FALTA</b>${j.gaps.map(esc).join(" · ")}</div>` : ""}
-      <div class="meta">
-        ${j.location ? `<span>${esc(j.location)}</span>` : ""}
-        ${MOD_LABEL[j.modality] && j.modality !== "no_especificado" ? `<span>${MOD_LABEL[j.modality]}</span>` : ""}
-        <span>${esc(j.source)}</span>
-        ${fechaDe(j) ? `<span>Vista ${fechaCorta(fechaDe(j))}</span>` : ""}
-      </div>
-      <div class="acciones">
-        <a class="boton primero" href="${esc(j.url)}" target="_blank" rel="noopener">Ver aviso</a>
-        <button class="boton ${post ? "on" : ""}" data-act="toggle" data-id="${esc(j.id)}" aria-pressed="${post}"><img class="orb-mini" src="${orbeURL()}" alt="" width="18" height="18">${post ? "Postulada" : "Marcar postulada"}</button>
-        ${post ? `<button class="boton ${resp ? "resp" : ""}" data-act="resp" data-id="${esc(j.id)}" aria-pressed="${resp}">${resp ? "Respondieron" : "Marcar respuesta"}</button>` : ""}
-        <button class="boton" data-act="closed" data-id="${esc(j.id)}">${closed.has(j.id) ? "Reabrir" : "Ya cerró"}</button>
-        ${typeof speechSynthesis !== "undefined" ? `<button class="boton" data-audio="${esc(j.id)}" aria-pressed="false"><span>Escuchar</span></button>` : ""}
-      </div>
-    </div>
-  </article>`;
-}
-
-function filtrar() {
-  let js = [...DATA.jobs];
-  const q = state.q.toLowerCase().trim();
-  if (q) js = js.filter(j => (j.title + " " + j.company + " " + (j.notes || "")).toLowerCase().includes(q));
-  if (state.ciudad !== "all") js = js.filter(j => j.city === state.ciudad);
-  if (state.cat !== "all") js = js.filter(j => j.category === state.cat);
-  if (state.fit !== "all") js = js.filter(j => fitOf(j) === state.fit);
-  if (state.mod !== "all") js = js.filter(j => j.modality === state.mod);
-  if (state.source !== "all") js = js.filter(j => j.source === state.source);
-  if (state.salaryOnly) js = js.filter(j => j.salary);
-  if (state.soloNuevas) js = js.filter(esNueva);
-  if (state.hideClosed) js = js.filter(j => !estaCerrada(j));
-  if (state.estado === "activas") js = js.filter(j => estadoDe(j) !== "descartada");
-  else if (state.estado !== "todas") js = js.filter(j => estadoDe(j) === state.estado);
-  if (state.frescura !== "all") {
-    const lim = new Date(Date.now() - +state.frescura * 864e5).toISOString().slice(0, 10);
-    js = js.filter(j => fechaDe(j) >= lim);
-  }
-  return js;
-}
-const ZONAS = {
-  high:{ titulo:"★ Zona legendaria", sub:"Calce alto. Parte por acá." },
-  medium:{ titulo:"Hierba alta", sub:"Calce medio. Revisa los requisitos." },
-  low:{ titulo:"Cueva", sub:"Calce bajo. Solo si hay algo que te tinque." },
-};
-function zonaHTML(f, g) {
-  const lim = limites[f], vis = g.slice(0, lim);
-  const mas = g.length - vis.length;
-  return `<section class="zona z-${f}">
-    <div class="zona-tit"><h2>${ZONAS[f].titulo}</h2><span>${g.length} · ${ZONAS[f].sub}</span></div>
-    <div class="zona-cuerpo">${vis.map(encuentroHTML).join("")}${mas > 0 ? `<button class="boton mas" data-mas="${f}">Mostrar ${lim === 0 ? "" : "más "}(${mas})</button>` : ""}</div>
-  </section>`;
-}
-function render() {
-  const js = filtrar();
-  const extra = [state.cat, state.mod, state.source].filter(v => v !== "all").length + (state.salaryOnly ? 1 : 0) + (state.soloNuevas ? 1 : 0) + (state.estado !== "activas" ? 1 : 0) + (state.frescura !== "30" ? 1 : 0) + (state.ciudad !== "Santiago" ? 1 : 0) + (state.hideClosed ? 0 : 1);
-  $("f-count").textContent = extra ? ` (${extra})` : "";
-  $("resultado").textContent = `${js.length} ${js.length === 1 ? "encuentro" : "encuentros"} con estos filtros`;
-  const a = activas();
-  $("s-total").textContent = a.length;
-  $("s-high").textContent = a.filter(j => j.fit === "high").length;
-  $("s-nuevas").textContent = a.filter(esNueva).length;
-  medallas();
-  if (!js.length) { $("list").innerHTML = '<div class="caja vacio">Nada por aquí. Prueba soltar algún filtro.</div>'; return; }
-  if (state.orden === "match") {
-    js.sort((a, b) => matchDe(b) - matchDe(a) || fechaDe(b).localeCompare(fechaDe(a)));
-    $("list").innerHTML = ["high", "medium", "low"].map(f => { const g = js.filter(j => fitOf(j) === f); return g.length ? zonaHTML(f, g) : ""; }).join("");
-    return;
-  }
-  if (state.orden === "fecha") js.sort((a, b) => fechaDe(b).localeCompare(fechaDe(a)) || matchDe(b) - matchDe(a));
-  else js.sort((a, b) => a.company.localeCompare(b.company));
-  const lim = limites.plano || 40;
-  $("list").innerHTML = `<section class="zona z-medium"><div class="zona-tit"><h2>Todos los encuentros</h2><span>${js.length}</span></div>
-    <div class="zona-cuerpo">${js.slice(0, lim).map(encuentroHTML).join("")}${js.length > lim ? `<button class="boton mas" data-mas="plano">Mostrar más (${js.length - lim})</button>` : ""}</div></section>`;
-}
-function medallas() {
-  const post = DATA.jobs.filter(j => estadoDe(j) === "postulada").length, resp = DATA.jobs.filter(j => responded.has(j.id)).length, vistas = DATA.jobs.length;
-  const M = [[post >= 1, "Primera postulación"], [post >= 10, "10 postulaciones"], [post >= 25, "25 postulaciones"], [resp >= 1, "Primera respuesta"], [resp >= 5, "5 respuestas"], [vistas >= 100, "100 ofertas vistas"], [vistas >= 500, "500 ofertas vistas"], [(DATA.reporte && DATA.reporte.muros || []).some(m => m.recorridas >= 500), "Muro de 500 recorrido"]];
-  $("medallas").innerHTML = M.map(([ok, t]) => `<span class="medalla ${ok ? "ok" : ""}" title="${t}" aria-label="${t}: ${ok ? "ganada" : "pendiente"}">${ok ? "★" : "·"}</span>`).join("");
-}
-function stat(nombre, val, max, lado, cls) {
-  return `<div class="stat"><span class="nom">${esc(nombre)}</span><div class="barrita"><i class="${cls || ""}" style="width:${Math.round(val / Math.max(max, 1) * 100)}%"></i></div><span class="val">${esc(lado)}</span></div>`;
-}
-function lineaHTML(j, lead) {
-  return `<div class="linea">${lead}<div><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a><small>${esc(j.company)} · ${esc(CAT_LABEL[j.category] || j.category)}${j.salary ? " · " + esc(j.salary) : ""}</small></div></div>`;
-}
-const pcHTML = j => `<span class="pc">${esCurado(j) ? "" : "~"}${matchDe(j)}%</span>`;
-function renderLab() {
-  $("perfil-skills").innerHTML = PERFIL.map(s => stat(s.name, s.nivel, 100, s.lvl.replace(/[⭐⚠]/g, "").trim()) + stat("", s.demanda, 100, "demanda", "o")).join("");
-  const a = activas();
-  const dist = (id, f, labeler, cls) => {
-    const c = {}; a.forEach(j => { const k = f(j); c[k] = (c[k] || 0) + 1; });
-    const max = Math.max(...Object.values(c), 1);
-    $(id).innerHTML = Object.entries(c).sort((x, y) => y[1] - x[1]).map(([k, n]) => stat(labeler(k), n, max, String(n), cls ? cls(k) : "")).join("") || '<div class="vacio">Sin datos</div>';
-  };
-  dist("dist-fit", fitOf, k => FIT_LABEL[k], k => k === "high" ? "g" : k === "medium" ? "o" : "n");
-  dist("dist-mod", j => j.modality, k => MOD_LABEL[k] || k, k => k === "remoto" ? "g" : k === "hibrido" ? "o" : k === "presencial" ? "" : "n");
-  dist("dist-cat", j => j.category, k => CAT_LABEL[k] || k);
-  dist("dist-src", j => j.source || "Sin dato", k => k);
-  const parseSal = s => { const m = (s || "").replace(/\./g, "").match(/\d{3,7}/g); return m ? Math.max(...m.map(Number)) : 0; };
-  const conSal = a.filter(j => j.salary).sort((x, y) => parseSal(y.salary) - parseSal(x.salary));
-  $("salary-list").innerHTML = conSal.length ? conSal.slice(0, 30).map(j => lineaHTML(j, `<img class="sp" src="${spriteDe(j)}" alt="" width="64" height="64" loading="lazy">`)).join("") : '<div class="vacio">Aún no hay ofertas con renta publicada</div>';
-  const tops = a.filter(j => estadoDe(j) !== "postulada").sort((x, y) => matchDe(y) - matchDe(x) || (esCurado(y) ? 1 : 0) - (esCurado(x) ? 1 : 0)).slice(0, 10);
-  $("top-ops").innerHTML = tops.map(j => lineaHTML(j, pcHTML(j))).join("") || '<div class="vacio">Sin datos</div>';
-  const gc = {};
-  DATA.jobs.forEach(j => (j.gaps || []).forEach(g => { const k = g.split("(")[0].trim(); (gc[k] = gc[k] || { n:0, e:new Set() }).n++; gc[k].e.add(j.company); }));
-  const gs = Object.entries(gc).sort((x, y) => y[1].n - x[1].n).slice(0, 12);
-  const mg = gs.length ? gs[0][1].n : 1;
-  $("gaps-list").innerHTML = gs.map(([k, v]) => stat(k, v.n, mg, String(v.n), "r")).join("") || '<div class="vacio">Sin brechas registradas</div>';
-  $("recos").innerHTML = RECOS.map(r => `<li><b>${r.t}.</b> ${r.d}</li>`).join("");
-}
-function renderMapa() {
-  $("palabras").innerHTML = PALABRAS.map(p => `<span>${esc(p)}</span>`).join("");
-  $("fuentes").innerHTML = FUENTES.map(g => `<div class="caja"><h2>${esc(g.grupo)}</h2><p class="pista">${esc(g.nota)}</p>${g.items.map(f => `<div class="fuente"><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.nombre)}</a><p>${esc(f.que)}</p></div>`).join("")}</div>`).join("");
-}
-function renderDiario() {
-  const hist = DATA.history || [];
-  if (!hist.length) { $("hist-chart").innerHTML = '<div class="vacio">Aún no hay histórico</div>'; return; }
-  const last = hist[hist.length - 1], total = hist.reduce((s, d) => s + d.new, 0);
-  $("h-hoy").textContent = last.new; $("h-hoy-high").textContent = last.new_high;
-  $("h-prom").textContent = Math.round(total / hist.length); $("h-total").textContent = last.cumulative;
-  const rec = hist.slice(-24), max = Math.max(...rec.map(d => d.new), 1);
-  $("hist-chart").innerHTML = [...rec].reverse().map(d => stat(fechaCorta(d.date), d.new, max, `${d.new} · Σ ${d.cumulative}`) + (d.new_high ? stat("", d.new_high, max, `${d.new_high} alto`, "o") : "")).join("");
-  const nuevas = DATA.jobs.filter(j => j.first_seen === last.date && estadoDe(j) !== "descartada").sort((a, b) => matchDe(b) - matchDe(a));
-  $("hist-nuevas").innerHTML = nuevas.length ? nuevas.slice(0, 20).map(j => lineaHTML(j, pcHTML(j))).join("") : '<div class="vacio">La última pasada no trajo ofertas nuevas</div>';
-  const R = DATA.reporte;
-  if (R && R.prioridades && R.prioridades.length) {
-    $("mision").hidden = false;
-    $("mision").innerHTML = `<h2>Misión del ${fechaCorta(R.fecha)}</h2><ol>${R.prioridades.map(p => {
-      const j = DATA.jobs.find(x => x.id === p.id);
-      return `<li><div><a href="${esc(j ? j.url : p.url || "#")}" target="_blank" rel="noopener">${esc(j ? j.title + " · " + j.company : p.titulo || "")}</a><br>${esc(p.porque)}</div></li>`;
-    }).join("")}</ol>`;
-  }
-  if (R && R.muros && R.muros.length) {
-    $("muros").hidden = false;
-    $("muros").innerHTML = R.muros.map(m => `<div class="caja"><h2>Muro de ${esc(m.red)}</h2><div class="cifras"><div><b>${m.recorridas}</b>recorridas</div><div><b>${m.oportunidades}</b>oportunidades</div><div><b>${m.para_ti}</b>para ti</div></div><p class="pista" style="margin:10px 0 0">${esc(m.nota || "")}</p></div>`).join("");
-  }
-}
-function renderEquipo() {
-  const post = DATA.jobs.filter(j => estadoDe(j) === "postulada");
-  const resp = post.filter(j => responded.has(j.id)), espera = post.filter(j => !responded.has(j.id));
-  $("sg-post").textContent = post.length; $("sg-resp").textContent = resp.length; $("sg-esp").textContent = espera.length;
-  $("sg-tasa").textContent = (post.length ? Math.round(resp.length / post.length * 100) : 0) + "%";
-  const dias = j => { const f = fechaAppl(j); return f ? diasDesde(f) : null; };
-  const cd = espera.map(dias).filter(d => d != null);
-  $("sg-dias").textContent = cd.length ? Math.round(cd.reduce((a, b) => a + b, 0) / cd.length) : "–";
-  post.sort((a, b) => (responded.has(a.id) ? 1 : 0) - (responded.has(b.id) ? 1 : 0) || (dias(b) ?? -1) - (dias(a) ?? -1));
-  $("sg-list").innerHTML = post.length ? post.map(j => {
-    const r = responded.has(j.id), d = dias(j), f = fechaAppl(j);
-    return `<div class="linea"><img class="sp" src="${spriteDe(j)}" alt="" width="64" height="64" loading="lazy">
-      <div><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a><small>${esc(j.company)}${f ? ` · ${fechaCorta(f)}, hace ${Math.max(0, d)} días` : ""} · ${r ? "respondió" : "en espera"}</small></div>
-      <button class="boton dcha ${r ? "resp" : ""}" data-act="resp" data-id="${esc(j.id)}" aria-pressed="${r}">${r ? "Respondieron" : "Marcar respuesta"}</button></div>`;
-  }).join("") : '<div class="vacio">Aún no atrapas ninguna. Marca "postulada" en Ofertas.</div>';
-}
-function refreshAll() { render(); renderLab(); renderMapa(); renderDiario(); renderEquipo(); }
-
-/* ---------- lugares ---------- */
-const LUGARES = {
-  ofertas:{ titulo:"Hierba alta", texto:() => { const a = activas(), h = a.filter(j => j.fit === "high").length, n = a.filter(esNueva).length;
-    return `Hay ${a.length} ofertas abiertas en la región. ${h} son de calce alto y ${n === 1 ? "1 apareció" : n + " aparecieron"} en la última pasada. Mientras más evolucionado el Pokémon, mejor el calce.`; }, a1:() => entrenadorURL(), a2:() => pokeURL(310) },
-  equipo:{ titulo:"Centro de equipo", texto:() => { const p = DATA.jobs.filter(j => estadoDe(j) === "postulada").length, r = DATA.jobs.filter(j => responded.has(j.id)).length;
-    return `Llevas ${p} postulaciones en tu equipo y ${r} con respuesta marcada. Aquí se ve cuáles siguen esperando.`; }, a1:() => entrenadorURL(), a2:() => orbeURL() },
-  lab:{ titulo:"Laboratorio", texto:() => "Tus estadísticas contra lo que pide el mercado: dónde estás fuerte, qué te falta y qué conviene entrenar.", a1:() => pokeURL(164), a2:() => entrenadorURL() },
-  mapa:{ titulo:"Mapa de la región", texto:() => "Portales, muros, centros de estudio y palabras clave: todos los lugares donde conviene buscar.", a1:() => pokeURL(279), a2:() => pokeURL(277) },
-  diario:{ titulo:"Diario de ruta", texto:() => { const R = DATA.reporte; return R && R.resumen ? R.resumen : "Lo que trajo cada pasada, para postular temprano a lo recién publicado."; }, a1:() => entrenadorURL(), a2:() => pokeURL(280) },
-};
-let tipeo = null;
-function escribir(texto) {
-  const p = $("v-texto"); clearInterval(tipeo);
-  if (matchMedia("(prefers-reduced-motion:reduce)").matches) { p.textContent = texto; return; }
-  const t0 = performance.now(), dur = Math.min(700, texto.length * 8); p.textContent = "";
-  tipeo = setInterval(() => { const i = Math.ceil(texto.length * (performance.now() - t0) / dur); p.textContent = texto.slice(0, i); if (i >= texto.length) clearInterval(tipeo); }, 30);
-}
-function pintarLugar(anim) {
-  const L = LUGARES[state.view];
-  $("v-titulo").textContent = L.titulo;
-  $("actor1").src = L.a1(); $("actor2").src = L.a2();
-  pintarEscena(state.view);
-  if (anim === false) { $("v-texto").textContent = L.texto(); } else escribir(L.texto());
-  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.view === state.view));
-  document.querySelectorAll(".tab").forEach(t => t.tabIndex = t.dataset.view === state.view ? 0 : -1);
-  document.querySelectorAll(".parada").forEach(t => t.setAttribute("aria-current", t.dataset.view === state.view));
-  Object.keys(LUGARES).forEach(v => $("view-" + v).hidden = v !== state.view);
-}
-function irA(view) {
-  state.view = view; pararAudio(); pintarLugar(true);
-  try { history.replaceState(null, "", "#" + view); } catch (e) {}
-  scrollTo({ top:0 });
-}
-
-/* ---------- audio ---------- */
-let audioBtn = null;
-function pararAudio() {
-  if (typeof speechSynthesis !== "undefined") speechSynthesis.cancel();
-  if (audioBtn) { audioBtn.setAttribute("aria-pressed", "false"); audioBtn.querySelector("span").textContent = "Escuchar"; audioBtn = null; }
-}
-function hablar(btn, j) {
-  const era = audioBtn === btn; pararAudio(); if (era) return;
-  const u = new SpeechSynthesisUtterance(`${j.title}, en ${j.company}. ${j.notes || ""} ${j.gaps && j.gaps.length ? "Te falta: " + j.gaps.join(", ") + "." : ""}`);
-  u.lang = "es-CL"; u.rate = 1; u.onend = () => { if (audioBtn === btn) pararAudio(); };
-  audioBtn = btn; btn.setAttribute("aria-pressed", "true"); btn.querySelector("span").textContent = "Detener";
-  speechSynthesis.speak(u);
-}
-
-/* ---------- eventos ---------- */
-function guardar() { store.set("postuladas", [...applied]); store.set("respondidas", [...responded]); store.set("postuladas_fechas", appliedDates); store.set("cerradas", [...closed]); }
-document.addEventListener("click", e => {
-  const nav = e.target.closest(".tab, .parada");
-  if (nav) { irA(nav.dataset.view); return; }
-  const chip = e.target.closest(".chip");
-  if (chip) { state[chip.dataset.key] = chip.dataset.val; chip.parentElement.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === chip)); render(); return; }
-  const mas = e.target.closest("[data-mas]");
-  if (mas) { const k = mas.dataset.mas; limites[k] = (limites[k] || 40) + 40; render(); return; }
-  if (e.target.closest("[data-leer]")) { const b = e.target.closest("[data-leer]"), p = b.previousElementSibling, c = p.classList.toggle("corta"); b.textContent = c ? "Seguir leyendo" : "Leer menos"; return; }
-  const au = e.target.closest("[data-audio]");
-  if (au) { hablar(au, DATA.jobs.find(j => j.id === au.dataset.audio)); return; }
-  const b = e.target.closest("[data-act]"); if (!b) return;
-  const id = b.dataset.id;
-  if (b.dataset.act === "toggle") {
-    if (applied.has(id)) { applied.delete(id); responded.delete(id); delete appliedDates[id]; }
-    else { applied.add(id); appliedDates[id] = appliedDates[id] || hoyISO(); }
-  } else if (b.dataset.act === "resp") {
-    if (responded.has(id)) responded.delete(id);
-    else { responded.add(id); applied.add(id); appliedDates[id] = appliedDates[id] || hoyISO(); }
-  } else if (b.dataset.act === "closed") { closed.has(id) ? closed.delete(id) : closed.add(id); }
-  guardar(); pararAudio();
-  const y = scrollY; refreshAll(); scrollTo({ top:y });
+/* Eventos */
+document.addEventListener("input",e=>{
+  const id=e.target.id;
+  if(id==="q")filtros.q=e.target.value; else if(id==="qP")filtros.qP=e.target.value;
+  else if(id==="qR"){filtros.qR=e.target.value;filtros.verR=50;} else return;
+  refrescarResultados();
 });
-document.querySelector(".tabs").addEventListener("keydown", e => {
-  if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-  const ts = [...document.querySelectorAll(".tab")], i = ts.indexOf(document.activeElement); if (i < 0) return;
-  const n = ts[(i + (e.key === "ArrowRight" ? 1 : ts.length - 1)) % ts.length]; irA(n.dataset.view); n.focus(); e.preventDefault();
+document.addEventListener("change",e=>{
+  const id=e.target.id;
+  if(id==="area")filtros.area=e.target.value; else if(id==="orden")filtros.orden=e.target.value;
+  else if(id==="nuevas")filtros.nuevas=e.target.checked; else if(id==="canal")filtros.canal=e.target.value; else return;
+  refrescarResultados();
 });
-$("btn-filtros").addEventListener("click", () => { const p = $("panel"); p.hidden = !p.hidden; $("btn-filtros").setAttribute("aria-expanded", !p.hidden); });
-$("q").addEventListener("input", e => { state.q = e.target.value; render(); });
-["estado", "orden", "source", "frescura"].forEach(k => $(k).addEventListener("change", e => { state[k] = e.target.value; render(); }));
-["salaryOnly", "soloNuevas", "hideClosed"].forEach(k => $(k).addEventListener("change", e => { state[k] = e.target.checked; render(); }));
-$("ent-img").src = entrenadorURL();
-const ancla = (location.hash || "").slice(1);
-if (LUGARES[ancla]) state.view = ancla;
-addEventListener("hashchange", () => { const h = location.hash.slice(1); if (LUGARES[h] && h !== state.view) irA(h); });
-pintarLugar(false);
-load();
+const hoyISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  const d=b.dataset;
+  if(b.id==="verMas"){filtros.verR+=50;refrescarResultados();return;}
+  if(d.postule){marcadas[d.postule]=hoyISO();store.set("visor_marcadas",marcadas);pintarNav();refrescarResultados();
+    avisar(`Pasó a Postuladas.<button type="button" data-deshacer-post="${esc(d.postule)}">Deshacer</button>`);}
+  else if(d.cerro){cerradas[d.cerro]=hoyISO();store.set("visor_cerradas",cerradas);pintarNav();refrescarResultados();
+    avisar(`Pasó al Registro anterior.<button type="button" data-deshacer-cerro="${esc(d.cerro)}">Deshacer</button>`);}
+  else if(d.deshacerPost){delete marcadas[d.deshacerPost];store.set("visor_marcadas",marcadas);pintarNav();refrescarResultados();avisar("Listo, volvió a Por postular.");}
+  else if(d.deshacerCerro){delete cerradas[d.deshacerCerro];store.set("visor_cerradas",cerradas);render();avisar("Listo, volvió a Por postular.");}
+});
+window.addEventListener("hashchange",()=>{if(location.hash!=="#contenido")render(true)});
+
+/* Carga */
+document.getElementById("marca").insertAdjacentHTML("afterbegin",icono("castillo"));
+fetch("../data/jobs.json?v="+Date.now()).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+  DATOS=d; jobs=d.jobs; postulaciones=d.postulaciones||[];
+  ultimaFecha=jobs.reduce((m,j)=>(j.first_seen||"")>m?j.first_seen:m,"");
+  const u=new Date(d.updated);
+  document.getElementById("actualizado").textContent=`Actualizado el ${u.getDate()} ${MESES[u.getMonth()]} ${u.getFullYear()}, ${String(u.getHours()).padStart(2,"0")}:${String(u.getMinutes()).padStart(2,"0")}`;
+  render();
+}).catch(()=>{
+  document.getElementById("actualizado").textContent="";
+  document.getElementById("contenido").innerHTML=`<h2>No se pudieron cargar los datos</h2><p class="intro">Revisa la conexión y recarga la página.</p>`;
+});
 </script>
 </body>
 </html>
