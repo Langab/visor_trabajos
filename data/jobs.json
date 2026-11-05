@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T14:39:20.131771+00:00",
+ "updated": "2026-11-05T15:06:52.201080+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -346,19 +346,22 @@
    "city": "Santiago",
    "first_seen": "2026-11-05",
    "date_posted": "",
-   "fit": "high",
-   "status": "nueva",
+   "fit": "medium",
+   "status": "cv_listo",
    "salary": "$2.333.878 bruto ($2.770.816 mensualizado), grado 10",
-   "notes": "Contrata temporal por reemplazo de licencia maternal; 32 postulaciones al revisar. Ingeniero o carrera afín, 3 años desde la titulación; Python, R, SQL y Power BI; gobernanza de datos. Calza con su trabajo en el SLEP y su Diplomado en Movilidad y Transporte. Se evalúa el CV del portal: revisar adjuntos antes de postular.",
+   "notes": "Bases leídas el 05-11. Se evalúa solo el CV electrónico del portal, no un CV libre. Pide ingeniería o carrera afín y 3 años desde la titulación (cumple, cerca de 3,9 según certificados); Python, R, SQL y Power BI; gobernanza de datos deseable. CV y carta listos. Falta revisar Mi CV y adjuntos, y postular. Ficha: ofertas/2026-11-05_DTPM_GestorDatos.md",
    "category": "sector_publico",
    "source": "Empleos Públicos",
-   "modality": "presencial",
+   "modality": "no_especificado",
    "deadline": "2026-11-10",
    "applied_date": "",
-   "match_pct": 80,
+   "match_pct": 68,
    "gaps": [
-    "Título: confirmar que Sociología entre como carrera afín",
-    "Es un reemplazo temporal"
+    "Carrera afín: Sociología no está nombrada",
+    "Sin experiencia en operación de transporte público",
+    "SIG y modelos de asignación de demanda",
+    "Sin experiencia como contraparte técnica de consultorías",
+    "Reemplazo temporal sin duración publicada"
    ]
   },
   {
@@ -16755,7 +16758,7 @@
   {
    "date": "2026-11-05",
    "new": 74,
-   "new_high": 4,
+   "new_high": 3,
    "new_ids": [
     "https://www.linkedin.com/jobs/view/4486563626",
     "https://www.linkedin.com/jobs/view/4486575659",
@@ -16843,7 +16846,7 @@
     "id": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144558&c=0&j=0&tipo=convpostularavisoTrabajo",
     "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144558&c=0&j=0&tipo=convpostularavisoTrabajo",
     "titulo": "Gestor(a) de Datos DTPM",
-    "porque": "Python, R, SQL, Power BI y gobernanza de datos, en transporte. Cierra el 10-11. Es un reemplazo temporal."
+    "porque": "CV y carta listos. Calzan las herramientas y la gobernanza; el riesgo es Sociología como carrera afín. Reemplazo temporal. Cierra el 10-11 a las 23:59."
    },
    {
     "id": "https://www.linkedin.com/jobs/view/4486444206",
