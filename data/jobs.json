@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T16:01:52.747103+00:00",
+ "updated": "2026-11-05T16:47:46.955082+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -738,7 +738,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "ESE Universidad de los Andes, contrato indefinido. Dashboards, KPIs, CRM y automatización. Pide ingeniero o carrera afín con orientación analítica. El aviso trae texto ilegible en los requisitos. | 05-11: CV, carta y ficha listos (75/100), sin postular. | Falta que inicie sesión en trabajando.cl. · 75/100 · Falta que inicie sesión en trabajando.cl. Ficha ofertas/2026-11-05_ESE_UANDES_IngenieroBI.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "ESE Universidad de los Andes, contrato indefinido. Dashboards, KPIs, CRM y automatización. Pide ingeniero o carrera afín con orientación analítica. El aviso trae texto ilegible en los requisitos. | 05-11: CV, carta y ficha listos (75/100), sin postular. | Falta que inicie sesión en trabajando.cl. · 75/100 · Falta que inicie sesión en trabajando.cl. Ficha ofertas/2026-11-05_ESE_UANDES_IngenieroBI.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -1528,9 +1528,9 @@
    "first_seen": "2026-11-05",
    "date_posted": "2026-11-02",
    "fit": "high",
-   "status": "evaluada",
+   "status": "postulada",
    "salary": "",
-   "notes": "Sector financiero, Las Condes. Pide 2 años, SQL intermedio, Power BI, estadística básica, documentación y Excel; deseable Python/R y nube. Calza casi punto por punto. | 05-11: CV, carta y ficha listos (85/100), sin postular. | Falta decidir años como analista de negocios. · 85/100 · Falta decidir años como analista de negocios (campo solo numérico). Ficha ofertas/2026-11-05_Confidencial_DataAnalystSemiSenior.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Sector financiero, Las Condes. Pide 2 años, SQL intermedio, Power BI, estadística básica, documentación y Excel; deseable Python/R y nube. Calza casi punto por punto. | 05-11: CV, carta y ficha listos (85/100), sin postular. | Postulada 05-11. · 85/100 · Postulada 05-11 por LinkedIn. Renta 2400000 líq.; 5 años declarados como analista de negocios (decisión de Benjamín; campo solo numérico). Ficha ofertas/2026-11-05_Confidencial_DataAnalystSemiSenior.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -1540,8 +1540,8 @@
    "gaps": [
     "Sin experiencia en sector financiero"
    ],
-   "cv_listo": true,
-   "etapa": "pendiente",
+   "cv_listo": false,
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -1582,7 +1582,7 @@
    "fit": "high",
    "status": "postulada",
    "salary": "",
-   "notes": "Banchile Inversiones. SQL, Power BI y Excel avanzado; ingeniería, estadística o afines; deseable Python y ETL. | 05-11: CV, carta y ficha listos (72/100), sin postular. | Postulada 05-11. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Banchile Inversiones. SQL, Power BI y Excel avanzado; ingeniería, estadística o afines; deseable Python y ETL. | 05-11: CV, carta y ficha listos (72/100), sin postular. | Postulada 05-11. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -2023,7 +2023,7 @@
    "fit": "high",
    "status": "postulada",
    "salary": "",
-   "notes": "Levantar y priorizar requerimientos de información de las áreas, analizar indicadores operacionales, estandarizar indicadores y reglas de negocio, coordinar soluciones analíticas. Calza con levantamiento de requerimientos + gobernanza (diccionario, estándares) del SLEP. | 05-11: CV, carta y ficha listos (82/100), sin postular. | Postulada 05-11. · 82/100 · Postulada 05-11 por LinkedIn. Renta 2300000 líq. Ficha ofertas/2026-11-05_UCChristus_GestorInformacion.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Levantar y priorizar requerimientos de información de las áreas, analizar indicadores operacionales, estandarizar indicadores y reglas de negocio, coordinar soluciones analíticas. Calza con levantamiento de requerimientos + gobernanza (diccionario, estándares) del SLEP. | 05-11: CV, carta y ficha listos (82/100), sin postular. | Postulada 05-11. · 82/100 · Postulada 05-11 por LinkedIn. Renta 2300000 líq. Ficha ofertas/2026-11-05_UCChristus_GestorInformacion.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -5940,7 +5940,7 @@
    "fit": "high",
    "status": "postulada",
    "salary": "",
-   "notes": "Pide explícitamente Sociología/Publicidad/Marketing, 1-3 años en research/insights/audiencias. Consolidar bases de herramientas de research y medios, reportes y estudios. Calza perfil sociólogo+datos; brecha: experiencia en agencia de medios (deseable). | 05-11: CV, carta y ficha listos (72/100), sin postular. | Postulada 05-11. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2000000 líq.; 4 años en el rol. Ficha ofertas/2026-11-05_Omnicom_ResearchAnalyst.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Pide explícitamente Sociología/Publicidad/Marketing, 1-3 años en research/insights/audiencias. Consolidar bases de herramientas de research y medios, reportes y estudios. Calza perfil sociólogo+datos; brecha: experiencia en agencia de medios (deseable). | 05-11: CV, carta y ficha listos (72/100), sin postular. | Postulada 05-11. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2000000 líq.; 4 años en el rol. Ficha ofertas/2026-11-05_Omnicom_ResearchAnalyst.md. Respuestas aprobadas por Benjamín.",
    "category": "sociologia",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -6276,7 +6276,7 @@
    "fit": "medium",
    "status": "postulada",
    "salary": "",
-   "notes": "Indicadores, reportes, modelos de información, automatizaciones y seguimiento de iniciativas comerciales. SQL, Power BI, Excel avanzado; deseable Python y ETL. Formación: carrera de 5 años o más de ingeniería/estadística 'o carreras afines con orientación analítica y de negocio' (zona gris para Sociología). Dominio financiero-comercial ajeno. Republicada también como 4471119267. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Indicadores, reportes, modelos de información, automatizaciones y seguimiento de iniciativas comerciales. SQL, Power BI, Excel avanzado; deseable Python y ETL. Formación: carrera de 5 años o más de ingeniería/estadística 'o carreras afines con orientación analítica y de negocio' (zona gris para Sociología). Dominio financiero-comercial ajeno. Republicada también como 4471119267. · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "presencial",
@@ -10970,7 +10970,7 @@
    "fit": "high",
    "status": "postulada",
    "salary": "",
-   "notes": "Indicadores, reportes, análisis de clientes/productos, presentaciones (✓ todo). Pide SQL + Power BI + Excel avanzado (✓); deseable Python/ETL/automatización (✓✓). Carreras \"...o afines con orientación analítica y de negocio\" (flexible). Banca = sector objetivo. Ley 21.015 u otras. Gap: dominio negocio inversiones · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas y renta propuestas sin confirmar.",
+   "notes": "Indicadores, reportes, análisis de clientes/productos, presentaciones (✓ todo). Pide SQL + Power BI + Excel avanzado (✓); deseable Python/ETL/automatización (✓✓). Carreras \"...o afines con orientación analítica y de negocio\" (flexible). Banca = sector objetivo. Ley 21.015 u otras. Gap: dominio negocio inversiones · 72/100 · Postulada 05-11 por LinkedIn. Renta 2400000, formulario no indica líquida. Ficha ofertas/2026-11-05_Banchile_AnalistaBI.md. Respuestas aprobadas por Benjamín.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -18052,6 +18052,15 @@
    "canal": "LinkedIn",
    "detalle": "",
    "url": "https://www.linkedin.com/jobs/view/4477406352"
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Empresa Confidencial (financiero)",
+   "cargo": "Data Analyst Semi Senior",
+   "fecha": "2026-11-05",
+   "canal": "LinkedIn",
+   "detalle": "",
+   "url": "https://www.linkedin.com/jobs/view/4486444206"
   },
   {
    "etapa": "sin_respuesta",
