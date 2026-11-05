@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T16:47:46.955082+00:00",
+ "updated": "2026-11-05T16:50:33.681547+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -789,9 +789,9 @@
    "first_seen": "2026-11-05",
    "date_posted": "2026-11-04",
    "fit": "low",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Reposteo: ya postuló a NielsenIQ el 20-10-2026. · Fit Medio (ciencias sociales OK; inglés fluido y consumo masivo en contra) · Renta declarada CLP 37M brutos/año. Santiago híbrido",
+   "notes": "Reposteo: ya postuló a NielsenIQ el 20-10-2026. · Fit Medio (ciencias sociales OK; inglés fluido y consumo masivo en contra) · Renta declarada CLP 37M brutos/año. Santiago híbrido | Gmail: siguieron con otros candidatos, 23-10-2026.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -2069,19 +2069,19 @@
    "first_seen": "2026-10-31",
    "date_posted": "2026-10-30",
    "fit": "medium",
-   "status": "cv_listo",
+   "status": "postulada",
    "salary": "COP 5.250.000 mensuales, prestación de servicios sin exclusividad (~CLP 1,5 M)",
    "notes": "Diseño de sistemas de indicadores, líneas base, tableros e informes a donantes (PNUD) en proyectos de discapacidad/víctimas de minas en el conflicto y prevención de VBG. Pide 4 años (3 en M&E con reportes a donantes), experiencia en género/violencias/conflicto, Kobo/ODK. Brechas: donantes, temática, Kobo, posgrado. Borrador con CV en Gmail; ficha 2026-10-31_EstudioPlural_InvestigadoraMEL.md",
    "category": "monitoreo-evaluacion",
    "source": "LinkedIn (muro)",
    "modality": "remoto",
    "deadline": "03-11-2026",
-   "applied_date": "",
+   "applied_date": "2026-10-31",
    "match_pct": null,
    "gaps": [],
-   "cv_listo": true,
-   "etapa": "caducada",
-   "motivo": "Plazo vencido el 03-11-2026"
+   "cv_listo": false,
+   "etapa": "postulada",
+   "motivo": ""
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4485366091",
@@ -5152,7 +5152,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "Le ofrecieron el cargo por mensaje (Carolina Quiroz, Mindwork). Cuestionario lleno y CV adjunto (cv/CV_BenjaminLang_Mindwork.pdf), PENDIENTE de que Benjamín revise, agregue su renta actual y envíe. Looker Studio avanzado excluyente; Sociología mencionada explícitamente. · Fit Muy Fuerte (replica su trabajo en el SLEP) · Entrevista lunes 2-nov-2026 11:00 por Meet con Mindwork. Renta en el cuestionario: $2,0M líquidos (confirmar lo enviado). Híbrido 3x2 Santiago Centro. Prep: entrevistas/Preparacion_Entrevista_SIP.docx",
+   "notes": "Le ofrecieron el cargo por mensaje (Carolina Quiroz, Mindwork). Cuestionario lleno y CV adjunto (cv/CV_BenjaminLang_Mindwork.pdf), PENDIENTE de que Benjamín revise, agregue su renta actual y envíe. Looker Studio avanzado excluyente; Sociología mencionada explícitamente. · Fit Muy Fuerte (replica su trabajo en el SLEP) · Entrevista lunes 2-nov-2026 11:00 por Meet con Mindwork. Renta en el cuestionario: $2,0M líquidos (confirmar lo enviado). Híbrido 3x2 Santiago Centro. Prep: entrevistas/Preparacion_Entrevista_SIP.docx | Gmail: 02-11 entrevista, evaluaciones Genomawork, referencias y formulario; 03-11 Mindwork responde que estarán en contacto.",
    "category": "datos-bi",
    "source": "Contacto directo (Mindwork)",
    "modality": "híbrido",
@@ -5255,7 +5255,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "$2.203.289 bruto promedio (grado 13, contrata; $3.019.823 en meses con bono)",
-   "notes": "EN PROCESO 30-10-2026: pasó admisibilidad. Prueba técnica online (Talana, Assertive Consulting) lun 02-11-2026 11:00-11:20, única oportunidad; temario SQL, validación de datos, modelamiento/integración, Python, Power BI, evaluaciones educativas. POSTULADA 21-10-2026 (N° postulación 11666547) con CV electrónico + CV_BenjaminLang_AgenciaCalidad.pdf en \"Otros\". OJO: certificado de experiencia laboral sigue siendo el PDF vacío de 2025. LA MEJOR DEL MURO. Sociólogo(a) tiene PUNTAJE PREFERENTE (junto a Docente, Psicólogo, Diseñador de Servicios e ingenierías). Funciones: elaborar y evaluar reportes de resultados de las evaluaciones de aprendizaje y desempeño de la Agencia, bases de licitación, asesoría técnica. Deseable: diplomado o curso en BI, análisis de datos o data storytelling; 3 años en reportería/BI/análisis de datos/educación; 3 años en sector público. Calza directo con su trabajo en el SLEP con datos SIMCE. Cierra 27-10. · Fit Fuerte (Sociólogo con puntaje preferente) · N° postulación 11666547. Grado 13, $2.203.289 bruto promedio. Cierra 27-10",
+   "notes": "EN PROCESO 30-10-2026: pasó admisibilidad. Prueba técnica online (Talana, Assertive Consulting) lun 02-11-2026 11:00-11:20, única oportunidad; temario SQL, validación de datos, modelamiento/integración, Python, Power BI, evaluaciones educativas. POSTULADA 21-10-2026 (N° postulación 11666547) con CV electrónico + CV_BenjaminLang_AgenciaCalidad.pdf en \"Otros\". OJO: certificado de experiencia laboral sigue siendo el PDF vacío de 2025. LA MEJOR DEL MURO. Sociólogo(a) tiene PUNTAJE PREFERENTE (junto a Docente, Psicólogo, Diseñador de Servicios e ingenierías). Funciones: elaborar y evaluar reportes de resultados de las evaluaciones de aprendizaje y desempeño de la Agencia, bases de licitación, asesoría técnica. Deseable: diplomado o curso en BI, análisis de datos o data storytelling; 3 años en reportería/BI/análisis de datos/educación; 3 años en sector público. Calza directo con su trabajo en el SLEP con datos SIMCE. Cierra 27-10. · Fit Fuerte (Sociólogo con puntaje preferente) · N° postulación 11666547. Grado 13, $2.203.289 bruto promedio. Cierra 27-10 | Gmail: cuestionario recibido por Talana el 02-11; sin resultado.",
    "category": "sector_publico",
    "source": "LinkedIn (muro) → Empleos Públicos",
    "modality": "presencial",
@@ -6010,9 +6010,9 @@
    "first_seen": "2026-10-13",
    "date_posted": "2026-10-02",
    "fit": "medium",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "",
-   "notes": "POSTULADA 20-10-2026 por Solicitud sencilla con CV_BenjaminLang_NielsenIQ_EN.pdf; renta declarada CLP 37M brutos/año. Acepta Social Sciences; pide inglés fluido. Investigación de mercado senior: ejecutar estudios de punta a punta, interpretar y narrar resultados para clientes, y guiar analistas junior. Su perfil CEP (encuestas, análisis e informes) calza bien; el dominio consumo masivo y la consultoría a clientes son nuevos. Probable inglés. · Fit Medio (ciencias sociales OK; inglés fluido y consumo masivo en contra) · Renta declarada CLP 37M brutos/año. Santiago híbrido",
+   "notes": "POSTULADA 20-10-2026 por Solicitud sencilla con CV_BenjaminLang_NielsenIQ_EN.pdf; renta declarada CLP 37M brutos/año. Acepta Social Sciences; pide inglés fluido. Investigación de mercado senior: ejecutar estudios de punta a punta, interpretar y narrar resultados para clientes, y guiar analistas junior. Su perfil CEP (encuestas, análisis e informes) calza bien; el dominio consumo masivo y la consultoría a clientes son nuevos. Probable inglés. · Fit Medio (ciencias sociales OK; inglés fluido y consumo masivo en contra) · Renta declarada CLP 37M brutos/año. Santiago híbrido | Gmail: siguieron con otros candidatos, 23-10-2026.",
    "category": "investigacion",
    "source": "LinkedIn",
    "modality": "presencial",
@@ -8139,23 +8139,23 @@
    "first_seen": "2026-08-30",
    "date_posted": "2026-08-28",
    "fit": "high",
-   "status": "evaluada",
+   "status": "postulada",
    "salary": "",
-   "notes": "Segmentación de clientes, perfilamiento de clusters y modelos de propensión: análisis cuantitativo aplicado a comportamiento, que es exactamente el puente entre tu sociología y tus datos. SQL excluyente (lo tienes) y la herramienta de data mining puede ser Power BI, donde eres fuerte. Buenos beneficios (pasajes con tarifa reducida, seguro). CV adaptado generado el 31-ago (cv/CV_BenjaminLang_SKY.docx); ficha en ofertas/2026-08-31_SKY_AnalistaCustomerInsights.md. Pendiente definir renta y postular. · 78/100 Fit Fuerte · Excluyentes cubiertos (SQL, Power BI como herramienta de data mining, inglés B2, grandes volúmenes vía Censo 2024). Brechas: título de ingeniería y modelos de propensión de compra. Proceso incluye evaluaciones en Genomawork. Renta por definir.",
+   "notes": "Segmentación de clientes, perfilamiento de clusters y modelos de propensión: análisis cuantitativo aplicado a comportamiento, que es exactamente el puente entre tu sociología y tus datos. SQL excluyente (lo tienes) y la herramienta de data mining puede ser Power BI, donde eres fuerte. Buenos beneficios (pasajes con tarifa reducida, seguro). CV adaptado generado el 31-ago (cv/CV_BenjaminLang_SKY.docx); ficha en ofertas/2026-08-31_SKY_AnalistaCustomerInsights.md. Pendiente definir renta y postular. · 78/100 Fit Fuerte · Excluyentes cubiertos (SQL, Power BI como herramienta de data mining, inglés B2, grandes volúmenes vía Censo 2024). Brechas: título de ingeniería y modelos de propensión de compra. Proceso incluye evaluaciones en Genomawork. Renta por definir. | Gmail 05-11: Genoma confirmó recepción el 31-08-2026.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
    "deadline": "",
-   "applied_date": "",
+   "applied_date": "2026-08-31",
    "match_pct": 78,
    "gaps": [
     "Título pedido: Ingeniería Civil/Comercial/Informática o afín",
     "Modelos predictivos y de propensión formalizados",
     "Inglés intermedio"
    ],
-   "cv_listo": true,
-   "etapa": "caducada",
-   "motivo": "Más de 45 días publicada, sin plazo"
+   "cv_listo": false,
+   "etapa": "postulada",
+   "motivo": ""
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4458972703",
@@ -8391,9 +8391,9 @@
    "first_seen": "2026-08-26",
    "date_posted": "2026-08-26",
    "fit": "high",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "$2.400.000 bruto",
-   "notes": "POSTULADA 2026-09-02. SOCIOLOGÍA nombrada PRIMERA en los títulos aceptados. Funciones: diseñar y ejecutar monitoreo y evaluación, contraparte técnica de estudios externos, seguimiento del marco de indicadores de programas sociales (✓✓ su trabajo SLEP). 3 años en evaluación/análisis de programas sociales (✓ 5), deseable R avanzado (✓✓). Programas: Cuidando a Quienes Cuidan, Quédate, Fondo Comunidad Activa. RIESGO: honorarios 1-oct a 31-dic-2026 (3 meses) con posible renovación, y $2.4M bruto ≈ $1,95M líquido. Cierra 14-sept · 88/100 Fit Fuerte · POSTULADA 2026-09-02 vía formulario Google (CV PDF + cédula + título + certificados adjuntos). Sociología primera en títulos aceptados; monitoreo/evaluación e indicadores = su trabajo actual; R deseable. Renta $2.400.000 BRUTO (~$1,95M líquido). RIESGO: honorarios solo oct-dic 2026 con posible renovación. Cierra 14-sept. Requiere adjuntar CV, cédula, título y certificados de experiencia en PDF",
+   "notes": "POSTULADA 2026-09-02. SOCIOLOGÍA nombrada PRIMERA en los títulos aceptados. Funciones: diseñar y ejecutar monitoreo y evaluación, contraparte técnica de estudios externos, seguimiento del marco de indicadores de programas sociales (✓✓ su trabajo SLEP). 3 años en evaluación/análisis de programas sociales (✓ 5), deseable R avanzado (✓✓). Programas: Cuidando a Quienes Cuidan, Quédate, Fondo Comunidad Activa. RIESGO: honorarios 1-oct a 31-dic-2026 (3 meses) con posible renovación, y $2.4M bruto ≈ $1,95M líquido. Cierra 14-sept · 88/100 Fit Fuerte · POSTULADA 2026-09-02 vía formulario Google (CV PDF + cédula + título + certificados adjuntos). Sociología primera en títulos aceptados; monitoreo/evaluación e indicadores = su trabajo actual; R deseable. Renta $2.400.000 BRUTO (~$1,95M líquido). RIESGO: honorarios solo oct-dic 2026 con posible renovación. Cierra 14-sept. Requiere adjuntar CV, cédula, título y certificados de experiencia en PDF | Gmail: no seleccionado, 14-10-2026.",
    "category": "investigacion",
    "source": "LinkedIn (Gobierno de Santiago)",
    "modality": "no_especificado",
@@ -10346,7 +10346,7 @@
    "fit": "high",
    "status": "evaluada",
    "salary": "",
-   "notes": "Evaluaciones de implementación y resultados/impacto de programas, estudios cuali+cuanti, terreno, informes. EXCLUYENTES cumplidos: Sociología explícita (✓), Stata/R/Python (✓ R avanzado), 2+ años análisis mixto (✓✓). Deseables: políticas públicas/social (✓✓ SLEP/INE/CEP), inglés avanzado (B2, solo deseable). Va directo al área del feedback CENIA (evaluación). CV listo: cv/CV_BenjaminLang_FundacionLuksic.docx/pdf · 87/100 Fit Fuerte · REUNIÓN jue 27-ago-2026. CONTACTO 19-ago: la fundación llamó para el cargo; briefing de preparación en entrevistas/Preparacion_Llamada_FundacionLuksic.docx. POSTULADA 2026-08-04 vía formulario del sitio (CV PDF adjunto, renta $2.0M líquidos declarada). Excluyentes todos cumplidos (Sociología explícita, R, métodos mixtos 2+ años); deseables políticas públicas/social ✓✓; inglés avanzado solo deseable (B2). Renta declarada en formulario: $2.000.000 líquidos. Cierra 17-ago. Semipresencial RM con terreno. Rol alineado al feedback CENIA (evaluación de programas)",
+   "notes": "Evaluaciones de implementación y resultados/impacto de programas, estudios cuali+cuanti, terreno, informes. EXCLUYENTES cumplidos: Sociología explícita (✓), Stata/R/Python (✓ R avanzado), 2+ años análisis mixto (✓✓). Deseables: políticas públicas/social (✓✓ SLEP/INE/CEP), inglés avanzado (B2, solo deseable). Va directo al área del feedback CENIA (evaluación). CV listo: cv/CV_BenjaminLang_FundacionLuksic.docx/pdf · 87/100 Fit Fuerte · REUNIÓN jue 27-ago-2026. CONTACTO 19-ago: la fundación llamó para el cargo; briefing de preparación en entrevistas/Preparacion_Llamada_FundacionLuksic.docx. POSTULADA 2026-08-04 vía formulario del sitio (CV PDF adjunto, renta $2.0M líquidos declarada). Excluyentes todos cumplidos (Sociología explícita, R, métodos mixtos 2+ años); deseables políticas públicas/social ✓✓; inglés avanzado solo deseable (B2). Renta declarada en formulario: $2.000.000 líquidos. Cierra 17-ago. Semipresencial RM con terreno. Rol alineado al feedback CENIA (evaluación de programas) | Gmail: siguieron con otros candidatos tras entrevistas, 15-09-2026.",
    "category": "investigacion",
    "source": "LinkedIn post → sitio fundación",
    "modality": "no_especificado",
@@ -11544,9 +11544,9 @@
    "first_seen": "2026-07-14",
    "date_posted": "2026-07-14",
    "fit": "high",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Plazo indefinido, Nivel 15, División Política Monetaria. R excluyente (✓ avanzado), microdatos administrativos masivos (✓ Censo/INE), indicadores en tiempo real. Gaps: inglés avanzado (B2, se valida en entrevista), título \"Ing. Comercial/Civil o afín 10 semestres\" (Sociología UDP = 10 semestres, argumentable), deseable magíster economía. Cierra 27-jul. CV listo: cv/CV_BenjaminLang_BancoCentral.docx · 76/100 Buen Fit · POSTULADA 2026-07-14 vía portal sistemadepostulacion.bcentral.cl (Circular 3410). Plazo indefinido Nivel 15, División Política Monetaria; R excluyente (✓ avanzado) + microdatos administrativos masivos (✓ Censo INE); deseables Python/SQL (✓ intermedio); gaps: inglés avanzado se valida en entrevista (tiene B2), título Ing Comercial/Civil o carrera afín 10 semestres (Sociología UDP argumentable), deseable magíster economía (no tiene); CIERRA 27-JUL; postular vía portal Banco Central (Oportunidad de trabajo 3410)",
+   "notes": "Plazo indefinido, Nivel 15, División Política Monetaria. R excluyente (✓ avanzado), microdatos administrativos masivos (✓ Censo/INE), indicadores en tiempo real. Gaps: inglés avanzado (B2, se valida en entrevista), título \"Ing. Comercial/Civil o afín 10 semestres\" (Sociología UDP = 10 semestres, argumentable), deseable magíster economía. Cierra 27-jul. CV listo: cv/CV_BenjaminLang_BancoCentral.docx · 76/100 Buen Fit · POSTULADA 2026-07-14 vía portal sistemadepostulacion.bcentral.cl (Circular 3410). Plazo indefinido Nivel 15, División Política Monetaria; R excluyente (✓ avanzado) + microdatos administrativos masivos (✓ Censo INE); deseables Python/SQL (✓ intermedio); gaps: inglés avanzado se valida en entrevista (tiene B2), título Ing Comercial/Civil o carrera afín 10 semestres (Sociología UDP argumentable), deseable magíster economía (no tiene); CIERRA 27-JUL; postular vía portal Banco Central (Oportunidad de trabajo 3410) | Gmail: seleccionaron a otro profesional, 21-09-2026.",
    "category": "investigacion",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -16120,9 +16120,9 @@
    "first_seen": "2026-07-07",
    "date_posted": "2026-07-02",
    "fit": "high",
-   "status": "postulada",
+   "status": "evaluada",
    "salary": "",
-   "notes": "Datos + automatización en universidad; buen cruce con su perfil · 85/100 Fit Fuerte · Equipo de Gobierno de Datos en universidad; calza directo con su gobernanza SLEP desde cero. Pide SQL+Python+ETL+Power BI, todos cumplidos. Presencial Huechuraba. Experiencia en educación superior deseable no excluyente",
+   "notes": "Datos + automatización en universidad; buen cruce con su perfil · 85/100 Fit Fuerte · Equipo de Gobierno de Datos en universidad; calza directo con su gobernanza SLEP desde cero. Pide SQL+Python+ETL+Power BI, todos cumplidos. Presencial Huechuraba. Experiencia en educación superior deseable no excluyente | Gmail: proceso concluido, cargo cerrado o cubierto, 20-07-2026.",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "no_especificado",
@@ -18072,12 +18072,21 @@
    "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=143599"
   },
   {
+   "etapa": "sin_respuesta",
+   "empresa": "Estudio PLURAL",
+   "cargo": "Persona investigadora MEL",
+   "fecha": "2026-10-31",
+   "canal": "Correo",
+   "detalle": "",
+   "url": "https://lnkd.in/p/diDBxX8R"
+  },
+  {
    "etapa": "proceso",
    "empresa": "Agencia de Calidad de la Educación",
    "cargo": "Analista de Gestión de Reportes",
    "fecha": "2026-10-21",
    "canal": "Empleos Públicos",
-   "detalle": "Prueba técnica el lunes 02-11 (Talana). Esperando respuesta; el portal sigue en revisión.",
+   "detalle": "Prueba técnica rendida el 02-11 (Talana). Esperando respuesta.",
    "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144016&c=0&j=0&tipo=convpostularavisoTrabajo"
   },
   {
@@ -18104,16 +18113,16 @@
    "cargo": "Analista de Datos y Reportería",
    "fecha": "2026-10-20",
    "canal": "Mindwork",
-   "detalle": "Entrevista con Mindwork el lunes 02-11. Esperando respuesta.",
+   "detalle": "Entrevista y evaluaciones Genomawork el 02-11. Referencias enviadas. Esperando respuesta.",
    "url": "https://mindwork.teamtailor.com/jobs/8546612-analista-de-datos-y-reporteria"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "NielsenIQ",
    "cargo": "Senior Consumer Insights Analyst",
    "fecha": "2026-10-20",
    "canal": "LinkedIn",
-   "detalle": "",
+   "detalle": "No seleccionado (23-10).",
    "url": "https://www.linkedin.com/jobs/view/4486526770"
   },
   {
@@ -18135,12 +18144,12 @@
    "url": "https://lnkd.in/p/d8NDG_sA"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Gobierno de Santiago (DIDESOH)",
    "cargo": "Profesional de Evaluación",
    "fecha": "2026-09-02",
    "canal": "Formulario",
-   "detalle": "",
+   "detalle": "No seleccionado (14-10).",
    "url": "https://docs.google.com/forms/d/e/1FAIpQLSc5I-NJkyr_4EBQfQadVHUYxJ_HDWc9H4_QaHAT1jfQ1_BXuw/viewform"
   },
   {
@@ -18154,6 +18163,15 @@
   },
   {
    "etapa": "sin_respuesta",
+   "empresa": "SKY Airline",
+   "cargo": "Analista Customer Insights",
+   "fecha": "2026-08-31",
+   "canal": "Genoma",
+   "detalle": "Recepción confirmada.",
+   "url": "https://www.linkedin.com/jobs/view/4460148934"
+  },
+  {
+   "etapa": "sin_respuesta",
    "empresa": "Subsecretaría de Evaluación Social",
    "cargo": "Jefatura de Departamento de Análisis de la Realidad Social",
    "fecha": "2026-08-25",
@@ -18162,21 +18180,12 @@
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
-   "empresa": "INE",
-   "cargo": "Cargo por confirmar",
-   "fecha": "2026-08-21",
-   "canal": "Por confirmar",
-   "detalle": "Prueba rendida en agosto. Sin novedades.",
-   "url": ""
-  },
-  {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Fundación Luksic",
    "cargo": "Analista de Calidad (Evaluación de Programas)",
    "fecha": "2026-08-04",
    "canal": "Formulario",
-   "detalle": "Sin novedades tras la reunión del 27-08.",
+   "detalle": "No seleccionado tras entrevistas (15-09).",
    "url": "https://postulacion.fundacionluksic.cl/analista-calidad"
   },
   {
@@ -18189,21 +18198,30 @@
    "url": "lnkd:isapre-esencial-modelamiento"
   },
   {
+   "etapa": "cerrada",
+   "empresa": "INE",
+   "cargo": "Analista Socioeconómico, Proyecto EPF",
+   "fecha": "2026-08",
+   "canal": "Por confirmar",
+   "detalle": "Evaluaciones en agosto. No seleccionado (21-09).",
+   "url": ""
+  },
+  {
    "etapa": "sin_respuesta",
    "empresa": "Starken",
    "cargo": "Analista de Datos (BI)",
    "fecha": "2026-07-14",
    "canal": "Correo",
-   "detalle": "Sin novedades tras pedir pruebas Hirint el 15-07.",
+   "detalle": "Pidió pruebas Hirint el 15-07; respondí ese día. Sin novedades.",
    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7482805684372434944/"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Banco Central de Chile",
    "cargo": "Analista Económico Cuantitativo DAIM",
    "fecha": "2026-07-14",
    "canal": "Formulario",
-   "detalle": "Resultados anunciados para agosto; sin registro.",
+   "detalle": "Seleccionaron a otra persona (21-09).",
    "url": "https://www.linkedin.com/jobs/view/4440577870"
   },
   {
@@ -18252,31 +18270,49 @@
    "url": "https://www.getonbrd.com/jobs/data-science-analytics/analista-de-datos-encuestas-y-estudios-opinando-online-santiago"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Universidad San Sebastián",
    "cargo": "Analista de Datos y Automatización",
    "fecha": "2026-07-09",
    "canal": "LinkedIn",
-   "detalle": "",
+   "detalle": "Proceso concluido; cargo cerrado o cubierto (20-07).",
    "url": "https://cl.linkedin.com/jobs/view/4432757667"
   },
   {
-   "etapa": "cerrada",
-   "empresa": "CENIA",
-   "cargo": "Analista de Datos",
-   "fecha": "2026-07-09",
-   "canal": "Sitio de la empresa",
-   "detalle": "Rechazado tras entrevista (21-07).",
-   "url": "https://cenia.cl/2026/07/07/trabaja-en-cenia-3/"
+   "etapa": "sin_respuesta",
+   "empresa": "Banco Falabella",
+   "cargo": "Data Analyst",
+   "fecha": "2026-07-08",
+   "canal": "LinkedIn",
+   "detalle": "Ya no recibe solicitudes.",
+   "url": "https://cl.linkedin.com/jobs/view/4410224504"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Cátedra Carlos Vial Espantoso",
    "cargo": "Investigador/a Área de Estudios",
    "fecha": "2026-07-08",
    "canal": "Correo",
-   "detalle": "",
+   "detalle": "No seleccionado (30-09).",
    "url": "https://es.linkedin.com/posts/carolinavonhausen_buscamos-investigadora-para-área-de-estudios-activity-7480726513542127617-iAVz"
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Principal Chile",
+   "cargo": "Analista Business Intelligence",
+   "fecha": "2026-07-07",
+   "canal": "LinkedIn",
+   "detalle": "Ya no recibe solicitudes.",
+   "url": "https://cl.linkedin.com/jobs/view/4436276447"
+  },
+  {
+   "etapa": "cerrada",
+   "empresa": "CENIA",
+   "cargo": "Analista de Datos y Estudios Jr",
+   "fecha": "2026-07-07",
+   "canal": "Sitio de la empresa",
+   "detalle": "Rechazado tras entrevista (21-07).",
+   "url": "https://cenia.cl/2026/07/07/trabaja-en-cenia-3/"
   },
   {
    "etapa": "cerrada",
@@ -18284,7 +18320,7 @@
    "cargo": "Profesional Depto. de Estudios, Monitoreo y Datos",
    "fecha": "2026-07-06",
    "canal": "Empleos Públicos",
-   "detalle": "Marcada con respuesta en el visor. Resultado en el portal.",
+   "detalle": "No continuó (26-08). Convocatoria declarada desierta (17-10).",
    "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=141385&c=0&j=0&tipo=convpostularavisoTrabajo"
   },
   {
@@ -18304,24 +18340,6 @@
    "canal": "LinkedIn",
    "detalle": "Ya no recibe solicitudes.",
    "url": ""
-  },
-  {
-   "etapa": "sin_respuesta",
-   "empresa": "Principal Chile",
-   "cargo": "Analista Business Intelligence",
-   "fecha": "2026-07",
-   "canal": "LinkedIn",
-   "detalle": "Ya no recibe solicitudes.",
-   "url": "https://cl.linkedin.com/jobs/view/4436276447"
-  },
-  {
-   "etapa": "sin_respuesta",
-   "empresa": "Banco Falabella",
-   "cargo": "Data Analyst",
-   "fecha": "2026-07",
-   "canal": "LinkedIn",
-   "detalle": "Ya no recibe solicitudes.",
-   "url": "https://cl.linkedin.com/jobs/view/4410224504"
   },
   {
    "etapa": "sin_respuesta",
@@ -18387,21 +18405,21 @@
    "url": "https://www.linkedin.com/jobs/view/4447847923"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Servicio Local de Educación Pública de Aconcagua",
    "cargo": "Encargado(a) de Monitoreo y Datos Educativos",
    "fecha": "2026-06-22",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (16-08).",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Subsecretaría de Evaluación Social",
    "cargo": "Analista de Estudios",
    "fecha": "2026-06-01",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (10-08).",
    "url": ""
   },
   {
@@ -18414,12 +18432,12 @@
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Dirección de Educación Pública",
    "cargo": "Coordinador de Datos y Estadísticas",
    "fecha": "2026-05-08",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (15-08).",
    "url": ""
   },
   {
@@ -18433,11 +18451,38 @@
   },
   {
    "etapa": "sin_respuesta",
+   "empresa": "EK Consultores",
+   "cargo": "Consultor (EK-75)",
+   "fecha": "2026-05",
+   "canal": "Por confirmar",
+   "detalle": "Recepción confirmada el 09-05.",
+   "url": ""
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Mineduc, Admisión Escolar",
+   "cargo": "Profesional Analista del Sistema de Admisión Escolar",
+   "fecha": "2026-04-21",
+   "canal": "Correo",
+   "detalle": "Recepción confirmada.",
+   "url": ""
+  },
+  {
+   "etapa": "cerrada",
    "empresa": "Comisión Nacional de Acreditación",
    "cargo": "Generalista de Información y Análisis de Datos",
    "fecha": "2026-04-09",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "No seleccionado (08-05).",
+   "url": ""
+  },
+  {
+   "etapa": "cerrada",
+   "empresa": "Banco Falabella",
+   "cargo": "Data Analyst (postulación de abril)",
+   "fecha": "2026-04-01",
+   "canal": "Aira",
+   "detalle": "No seleccionado (20-04).",
    "url": ""
   },
   {
@@ -18450,12 +18495,21 @@
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Servicio Local de Educación Pública de Aconcagua",
    "cargo": "Encargado(a) de Monitoreo y Datos Educativos, grado 8°",
    "fecha": "2026-03-25",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Convocatoria declarada desierta (09-06).",
+   "url": ""
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "CENIA",
+   "cargo": "Coordinador/a Técnico ILIA",
+   "fecha": "2026-03-24",
+   "canal": "Buk",
+   "detalle": "Recepción confirmada.",
    "url": ""
   },
   {
@@ -18464,7 +18518,16 @@
    "cargo": "Analista Económico Estadístico, Dirección Regional Aysén",
    "fecha": "2026-03-18",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Concurso concluido el 23-04; sin resultado informado por correo.",
+   "url": ""
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Empresa no indicada",
+   "cargo": "Profesional Unidad de Estudios, Depto. de Pregrado",
+   "fecha": "2026-03-17",
+   "canal": "Trabajando.com",
+   "detalle": "Postulación confirmada.",
    "url": ""
   },
   {
@@ -18491,34 +18554,34 @@
    "cargo": "Analista División Estudios",
    "fecha": "2026-02-25",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Concurso concluido el 08-05; sin resultado informado por correo.",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
-   "empresa": "Secretaría y Adm. General de Transportes",
-   "cargo": "Analista Área de Políticas y Estudios",
+   "etapa": "cerrada",
+   "empresa": "Subsecretaría de Hacienda",
+   "cargo": "Analista Área de Políticas y Estudios, Gobierno Digital",
    "fecha": "2026-01-27",
    "canal": "Empleos Públicos",
-   "detalle": "En revisión según el portal.",
+   "detalle": "Convocatoria dejada sin efecto (15-07).",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
-   "empresa": "Secretaría y Adm. General de Transportes",
-   "cargo": "Analista de Datos y Estudios",
+   "etapa": "cerrada",
+   "empresa": "Subsecretaría de Hacienda",
+   "cargo": "Analista de Datos y Estudios, Gobierno Digital",
    "fecha": "2026-01-26",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Convocatoria dejada sin efecto (15-07).",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "SERNAC",
    "cargo": "Ingeniera(o) Gobierno de Datos e Inteligencia de Negocios",
    "fecha": "2026-01-22",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Convocatoria dejada sin efecto (14-02).",
    "url": ""
   },
   {
@@ -18527,16 +18590,34 @@
    "cargo": "Analista de Estudios",
    "fecha": "2026-01-14",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Concurso concluido el 13-02; sin resultado informado por correo.",
    "url": ""
   },
   {
    "etapa": "sin_respuesta",
+   "empresa": "Falabella Retail",
+   "cargo": "Data Analyst Senior",
+   "fecha": "2026-01-14",
+   "canal": "Aira",
+   "detalle": "Recepción confirmada.",
+   "url": ""
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Falabella, Equipo Corporativo",
+   "cargo": "Data Analyst",
+   "fecha": "2026-01-14",
+   "canal": "Aira",
+   "detalle": "Recepción confirmada.",
+   "url": ""
+  },
+  {
+   "etapa": "cerrada",
    "empresa": "Servicio Electoral",
    "cargo": "Analista de Datos",
    "fecha": "2026-01-14",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (03-03).",
    "url": ""
   },
   {
@@ -18590,34 +18671,43 @@
    "cargo": "Analista Socioeconómico de Género",
    "fecha": "2025-12-31",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Concurso concluido el 18-02; sin resultado informado por correo.",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
-   "empresa": "Secretaría y Adm. General de Transportes",
+   "etapa": "cerrada",
+   "empresa": "Subsecretaría de Hacienda",
    "cargo": "Asesor(a) de Estudios, Secretaría de Modernización del Estado",
    "fecha": "2025-09-13",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (19-10-2025).",
    "url": ""
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "cerrada",
    "empresa": "Dirección de Educación Pública",
    "cargo": "Analista Cuantitativo de Datos Educativos",
    "fecha": "2025-09-09",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (19-01).",
    "url": ""
   },
   {
    "etapa": "sin_respuesta",
+   "empresa": "Universidad Central",
+   "cargo": "Analista de Datos Científicos",
+   "fecha": "2025-08-26",
+   "canal": "Trabajando.com",
+   "detalle": "Postulación confirmada.",
+   "url": ""
+  },
+  {
+   "etapa": "cerrada",
    "empresa": "INE",
    "cargo": "Analista Metodólogo II",
    "fecha": "2025-08-13",
    "canal": "Empleos Públicos",
-   "detalle": "Resultado disponible en el portal; no revisado.",
+   "detalle": "Seleccionaron a otra persona (19-11-2025).",
    "url": ""
   }
  ],
