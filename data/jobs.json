@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T03:54:30.632556+00:00",
+ "updated": "2026-11-11T15:38:46.083513+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -1023,7 +1023,7 @@
    "first_seen": "2026-11-05",
    "date_posted": "",
    "fit": "medium",
-   "status": "postulada",
+   "status": "en_proceso",
    "salary": "$2.333.878 bruto ($2.770.816 mensualizado), grado 10",
    "category": "sector_publico",
    "source": "Empleos Públicos",
@@ -1054,8 +1054,8 @@
    "applied_date": "",
    "match_pct": 60,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Plazo vencido el 09-11-2026"
   },
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144570&c=0&j=0&tipo=convpostularavisoTrabajo",
@@ -4530,8 +4530,8 @@
    "applied_date": "",
    "match_pct": null,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Plazo vencido el 09-11-2026"
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4484207617",
@@ -7214,8 +7214,8 @@
    "applied_date": "",
    "match_pct": null,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Más de 45 días publicada, sin plazo"
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4469745848",
@@ -7236,8 +7236,8 @@
    "applied_date": "",
    "match_pct": null,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Más de 45 días publicada, sin plazo"
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4470192141",
@@ -7258,8 +7258,8 @@
    "applied_date": "",
    "match_pct": null,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Más de 45 días publicada, sin plazo"
   },
   {
    "id": "https://www.linkedin.com/jobs/view/4472013946",
@@ -7280,8 +7280,8 @@
    "applied_date": "",
    "match_pct": null,
    "cv_listo": false,
-   "etapa": "pendiente",
-   "motivo": ""
+   "etapa": "caducada",
+   "motivo": "Más de 45 días publicada, sin plazo"
   },
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=142932&c=0&j=0&tipo=avisotrabajoficha",
@@ -18067,12 +18067,12 @@
    "url": "https://www.linkedin.com/jobs/view/4488430326"
   },
   {
-   "etapa": "sin_respuesta",
+   "etapa": "proceso",
    "empresa": "Subsecretaría de Transportes (DTPM)",
    "cargo": "Gestor(a) de Datos, reemplazo temporal",
    "fecha": "2026-11-05",
    "canal": "Empleos Públicos",
-   "detalle": "En revisión. Cierra el 10-11.",
+   "detalle": "Pruebas psicolaborales (Talana) recibidas el 11-11. Plazo: 15-11, 09:32.",
    "url": "https://www.empleospublicos.cl/pub/convocatorias/convpostularavisoTrabajo.aspx?i=144558&c=0&j=0&tipo=convpostularavisoTrabajo"
   },
   {
