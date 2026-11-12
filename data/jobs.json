@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T18:39:21.446206+00:00",
+ "updated": "2026-11-12T01:28:14.616410+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -18021,6 +18021,15 @@
   }
  ],
  "postulaciones": [
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Enseña Chile",
+   "cargo": "Coordinador/a de Estudios / Analista de Investigación",
+   "fecha": "2026-11-11",
+   "canal": "Formulario web",
+   "detalle": "Postulada el 11-11 por formulario; el plazo cierra el 14-11.",
+   "url": ""
+  },
   {
    "etapa": "sin_respuesta",
    "empresa": "Empresa Confidencial",
