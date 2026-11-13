@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T02:59:26.889068+00:00",
+ "updated": "2026-11-13T12:33:11.627364+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -275,16 +275,16 @@
    "first_seen": "2026-11-12",
    "date_posted": "2026-11-12",
    "fit": "medium",
-   "status": "nueva",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "presencial",
    "deadline": "",
-   "applied_date": "",
+   "applied_date": "2026-11-13",
    "match_pct": 60,
    "cv_listo": false,
-   "etapa": "pendiente",
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -759,15 +759,15 @@
    "first_seen": "2026-11-12",
    "date_posted": "2026-11-12",
    "fit": "medium",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn (muro)",
    "modality": "híbrido",
-   "deadline": "",
+   "deadline": "2027-01-04",
    "applied_date": "",
    "match_pct": 60,
-   "cv_listo": false,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
@@ -1331,7 +1331,7 @@
    "first_seen": "2026-11-12",
    "date_posted": "2026-11-10",
    "fit": "high",
-   "status": "nueva",
+   "status": "evaluada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
@@ -1339,7 +1339,7 @@
    "deadline": "",
    "applied_date": "",
    "match_pct": 70,
-   "cv_listo": false,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
@@ -19473,6 +19473,15 @@
   }
  ],
  "postulaciones": [
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Abastible",
+   "cargo": "Analista de Datos",
+   "fecha": "2026-11-13",
+   "canal": "LinkedIn (Solicitud sencilla)",
+   "detalle": "Postulada 13-11.",
+   "url": "https://www.linkedin.com/jobs/view/4488551827"
+  },
   {
    "etapa": "sin_respuesta",
    "empresa": "Enseña Chile",
