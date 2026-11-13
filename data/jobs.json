@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T12:33:11.627364+00:00",
+ "updated": "2026-11-13T14:45:15.806636+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -1331,16 +1331,16 @@
    "first_seen": "2026-11-12",
    "date_posted": "2026-11-10",
    "fit": "high",
-   "status": "evaluada",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "híbrido",
    "deadline": "",
-   "applied_date": "",
+   "applied_date": "2026-11-13",
    "match_pct": 70,
-   "cv_listo": true,
-   "etapa": "pendiente",
+   "cv_listo": false,
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -19481,6 +19481,15 @@
    "canal": "LinkedIn (Solicitud sencilla)",
    "detalle": "Postulada 13-11.",
    "url": "https://www.linkedin.com/jobs/view/4488551827"
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "ACL",
+   "cargo": "Analista de Datos Postventa (Data Analyst / BI)",
+   "fecha": "2026-11-13",
+   "canal": "Correo a la empresa",
+   "detalle": "Postulada por correo 13-11.",
+   "url": "https://www.linkedin.com/jobs/view/4489493140"
   },
   {
    "etapa": "sin_respuesta",
