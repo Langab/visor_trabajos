@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T17:22:46.744125+00:00",
+ "updated": "2026-11-16T18:25:14.335380+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -1265,16 +1265,16 @@
    "first_seen": "2026-11-12",
    "date_posted": "2026-11-12",
    "fit": "medium",
-   "status": "evaluada",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn (muro)",
    "modality": "híbrido",
    "deadline": "2027-01-04",
-   "applied_date": "",
+   "applied_date": "2026-11-16",
    "match_pct": 60,
-   "cv_listo": true,
-   "etapa": "pendiente",
+   "cv_listo": false,
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -20436,6 +20436,15 @@
    "canal": "Portal BHP (SAP SuccessFactors)",
    "detalle": "Postulada en el portal de BHP 16-11.",
    "url": "https://www.linkedin.com/jobs/view/4488943857"
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Metro de Santiago",
+   "cargo": "Analista de Sistemas de Transporte (oferta inclusiva)",
+   "fecha": "2026-11-16",
+   "canal": "Portal Metro (trabajando.com)",
+   "detalle": "Postulada en el portal de Metro 16-11.",
+   "url": "https://metro.trabajando.cl/trabajo/6146298"
   },
   {
    "etapa": "sin_respuesta",
