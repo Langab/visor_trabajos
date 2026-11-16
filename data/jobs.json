@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T12:29:45.313386+00:00",
+ "updated": "2026-11-16T12:54:58.596759+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -605,15 +605,15 @@
    "first_seen": "2026-11-16",
    "date_posted": "2026-11-13",
    "fit": "high",
-   "status": "nueva",
+   "status": "cv_listo",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "",
    "deadline": "",
    "applied_date": "",
-   "match_pct": null,
-   "cv_listo": false,
+   "match_pct": 65,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
@@ -2805,16 +2805,16 @@
    "first_seen": "2026-11-16",
    "date_posted": "2026-11-09",
    "fit": "high",
-   "status": "nueva",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
-   "modality": "",
+   "modality": "híbrido",
    "deadline": "",
-   "applied_date": "",
-   "match_pct": null,
+   "applied_date": "2026-11-16",
+   "match_pct": 70,
    "cv_listo": false,
-   "etapa": "pendiente",
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -20419,6 +20419,15 @@
   }
  ],
  "postulaciones": [
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "Falabella",
+   "cargo": "Analista de Datos y Control de Gestión (Marketplace Internacional)",
+   "fecha": "2026-11-16",
+   "canal": "LinkedIn (Solicitud sencilla)",
+   "detalle": "Postulada por LinkedIn 16-11.",
+   "url": "https://www.linkedin.com/jobs/view/4488876540"
+  },
   {
    "etapa": "sin_respuesta",
    "empresa": "Abastible",
