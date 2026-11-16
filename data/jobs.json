@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T12:54:58.596759+00:00",
+ "updated": "2026-11-16T17:22:46.744125+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -605,16 +605,16 @@
    "first_seen": "2026-11-16",
    "date_posted": "2026-11-13",
    "fit": "high",
-   "status": "cv_listo",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn",
    "modality": "",
    "deadline": "",
-   "applied_date": "",
+   "applied_date": "2026-11-16",
    "match_pct": 65,
-   "cv_listo": true,
-   "etapa": "pendiente",
+   "cv_listo": false,
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -20427,6 +20427,15 @@
    "canal": "LinkedIn (Solicitud sencilla)",
    "detalle": "Postulada por LinkedIn 16-11.",
    "url": "https://www.linkedin.com/jobs/view/4488876540"
+  },
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "BHP",
+   "cargo": "Specialist Analytics | BHP Chile (Portfolio & Experience)",
+   "fecha": "2026-11-16",
+   "canal": "Portal BHP (SAP SuccessFactors)",
+   "detalle": "Postulada en el portal de BHP 16-11.",
+   "url": "https://www.linkedin.com/jobs/view/4488943857"
   },
   {
    "etapa": "sin_respuesta",
