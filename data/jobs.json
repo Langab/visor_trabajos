@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T00:12:22.153276+00:00",
+ "updated": "2026-11-27T00:32:29.490081+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -672,7 +672,7 @@
    "first_seen": "2026-11-26",
    "date_posted": "2026-11-26",
    "fit": "high",
-   "status": "nueva",
+   "status": "cv_listo",
    "salary": "$1.705.958 bruto",
    "category": "datos-bi",
    "source": "Empleos Públicos",
@@ -680,7 +680,7 @@
    "deadline": "2026-12-02",
    "applied_date": "",
    "match_pct": 72,
-   "cv_listo": false,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
@@ -760,7 +760,7 @@
    "first_seen": "2026-11-26",
    "date_posted": "2026-11-26",
    "fit": "high",
-   "status": "nueva",
+   "status": "cv_listo",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn (muro)",
@@ -768,7 +768,7 @@
    "deadline": "2026-12-15",
    "applied_date": "",
    "match_pct": 75,
-   "cv_listo": false,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
@@ -798,13 +798,13 @@
    "id": "muro:cepal-research-assistant-g5-dds-2026-11",
    "title": "Research Assistant, G5 (División de Desarrollo Social)",
    "company": "CEPAL",
-   "url": "https://www.linkedin.com/search/results/content/?keywords=CEPAL%20vacante%20Research%20Assistant%20G5%20Santiago",
+   "url": "https://careers.un.org/jobSearchDescription/288971?language=en",
    "location": "Santiago",
    "city": "Santiago",
    "first_seen": "2026-11-26",
    "date_posted": "2026-11-26",
    "fit": "medium",
-   "status": "nueva",
+   "status": "cv_listo",
    "salary": "",
    "category": "investigacion",
    "source": "LinkedIn (muro)",
@@ -812,7 +812,7 @@
    "deadline": "2026-12-01",
    "applied_date": "",
    "match_pct": 60,
-   "cv_listo": false,
+   "cv_listo": true,
    "etapa": "pendiente",
    "motivo": ""
   },
