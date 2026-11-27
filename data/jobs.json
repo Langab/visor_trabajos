@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T00:32:29.490081+00:00",
+ "updated": "2026-11-27T00:33:09.380063+00:00",
  "jobs": [
   {
    "id": "https://www.empleospublicos.cl/pub/convocatorias/convFicha.aspx?i=140370&c=0&j=0&tipo=avisotrabajoficha",
@@ -760,7 +760,7 @@
    "first_seen": "2026-11-26",
    "date_posted": "2026-11-26",
    "fit": "high",
-   "status": "cv_listo",
+   "status": "postulada",
    "salary": "",
    "category": "datos-bi",
    "source": "LinkedIn (muro)",
@@ -768,8 +768,8 @@
    "deadline": "2026-12-15",
    "applied_date": "",
    "match_pct": 75,
-   "cv_listo": true,
-   "etapa": "pendiente",
+   "cv_listo": false,
+   "etapa": "postulada",
    "motivo": ""
   },
   {
@@ -24424,6 +24424,15 @@
   }
  ],
  "postulaciones": [
+  {
+   "etapa": "sin_respuesta",
+   "empresa": "ClearData Consultores",
+   "cargo": "Analista de datos y estrategia",
+   "fecha": "2026-11-26",
+   "canal": "Correo a contacto@cleardata.cl",
+   "detalle": "CV y carta enviados por correo el 26-11 (cierre 15-12).",
+   "url": "https://www.linkedin.com/search/results/content/?keywords=Buscamos%20analista%20de%20datos%20y%20estrategia%20en%20Clear%20Data"
+  },
   {
    "etapa": "sin_respuesta",
    "empresa": "Falabella",
